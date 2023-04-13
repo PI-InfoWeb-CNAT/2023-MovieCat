@@ -11,24 +11,25 @@
 
 ### 1. Objetivo do Projeto 
 
-O projeto __Agendamento de Serviços__ tem como objetivo prover uma solução simples, acessível e padronizada para o agendamento de serviços através da Internet.
+O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida, simples e dinâmica para ambas as faces do comércio: público/funcionário; promovendo, assim, um serviço mais ágil e tranquilo, evitando que o cliente despenda muito tempo em filas que possivelmente comprometem seu tempo de filme, logo prejudicando sua experiência e aumentando as possibilidades de desistência e não retorno ao local, o que por sua vez prejudica financeiramente a empresa e seus funcionários, que no método tradicional também trabalham sob muito mais pressão.
 
 ### 2. Descrição do Problema 
 
 |         __        | __   |
 |:------------------|:-----|
-| **_O problema_**    | Marcar um horário de atendimento com profissionais, como dentistas, médicos, psicólogos, dentro outros, e empresas prestadoras de serviços, como concessionárias de automóveis, eletrônicas, pet-shops, etc.  |
-| **_afetando_**      | Profissionais e empresas que fornecem diversos serviços à sociedade e pessoas que precisam contratar esses serviços, agendando um horário de atendimento. |
-| **_cujo impacto é_**| Dificuldade no agendamento do atendimento, dificuldade na contratação dos serviços, perda de clientes (empresas e profissionais) e não realização de serviços (clientes). |
-| **_uma boa solução seria_** | Um sistema na Internet que permita aos profissionais e empresas informar a disponibilidade de horários de atendimento, facilitando o agendamento desses atendimentos para seus clientes. E para os clientes, um sistema que facilite a busca de profissionais e empresas para agendamento de um atendimento. |
+| **_O problema_**    | O metódo tradicional da compra de ingressos muitas vezes gera clientes insatisfeitos com o serviço em função do tempo gasto aguardando atendimento e da exaustão dos funcionários que são poucos para uma grande demanda diária, gerando assim um estresse mútuo desnecessário que pode causar uma perca monetária significativa para a empresa.  |
+| **_afetando_**      | A empresa, seus funcionários, clientes e o bom funcionamento e imagem do local, que sem a automatização desse serviço se torna ineficaz em propiciar uma maior satisfação social. |
+| **_cujo impacto é_**| Maiores dificuldades na administração e no atendimento, com impacto direto no bem estar de funcionários e clientes. |
+| **_uma boa solução seria_** | Uma aplicação web que permita que os clientes agendem o horário da compra presencial de ingressos, se dirigindo em ordem de agendamento ao caixa para efetuar a compra, podendo assim aproveitar seu tempo de tela sem muitos problemas e não sendo preciso aguardar na fila. Essa funcionalidade promoveria atendimento da demanda daqueles usuários que por algum motivo não conseguem efetuar a compra de ingressos online (estudantes que não possuem a carteira oficial de estudante, pessoas sem acesso a dinheiro virtual e usuários não familiarizados com a tecnologia, já que a solicitação de atendimento fisico seria muito mais descomplicada). |
 
 ### 3. Descrição dos Usuários
 
 | Nome | Descrição | Responsabilidades |
 |:---  |:--- |:--- |
-| Administrador  | Realiza as atividades básicas para o início da operação do sistema | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços |
-| Funcionário  | Realiza as atividades relacionadas ao controle da agenda de serviços | Mantém o cadastro de serviços; consulta a situação das agendas de serviços; mantém a agenda de atendimento; confirma o agendamento de clientes e exclui o agendamento de clientes |
-| Cliente | Realiza as atividades relacionadas ao agendamento do serviço | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
+| Administrador  | Realiza as atividades básicas para o início da operação do sistema | Faz o gerenciamento de compras e atendimentos |
+| Funcionário  | Realiza acesso constante ao sistema | Efetua o processo de compra do cliente; consulta a situação das agendas de serviços; mantém a agenda de atendimento; confirma o agendamento de clientes e exclui o agendamento de clientes |
+| Usuário | Efetua o processo de agendamento do atendimento via web | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
+| Cliente | Participa do processo de atendimento fisico | Confirma as informações empregues no site e faz a compra de ingressos |
 
 ### 4. Descrição do Ambiente dos Usuários
 
