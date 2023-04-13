@@ -33,27 +33,25 @@ O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida
 
 ### 4. Descrição do Ambiente dos Usuários
 
-Em várias atividades do cotidiano humano é necessário agendar um horário determinado para que uma ação específica seja realizada. Isso ocorre, por exemplo, quando um automóvel vai ser revisado em uma oficina, quando um médico vai consultar um paciente ou quando consertos diversos (hidráulicos, elétricos, dentre outros) são realizados em uma residência. 
+Atualmente a tecnologia avançou em níveis surpreendentes e vem ganhando cada vez mais espaço em nossas vidas e cotidianos, possibilitando hoje a realização de qualquer compra sem sair de casa, utilizando dinheiro virtual, aplicativos bancários etc.  No entanto, muitos indivíduos enfrentam dificuldades com a adaptação de uma vida conectada á internet e no manuseio desses apps financeiros e operações de compra web, realizando, assim, suas atividades referentes ao tópico anteriormente citado de modo presencial, a exigir do indíviduo seu deslocamento até o local e possivelmente uma experiência mais estressante.
+ 
+A mediação do contato cliente/funcionário através de um agendamento de serviço evitaria a longa espera em filas e melhor direcionamento organizacional social levando em consideração os horários das sessões dos filmes, preservando assim o tempo do cliente e valorizando o tempo do funcionários, trazendo uma experência mais agradável e confortavél para o cliente que se torna mais suscetível ao retorno naquela empresa.
 
-Em muitas dessas situações, o cliente precisa atualmente estabelecer um contato pessoal com o profissional ou com a empresa prestadora do serviço para agendar um atendimento. E, como isso é normalmente realizado por telefone ou aplicativo de mensagens, encontrar um horário de atendimento possível para ambas as partes pode ser custoso, pois há a necessidade de encontrar um horário viável para os dois envolvidos.
-
-Desta forma, a ideia central do sistema é permitir que empresas e profissionais registrem suas disponibilidades de atendimento e que clientes, em geral, possam consultar e agendar horários para realização e contratação de serviços. Com isso, o sistema pode estabelecer um canal de comunicação mais ágil entre clientes e empresas ou profissionais.
+Desta forma, a ideia central do sistema é permitir que pessoas que por algum motivo não podem efetuar a compra online do ingresso também tenham uma boa e tranquila ida ao cinema, não precisando esperar em filas e dessa forma gerando um diferencial no atendimento daquela empresa que fornece opções mais acessível ao seu público. A ideia é que esse agendamento seja intuitivo e descomplicado, não trazendo problemas ao usuário que está fazendo o acesso.
 
 ### 5. Principais Necessidades dos Usuários
 
-Para empresas e profissionais, a necessidade é divulgar sua disponibilidade de atendimentos para viabilizar, de forma mais eficiente, o atendimento dos seus clientes.
+Para empresas, a necessidade é divulgar sua disponibilidade de atendimentos presenciais agendados para viabilizar, de forma mais eficiente, o atendimento dos seus clientes.
 
-Para os clientes, as necessidades são encontrar profissionais e empresas prestadoras de serviço e agendar atendimentos com estes de acordo as disponibilidades de tempo dos envolvidos.
+Para os clientes, as necessidades são evitar o gasto de tempo numa fila sem abrir mão do atendimento presencial, no qual ele pode receber orientações de um funcionário que guiará o processo de compra.
 
 ### 6.	Alternativas Concorrentes
 
-As alternativas concorrentes são, em geral, específicas para uma empresa ou profissional. A ideia do sistema proposto é prover uma solução simples, acessível e padronizada para o agendamento de serviços e que pode ser utilizada por quaisquer profissionais e empresas.
+No presente momento não há ideias semelhantes sendo postas em prática em nenhum estabelecimento comercial de modo geral, no entanto, o mais próximo disso que pode ser posto como objeto de comparação seria a compra online de ingressos - da qual já viabiliza o acesso rápido as telas e evita filas enormes, no entanto, existe a problemática de não atender a um determinado público frequentador do local; e também há a forma tradicional de filas, que por sua vez submete ao cliente muitas vezes um longo tempo de aguardo para poder comprar seu ingresso. Sendo nossa solução uma nova implementação efeciente e que não excluiria as opções anteriores mas certamente atenderia e promoveria satisfação ao seu público alvo.
 
 ### 7.	Visão Geral do Produto
 
-Em resumo, o sistema de Agendamento de Serviços é uma aplicação que permite empresas e profissionais registrarem suas disponibilidades de atendimento aos seus clientes, de forma que estes possam consultar e agendar horários para realização de serviços.
-
-O sistema deve ter uma interface amigável e permitir o acesso concorrente de clientes para agendamento de um horário de atendimento.
+De um modo geral, nosso sistema busca a introdução de alternativas de compra online de ingressos via web agendamento que sejam acessíveis à demanda de pessoas com pouca ou nenhuma familiaridade com a internet ou que por alguma outra razão não podem efetuar a compra, dessa forma atendendo um maior número de pessoas gerando uma satisfação maior associada a empresa que reflete em maiores lucros e no marketing.
 
 ### 8. Requisitos Funcionais
 
