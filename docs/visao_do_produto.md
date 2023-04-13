@@ -58,12 +58,11 @@ De um modo geral, nosso sistema busca a introdução de alternativas de compra o
 | Código | Nome | Descrição |
 |:---  |:--- |:--- |
 | RF01 | Entrar no sistema | Usuários devem logar no sistema para acessar as funcionalidades relacionadas ao agendamento |
-| RF02 | Cadastro de Funcionários | Administrador do sistema mantém o cadastro dos funcionários responsáveis pelo gerenciamento das agendas |
-| RF03 | Gerenciamento de Serviços |  Funcionário mantém a relação de serviços prestados pela empresa ou profissional |
+| RF02 | Cadastro no sistema | Usuários disponibilizam algumas informações que serão confirmadas presencialmente |
+| RF03 | Gerenciamento de Serviços | Funcionário faz a confirmação de informações e checa os horários de atendimentos  |
 | RF04 | Gerenciamento da Agenda | Funcionário registra os horários disponíveis de atendimento, confirma e cancela o agendamento de clientes |
-| RF05 | Cadastro de Clientes | Cliente deve realizar o auto cadastramento |
-| RF06 | Consulta de Agendas | Cliente consulta agendas de atendimento dos serviços disponíveis, podendo agendar um serviço  |
-| RF07 | Consulta de Agendamento | Cliente consulta atendimentos agendados, podendo cancelar um agendamento |
+| RF05 | Consulta de Agendas | Cliente consulta agendas de atendimento dos serviços disponíveis, podendo agendar um serviço  |
+| RF06 | Consulta de Agendamento | Cliente consulta atendimentos agendados, podendo cancelar um agendamento |
 
 
 ### 9. Requisitos Não-funcionais
