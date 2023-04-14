@@ -31,6 +31,8 @@ O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida
 | Funcionário  | Realiza acesso constante ao sistema | Efetua o processo de compra do cliente; consulta a situação das agendas de serviços; mantém a agenda de atendimento; confirma o agendamento de clientes e exclui o agendamento de clientes |
 | Usuário | Efetua o processo de agendamento do atendimento via web | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
 | Cliente | Participa do processo de atendimento fisico | Confirma as informações empregues no site e faz a compra de ingressos |
+| Visitante | Usuário que acessa o site para consultar informações | Não possui nenhuma responsabilidade. Faz uso do site de modo descompromissado |
+
 
 ### 4. Descrição do Ambiente dos Usuários
 
