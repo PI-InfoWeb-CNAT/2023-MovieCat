@@ -7,6 +7,7 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 19/06/2021 |  **`1.00`** | Versão Inicial  | Gilbert Azevedo |
+| 18/04/2023 |  **`1.00`** | Versão Atual  | Maria Cândida |
 
 
 ### 1. Objetivo do Projeto 
