@@ -7,12 +7,12 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 19/06/2021 |  **`1.00`** | Versão Inicial  | Gilbert Azevedo |
-| 18/04/2023 |  **`1.00`** | Versão Atual  | Maria Cândida |
+| 18/04/2023 |  **`1.01`** | Versão Atual  | Maria Cândida |
 
 
 ### 1. Objetivo do Projeto 
 
-O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida, simples e dinâmica para ambas as faces do comércio: público/funcionário; promovendo, assim, um serviço mais ágil e tranquilo, evitando que o cliente despenda muito tempo em filas que possivelmente comprometem seu tempo de filme, logo prejudicando sua experiência e aumentando as possibilidades de desistência e não retorno ao local, o que por sua vez prejudica financeiramente a empresa e seus funcionários, que no método tradicional também trabalham sob muito mais pressão.
+O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida, simples e dinâmica para ambas as faces do comércio: cliente/funcionário; promovendo, assim, um serviço mais ágil e tranquilo, evitando que o cliente despenda muito tempo em filas que possivelmente comprometem seu tempo de filme, logo prejudicando sua experiência e aumentando as possibilidades de desistência e não retorno ao local, o que por sua vez prejudica financeiramente a empresa e seus funcionários, que no método tradicional também trabalham sob muito mais pressão. //explicar direito
 
 ### 2. Descrição do Problema 
 
@@ -29,14 +29,13 @@ O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa rápida
 |:---  |:--- |:--- |
 | Administrador  | Realiza as atividades básicas para o início da operação do sistema | Faz o gerenciamento de compras e atendimentos |
 | Funcionário  | Realiza acesso constante ao sistema | Efetua o processo de compra do cliente; consulta a situação das agendas de serviços; mantém a agenda de atendimento; confirma o agendamento de clientes e exclui o agendamento de clientes |
-| Usuário | Efetua o processo de agendamento do atendimento via web | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
-| Cliente | Participa do processo de atendimento fisico | Confirma as informações empregues no site e faz a compra de ingressos |
+| Cliente | Efetua o processo de agendamento do atendimento via web | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
 | Visitante | Usuário que acessa o site para consultar informações | Não possui nenhuma responsabilidade. Faz uso do site de modo descompromissado |
 
 
 ### 4. Descrição do Ambiente dos Usuários
 
-Atualmente a tecnologia avançou em níveis surpreendentes e vem ganhando cada vez mais espaço em nossas vidas e cotidianos, possibilitando hoje a realização de qualquer compra sem sair de casa, utilizando dinheiro virtual, aplicativos bancários etc.  No entanto, muitos indivíduos enfrentam dificuldades com a adaptação de uma vida conectada á internet e no manuseio desses apps financeiros e operações de compra web, realizando, assim, suas atividades referentes ao tópico anteriormente citado de modo presencial, a exigir do indíviduo seu deslocamento até o local e possivelmente uma experiência mais estressante.
+Atualmente a tecnologia avançou em níveis surpreendentes e vem ganhando cada vez mais espaço em nossas vidas e cotidianos, possibilitando hoje a realização de qualquer compra sem sair de casa, utilizando dinheiro virtual, aplicativos bancários etc.  No entanto, muitos indivíduos enfrentam dificuldades com a adaptação de uma vida conectada á internet e no manuseio desses apps financeiros e operações de compra web, realizando, assim, suas atividades referentes ao tópico anteriormente citado de modo presencial, a exigir do indíviduo seu deslocamento até o estabelecimento de cinema  e possivelmente uma experiência mais estressante.//ambiente do usuário é o local em que ele fará uso do sistema
  
 A mediação do contato cliente/funcionário através de um agendamento de serviço evitaria a longa espera em filas e melhor direcionamento organizacional social levando em consideração os horários das sessões dos filmes, preservando assim o tempo do cliente e valorizando o tempo do funcionários, trazendo uma experência mais agradável e confortavél para o cliente que se torna mais suscetível ao retorno naquela empresa.
 
