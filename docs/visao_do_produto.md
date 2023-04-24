@@ -57,12 +57,13 @@ De um modo geral, nosso sistema busca a promoção de mais praticidade na compra
 
 | Código | Nome | Descrição |
 |:---  |:--- |:--- |
-| RF01 | Entrar no sistema | Usuários entram no sistema para acessar as opções de pedidos e pagamentos |
-| RF02 | Cadastro no sistema | Usuários disponibilizam algumas informações |
-| RF03 | Efetuação do pedido | Cliente faz, confirma e cancela o pedido  |
-| RF04 | Gerenciamento da Agenda | Administrador registra os horários disponíveis de sessões e opções de pacotes |
-| RF05 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
-| RF06 | Consulta de Pedidos e compras | Funcionário faz a confirmação das informações disponibilizadas pelos clientes |
+| RF01 | Cadastro | Usuários fazem o auto cadastro no sistema para poderem efetuar pedido |
+| RF02 | Entrar no sistema | Usuários entram no sistema para acessar as opções de pedidos e pagamentos |
+| RF03 | Cadastro no sistema | Usuários disponibilizam algumas informações |
+| RF04 | Efetuação do pedido | Cliente faz, confirma e cancela o pedido  |
+| RF05 | Gerenciamento da Agenda | Administrador registra os horários disponíveis de sessões e opções de pacotes |
+| RF06 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
+| RF07 | Consulta de Pedidos e compras | Funcionário faz a confirmação das informações disponibilizadas pelos clientes |
 
 
 ### 9. Requisitos Não-funcionais
