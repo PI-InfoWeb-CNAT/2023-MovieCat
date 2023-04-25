@@ -12,7 +12,7 @@
 
 ### 1. Objetivo do Projeto 
 
-O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa simples e dinâmica para compras de sessões de cinema. O que promove um serviço mais ágil que evita que o(s) cliente(s) despenda(m) muito tempo em filas que possivelmente provoca insatisfação, aumentando as possibilidades de desistência //deixar mais fluído
+O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa simples e dinâmica para compras de sessões de cinema através da compra de múltiplos ingressos por somente um usuário. Dessa forma, o serviço se torna mais ágil e reduz a insatisfação e desistência do cliente, além de evitar perdas monetárias por parte da empresa. 
 
 ### 2. Descrição do Problema 
 
@@ -36,9 +36,9 @@ O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa simples
 ### 4. Descrição do Ambiente dos Usuários
 
 O sistema irá atender a usuários em qualquer ambiente desde que tenha acesso à internet. A compra ou efetuação do pedido pelo usuário cliente será feita através de um computador ou celular e o contato com algum funcionário daquela empresa só ocorrerá presencialmente, sendo apenas possível a visualização e compra dos pacotes disponibilizados no site.
-
- //descrever ambientre dos funcionários
 O uso da aplicação web deve ser intuitivo e descomplicado, não trazendo problemas ao usuário que está acessando o sistema.
+
+O sistema será acessado pelos funcionários através de computadores disponibilizados no ambiente de trabalho.
 
 ### 5. Principais Necessidades dos Usuários
 
@@ -63,11 +63,11 @@ De um modo geral, nosso sistema busca a promoção de mais praticidade na compra
 | RF03 | Gerenciamento de pedidos | Cliente realiza o pedido, confirma a compra ou cancela compras já efetuadas |
 | RF04 | Gerenciamento da Agenda | Administrador registra os horários disponíveis de sessões |
 | RF05 | Cadastro de funcionários | Administrador insere funcionários no sistema |
-| RF04 | Cadastro de filmes | Administrador registra os filmes disponíveis |
-| RF06 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
-| RF07 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
-| RF04 | Visualização de sessões | Administrador registra os horários disponíveis de sessões e opções de pacotes |
-| RF04 | Visualização | O cliente visualiza filmes, sessões e pacotes |
+| RF06 | Cadastro de filmes | Administrador registra os filmes disponíveis |
+| RF07 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
+| RF08 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
+| RF09 | Visualização de sessões | Administrador registra os horários disponíveis de sessões e opções de pacotes |
+| RF10 | Visualização | O cliente visualiza filmes, sessões e pacotes |
 
 
 ### 9. Requisitos Não-funcionais
