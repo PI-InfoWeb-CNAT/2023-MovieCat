@@ -69,7 +69,7 @@ De um modo geral, nosso sistema busca a promoção de mais praticidade na compra
 | RF07 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
 | RF08 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
 | RF09 | Gerenciamento de pacotes | Administrador registra opções de pacotes |
-| RF10 | Visualização | O cliente visualiza filmes, sessões e pacotes |
+| RF10 | Visualização de sessões | O cliente visualiza filmes, sessões e pacotes |
 
 
 ### 9. Requisitos Não-funcionais
