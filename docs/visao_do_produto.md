@@ -63,13 +63,13 @@ De um modo geral, nosso sistema busca a promoção de mais praticidade na compra
 | RF01 | Autocadastro | Usuários fazem o auto cadastro no site para realizar pedido |
 | RF02 | Entrar no sistema | Usuários entram no sistema para acessar as opções de pedidos e pagamentos |
 | RF03 | Gerenciamento de pedidos | Cliente realiza o pedido, confirma a compra ou cancela compras já efetuadas |
-| RF04 | Gerenciamento da Agenda | Administrador registra os horários disponíveis de sessões |
-| RF05 | Cadastro de funcionários | Administrador insere funcionários no sistema |
-| RF06 | Cadastro de filmes | Administrador registra os filmes disponíveis |
-| RF07 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
-| RF08 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
+| RF04 | Consulta de Pedidos | Cliente consulta seus pedidos já feitos  |
+| RF05 | Visualização de sessões | O cliente visualiza filmes, sessões e pacotes |
+| RF06 | Gerenciamento da Agenda | Administrador registra os horários disponíveis de sessões |
+| RF07 | Cadastro de funcionários | Administrador insere funcionários no sistema |
+| RF08 | Cadastro de filmes | Administrador registra os filmes disponíveis |
 | RF09 | Gerenciamento de pacotes | Administrador registra opções de pacotes |
-| RF10 | Visualização de sessões | O cliente visualiza filmes, sessões e pacotes |
+| RF10 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
 
 
 ### 9. Requisitos Não-funcionais
