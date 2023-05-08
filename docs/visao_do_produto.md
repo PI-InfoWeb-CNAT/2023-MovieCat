@@ -8,6 +8,8 @@
 |:-------|:-------|:----------|:------|
 | 19/06/2021 |  **`1.00`** | Versão Inicial  | Gilbert Azevedo |
 | 18/04/2023 |  **`1.01`** | Versão Atual  | Maria Cândida |
+| 08/05/2023 |  **`1.02`** | Versão Atual  | Maria Cândida |
+
 
 
 ### 1. Objetivo do Projeto 
@@ -66,7 +68,7 @@ De um modo geral, nosso sistema busca a promoção de mais praticidade na compra
 | RF06 | Cadastro de filmes | Administrador registra os filmes disponíveis |
 | RF07 | Consulta de Pedidos | Usuário consulta seus pedidos já feitos  |
 | RF08 | Conferência dos códigos de pacotes | O funcionário confere os dados do pacote para liberar o acesso do cliente à sessão |
-| RF09 | Visualização de sessões | Administrador registra os horários disponíveis de sessões e opções de pacotes |
+| RF09 | Gerenciamento de pacotes | Administrador registra opções de pacotes |
 | RF10 | Visualização | O cliente visualiza filmes, sessões e pacotes |
 
 
