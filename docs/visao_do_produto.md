@@ -20,7 +20,7 @@ O projeto __AgendMovies__ tem como objetivo proporcionar uma alternativa simples
 
 |         __        | __   |
 |:------------------|:-----|
-| **_O problema_**    | O metódo tradicional da compra de ingressos para um grupo numeroso de pessoas muitas vezes gera clientes insatisfeitos com o serviço em função do tempo gasto aguardando atendimento, o que pode acarretar uma perda monetária significativa para a empresa. Pois quando se é feito um passeio com 5 ou mais pessoas, é preciso comprar, pagar e confirmar todas as unidades de ingressos individualmente, sendo assim um processo longo e que não é prático.  |
+| **_O problema_**    | O método tradicional da compra de ingressos para um grupo numeroso de pessoas muitas vezes gera clientes insatisfeitos com o serviço em função do tempo gasto aguardando atendimento, o que pode acarretar uma perda monetária significativa para a empresa. Pois quando se é feito um passeio com 5 ou mais pessoas, é preciso comprar, pagar e confirmar todas as unidades de ingressos individualmente, sendo assim um processo longo e que não é prático.  |
 | **_afetando_**      | A empresa, seus funcionários, clientes e o bom funcionamento do local.  |
 | **_cujo impacto é_**| Perda e insatisfação de clientes. |
 | **_uma boa solução seria_** | Uma aplicação web que permita que um cliente efetue a compra de um pacote de ingressos para múltiplas pessoas. Essa funcionalidade seria eficiente em atender passeios escolares ou famílias. |
