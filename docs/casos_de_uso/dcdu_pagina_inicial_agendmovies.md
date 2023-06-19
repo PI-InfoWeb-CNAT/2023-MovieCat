@@ -30,7 +30,7 @@ _
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O usuário acessa a página do AgendMovies.| 2. O sistema exibe o HomePage AgendMovies, permitindo ao usuário visualizar as demais páginas e os conteúdos expostos na tela |
+| 1. O usuário acessa a página do AgendMovies.| 2. O sistema exibe o HomePage AgendMovies, permitindo ao usuário visualizar o menu de acesso para as demais páginas |
 | 3. O usuário seleciona o ícone de perfil na página | 4. O sistema redireciona para página de login e/ou de cadastro |
 | 5. O usuário faz o login ou se cadastra no sistema| 6. O sistema redireciona novamente para a HomePage, agora com a possibilidade de fazer pedidos no site |
 | 7. O usuário clica no ícone de tela com a opção “mudar tema”  | 8. O sistema altera o tema do site para o tema oposto ao que está naquele momento.|
