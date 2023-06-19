@@ -6,8 +6,8 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 16/07/2021 | **1.00** | Versão Inicial  | Gilbert Azevedo |
-| 16/05/2021 | **1.10** | Ajustes na redação  | Gilbert Azevedo |
+| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 00/06/2023 | **1.10** | Ajustes na redação  | Gilbert Azevedo |
 
 ### 1. Resumo 
 
