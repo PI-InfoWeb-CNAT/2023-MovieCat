@@ -19,7 +19,7 @@ Funcionário
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com suas credenciais (login e senha) o sistema
+O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
 
 ### 4. Pós-condições
 
