@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+
+#FCC ol{/*FCC = filmes calendario cinema*/
+  padding: 1em;
+  display: flex;
+  gap: 200px;
+  justify-content: center;
+  align-items: center;  
+}
+
+#FCC ol li{
+  display: flex;
+  list-style: none;
+  color: white;
+  background-color: #C00C0C;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+#FCC ol a{
+  text-decoration: none;
+}
+
+#FCC a:hover li{
+  background-color: #cf2a2a;
+}
+
+#eventual_carrocel{
+  background-image: url('img/Eventual.png');
+  background-size: 100%;
+  height: 400px;
+  
+}
+/**/
+
+#cards_filmes ol{
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+#cards_filmes ol a li img{
+  width: 200px;
+}
+
+#cards_filmes h1{
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 35px;
+}
+
+/**/
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 50% 50%;
+  justify-content: center;
+}
+
+#container div{
+  padding: 2em;
+}
+
+/**/
+
+#ver_mais{
+  padding: 10px;
+  border-color: white;
+  border-radius: 20px;
+  color: white;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  
+}
+
+#ver_mais:hover{
+  color: #5177d2;
+}
+
+div #ver_mais{
+  align-items: center;
+  
+}
+
+#limitador div{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+#limitador a{
+  text-decoration: none;
+}
+/**/
+
+#block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#block img{
+  padding: 2em;
+}
+
+#p_block{
+  text-align: center;
+  font-size:  35px;
+  color: white;
+}
+
+/**/
+
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+}
