@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+
+section img{
+  padding: 1em;
+}
+
+#grande_caixa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grande_caixa #separador{
+  width: 45%;
+  padding: 1em;
+  margin: 1em;
+}
+
+#separador{
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#separador h2{
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+#separador div{
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3A3A3A;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    height: 128.8px;
+    flex-wrap: nowrap;
+}
+
+#separador div img{
+  width: 25px;
+  height: 25px;
+}
+
+#separador div #preço:hover{
+  background-color: #3fca4d; 
+}
+
+#separador div #preço{
+  display: flex;
+  height: 5px;
+  width: 80px;
+  background-color: #277A2F;
+  align-items: center;
+  justify-content: center;
+}
+
+#separador div a{
+  text-decoration: none;
+}
+
+#separador div p{
+  color: white;
+  font-size: 30px;
+}
+
+#pedaços{
+  display: grid;
+  grid-template-columns:20% 40%;
+}
+
+/**/
+
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+}

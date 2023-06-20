@@ -89,6 +89,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="script\script.js" />
+    <Content Include="styles\adm.css" />
+    <Content Include="styles\funcionario01.css" />
+    <Content Include="styles\funcionario02.css" />
+    <Content Include="styles\funcionario03.css" />
+    <Content Include="styles\listafuncionarios.css" />
+    <Content Include="styles\login.css" />
+    <Content Include="styles\pacotes.css" />
+    <Content Include="styles\pacotes_create.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

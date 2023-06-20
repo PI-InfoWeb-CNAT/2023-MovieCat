@@ -1,18 +1,96 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/IStyleSheet/IStyleSheet.css")"style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div> 
-        <h1>HomePage</h1>
-    </div>
+    <header>
+
+        <div id="Header_Organizador">
+            <div>
+                <a href="index.html"><p><img src="img/Logo.png"></p></a>
+            </div>
+
+            <div>
+                <a href="#.html"><p><img src="img/Sol.png"></p></a>
+                <a href="login.html"><p><img src="img/Perfil.png"></p></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 246 -->
+    <section>
+        <div id="FCC">
+            <ol>
+                <a href="ADM.html"><li><p>Filmes</p></li></a>
+                <a href="funcionario01.html"><li><p>Calendario</p></li></a>
+                <a href="pacotes.html"><li><p>Cinemas</p></li></a>
+            </ol>
+        </div>
+
+        <a href="#.html">
+            <div id="eventual_carrocel">
+            </div>
+        </a>
+
+        <div id="cards_filmes">
+            <h1>Em Breve</h1>
+            <ol>
+                <a href="listafuncionarios.html"><li><img src="img/Campeoes.png"></li></a>
+                <a href="#.html"><li><img src="img/Elemental.png"></li></a>
+                <a href="#.html"><li><img src="img/Bacurau.png"></li></a>
+                <a href="#.html"><li><img src="img/Bacurau.png"></li></a>
+                <a href="#.html"><li><img src="img/Bacurau.png"></li></a>
+                <a href="#.html"><li><img src="img/Bacurau.png"></li></a>
+                <a href="#.html"><li><img src="img/Bacurau.png"></li></a>
+            </ol>
+        </div>
+
+        <div id="limitador">
+            <!--como isso ta funcionando eu n sei 00:10-->
+            <div></div>
+            <a href="#.html"><div><h1 id="ver_mais">VER TODOS</h1></div></a>
+            <div></div>
+        </div>
+
+        <p id="p_block">Em Cartaz</p>
+
+        <div id="container">
+            <div><a href="#.html"><img src="img/Bacurau.png"></a></div>
+            <div><a href="#.html"><img src="img/John_Wick.png"></a></div>
+            <div><a href="#.html"><img src="img/O_nascimento_do_mal.png"></a></div>
+            <div><a href="#.html"><img src="img/Que_horas_eu_te_pego.png"></a></div>
+        </div>
+
+        <div id="limitador">
+            <!--como isso ta funcionando eu n sei 00:10-->
+            <div></div>
+            <a href="#.html"><div><h1 id="ver_mais">VER TODOS</h1></div></a>
+            <div></div>
+        </div>
+
+        <p id="p_block">APROVEITE</p>
+        <div id="block">
+            <div><a href="#.html"><img src="img/block01.png"></a></div>
+            <div><a href="#.html"><img src="img/block02.png"></a></div>
+        </div>
+
+
+    </section>
+    <footer>
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+
+        <div>
+            <ol>
+                <a href="#.html"><li><img src="img/insta.png"></li></a>
+                <a href="#.html"><li><img src="img/face.png"></li></a>
+                <a href="#.html"><li><img src="img/twitter.png"></li></a>
+            </ol>
+        </div>
+    </footer>
 </body>
 </html>

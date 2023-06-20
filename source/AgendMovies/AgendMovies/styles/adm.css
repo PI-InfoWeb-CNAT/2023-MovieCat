@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+body{
+    background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+
+section{
+    position: absolute;
+    bottom: 25%;
+    left: 33%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+  
+}
+
+section div{
+    height: 100px;
+    margin: 26px;
+    width: 500px;
+    background-color: #C00C0C;
+    border-style: solid;
+    border-color: #B2B2B2;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section div p{
+  color: white;
+  font-size: 4em;
+  text-align: center;
+}
+
+section a{
+  text-decoration: none;
+}
+
+section a:hover div{
+  background-color: #cf2a2a;
+}
+
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+}
+
