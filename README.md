@@ -12,7 +12,7 @@ Todo material está publicado sob licença [GPL-3.0](https://www.gnu.org/license
 
 * Documento de Requisitos
 
-* [Diagrama de casos de uso](./docs/diagramas/diagrama_casos_de_uso.png)
+* [Diagrama de casos de uso](./docs/diagramas/diagrama_de_casos_de_uso.png)
 
 * Detalhamento de casos de uso 
 
