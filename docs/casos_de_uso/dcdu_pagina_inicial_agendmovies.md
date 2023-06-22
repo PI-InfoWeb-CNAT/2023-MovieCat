@@ -7,6 +7,8 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 19/06/2023 | **1.00** | Versão Inicial  | Milton Shyon |
+| 22/06/2023 | **1.10** | Versão Alterada  | Maria Cândida |
+
 
 ### 1. Resumo 
 
@@ -22,11 +24,11 @@ _
 
 ### 4. Pós-condições
 
-//O sistema exibirá a página home onde disponibiliza a grade de horários dos filmes disponíveis para agendamento e os  filmes que ficaram disponíveis em breve, vantagens dos assentos D-Box e da sala XD, também possibilita visualizar os alimentos que será disponibilizado no local, visualizar o cinema (que utiliza o sistema) mais perto de você e opção de mudança do tema (para escuro) da página para conforto ocular.
+_
  
 ### 5. Fluxos de Evento
 
-#### 5.1. Fluxo Básico - //logado
+#### 5.1. Fluxo Básico - 
 
 | Ator   | Sistema |
 |:-------|:--------|
