@@ -96,11 +96,16 @@
     <Content Include="img\block02.png" />
     <Content Include="img\cadeiras.png" />
     <Content Include="img\Campeoes.png" />
+    <Content Include="img\ci12.png" />
+    <Content Include="img\ci14.png" />
+    <Content Include="img\ci18.png" />
+    <Content Include="img\ciL.png" />
     <Content Include="img\Combo_4D.png" />
     <Content Include="img\Combo_50tons.png" />
     <Content Include="img\Combo_avatar.png" />
     <Content Include="img\Combo_capita_marvel.png" />
     <Content Include="img\Combo_familia.png" />
+    <Content Include="img\dbox.png" />
     <Content Include="img\Deixados_para_tras.png" />
     <Content Include="img\Eduardo_&amp;_monica.png" />
     <Content Include="img\Elemental.png" />
@@ -131,6 +136,7 @@
     <Content Include="styles\funcionario03.css" />
     <Content Include="styles\listafuncionarios.css" />
     <Content Include="styles\login.css" />
+    <Content Include="styles\mapa.css" />
     <Content Include="styles\pacotes.css" />
     <Content Include="styles\pacotes_create.css" />
     <Content Include="styles\style.css" />
@@ -140,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TemporarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,6 +156,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Temporario\MapaLinks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
