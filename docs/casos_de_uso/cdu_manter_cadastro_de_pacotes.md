@@ -7,7 +7,6 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
-| 00/06/2023 | **1.10** | Ajustes na redação  | Gilbert Azevedo |
 
 ### 1. Resumo 
 
