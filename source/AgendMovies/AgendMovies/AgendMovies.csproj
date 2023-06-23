@@ -120,6 +120,7 @@
     <Content Include="img\logout.png" />
     <Content Include="img\logout_branco.png" />
     <Content Include="img\mais+.png" />
+    <Content Include="img\mais.png" />
     <Content Include="img\Mia_goth_pear.png" />
     <Content Include="img\mil.png" />
     <Content Include="img\O_nascimento_do_mal.png" />
@@ -129,9 +130,10 @@
     <Content Include="img\red.png" />
     <Content Include="img\Sol.png" />
     <Content Include="img\twitter.png" />
+    <Content Include="img\vizinho.png" />
     <Content Include="script\script.js" />
     <Content Include="styles\adm.css" />
-    <Content Include="styles\funcionario01.css" />
+    <Content Include="styles\funcionariopage.css" />
     <Content Include="styles\funcionario02.css" />
     <Content Include="styles\funcionario03.css" />
     <Content Include="styles\listafuncionarios.css" />
@@ -144,8 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmController.cs" />
+    <Compile Include="Controllers\CadastroDePacotesController.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListarFuncionariosController.cs" />
+    <Compile Include="Controllers\PacotesController.cs" />
     <Compile Include="Controllers\TemporarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,6 +164,11 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Temporario\MapaLinks.cshtml" />
+    <Content Include="Views\Adm\AdmPage.cshtml" />
+    <Content Include="Views\ListarFuncionarios\ListarFuncionarios.cshtml" />
+    <Content Include="Views\Pacotes\ListarPacotes.cshtml" />
+    <Content Include="Views\CadastroDePacotes\CadastrarPacotes.cshtml" />
+    <Content Include="Views\Funcionario\FuncionarioPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,11 +8,17 @@
 <body>
     <div id="FCC">
         <ol>
-            <a href='@Url.Action("Index", "Home")'><li><p>Home</p></li></a>
-            <a href="ADM.html">
+            <a href='@Url.Action("Index", "Home")'>
+            <li><p>Home</p></li></a>
+            <a href='@Url.Action("AdmPage", "Adm")'>
             <li><p>ADM</p></li></a>
-            <a href="funcionario01.html">
-            <li><p>Funcionario01</p></li></a>
+
+            <a href='@Url.Action("FuncionarioPage", "Funcionario")'>
+                <li>
+                    <p>DashboardFuncionario</p>
+                </li>
+            </a>
+            <li><p>Funcionariopag01</p></li></a>
             <a href="funcionario02.html">
             <li><p>Funcionario02</p></li></a>
             <a href="funcionario03.html">
@@ -21,10 +27,10 @@
             <li><p>Lista de Funcionarios</p></li></a>
             <a href="login.html">
             <li><p>Login</p></li></a>
-            <a href="pacotes_create.html">
-            <li><p>Pacotes_create</p></li></a>
-            <a href="pacotes.html">
+            <a href='@Url.Action("ListarPacotes", "Pacotes")'>
             <li><p>Pacotes</p></li></a>
+            <a href='@Url.Action("CadastrarPacotes", "CadastroDePacotes")'>
+            <li><p>CadastroDePacotes</p></li></a>
         </ol>
     </div>
 
