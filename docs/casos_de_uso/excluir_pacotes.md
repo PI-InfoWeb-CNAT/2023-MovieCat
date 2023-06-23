@@ -31,7 +31,7 @@ O sistema mostra lista de pacotes com os seguintes botões "Excluir" e "Adiciona
 | Ator   | Sistema |
 |:-------|:--------|
 | 1. O funcionário clica em “Excluir"| 2. O sistema mostra a mensagem "Tem certeza que deseja excluir esse pacote?"|
-| 1. O funcionário clica em “Excluir"| 2. O sistema mostra a mensagem "Tem certeza que deseja excluir esse pacote?"|
+| 1. O funcionário clica em “Sim,tenho certeza"| 2. O sistema exclui o pacote do sistema |
 
 
 #### 5.2. Fluxos de Exceção
