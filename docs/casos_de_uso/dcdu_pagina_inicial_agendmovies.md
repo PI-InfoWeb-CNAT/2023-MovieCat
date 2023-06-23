@@ -7,12 +7,10 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 19/06/2023 | **1.00** | Versão Inicial  | Milton Shyon |
-| 22/06/2023 | **1.10** | Versão Alterada  | Maria Cândida |
-
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário pode acessar o sistema sem possuir cadastro ou login no site, no entanto, o acesso sem login limita-se a apenas visualizar as opções ofertadas pelo sistema, e ao tentar acessar qualquer funcionalidade disponível apenas à usuários cadastrados o usuário não logado é redirecionado para as páginas de login de cadastro.
+Nesse caso de uso o usuário acessa o endereço do AgendMovies e o sistema exibe a LandPage com o menu de acesso para as demais páginas, a opção de login, uma exibição de filmes a serem exibidos, os filmes em cartaz e as funcionalidades que o cinema dispõe (cadeiras xd e salas d-box) 
 
 ### 2. Atores 
 
@@ -33,12 +31,12 @@ _
 | Ator   | Sistema |
 |:-------|:--------|
 | 1. O usuário acessa a página do AgendMovies.| 2. O sistema exibe o HomePage AgendMovies, permitindo ao usuário visualizar o menu de acesso para as demais páginas |
-| 3. O usuário seleciona o ícone de perfil na página | 4. O sistema redireciona para página de login e/ou de cadastro |
+| 3. O usuário seleciona o ícone de perfil na página | 4. O sistema redireciona para página de login //e/ou de cadastro |
 | 5. O usuário faz o login ou se cadastra no sistema| 6. O sistema redireciona novamente para a HomePage, agora com a possibilidade de fazer pedidos no site |
 | 7. O usuário clica no ícone de tela com a opção “mudar tema”  | 8. O sistema altera o tema do site para o tema oposto ao que está naquele momento.|
 | 9. O usuário clica em “filmes”  | 10. O sistema exibe a lista de filmes disponíveis separados por tópicos (Nesta semana, em promoção, em breve,D-Box e XD ) .|
 | 11. O usuário clica em determinado filme. | 12. O sistema o redireciona para uma página interna onde ele pode visualizar detalhes do filme, os horários de exibição dele e também fazer o pedido de um pacote. |
-| 13. O usuário volta a página home e seleciona calendário. | 14. O sistema exibe uma lista de filmes que estarão disponíveis em breve filtrados por ano e mês. |
+| 13. O usuário volta a página home e seleciona calendário. | 14. O sistema exibe uma lista de filmes que estarão disponíveis em breve exibidos por ano e mês. |
 | 15. O usuário volta a página home e seleciona cinema. | 16. O sistema  exibe a página de cinema mais próximos onde pode ser filtrado por localização . |
 | 17. O usuário filtra por determinada localização. | 18. O sistema mostra o cinema mais próximo da localização filtrada. |
 | 19. O usuário volta a pagina home e seleciona “compra ingresso” do cartaz. | 20. O sistema redireciona para a pagina de compra de ingresso daquele filme do cartaz.|
