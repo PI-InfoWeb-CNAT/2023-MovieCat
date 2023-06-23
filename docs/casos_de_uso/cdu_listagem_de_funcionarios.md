@@ -10,7 +10,7 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso, o usuário administrador acessa o sistema e gerencia os funcionários incluídos no sistema,que estão listados na página em questão, com as possibilidades de exclusão, edição e detalhamento do funcionários selecionado pelo usuário administrador e também a opção de adicionar um novo funcionário na listagem.
+Nesse caso de uso, o usuário administrador acessa o sistema e 
 
 ### 2. Atores 
 
