@@ -34,7 +34,6 @@ Ter acesso a lista de funcionários cadastrados no sistema.
 | 3. O usuário aperta em "visualiza" um determinado funcionário. | 
 | 4. O usuário seleciona e edita dados de um funcionário existente. | 5. O sistema atualiza os dados e exibe uma mensagem na tela indicando o sucesso na alteração de dados do funcionário. |
 | 6. Usuário visualiza o funcionário na listagem com os dados já alterados.
-| 7. O usuário clica em “adicionar" | 4. O sistema redireciona para a página de cadastro de funcionário.
 
 #### 5.2. Fluxos de Exceção
 
