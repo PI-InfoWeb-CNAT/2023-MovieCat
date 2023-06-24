@@ -18,7 +18,7 @@ Adm
 
 ### 3. Pré-condições
 
-O adm deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O adm deve estar registrado no sistema.
 
 ### 4. Pós-condições
 
