@@ -14,11 +14,11 @@ Nesse caso de uso o usuário funcionário acessa o sistema e por meio do botão 
 
 ### 2. Atores 
 
-Funcionário
+adm
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O adm deve estar registrado no sistema.
 
 ### 4. Pós-condições
 
@@ -29,7 +29,7 @@ O sistema mostra uma lista de pacotes atuais (número de ingressos e valor do pa
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O Funcionário clica no botão "pacotes" no painel de controle (dashborad) de funcionário do AgendMovies.| 2. O sistema lista os pacotes atuais do AgendMovies|
+| 1. O admo clica no botão "pacotes" no painel de controle (dashborad) de funcionário do AgendMovies.| 2. O sistema lista os pacotes atuais do AgendMovies|
 
 
 #### 5.2. Fluxos de Exceção
