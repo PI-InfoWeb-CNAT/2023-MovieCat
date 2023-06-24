@@ -149,6 +149,7 @@
     <Compile Include="Controllers\AdmController.cs" />
     <Compile Include="Controllers\CadastroDePacotesController.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
+    <Compile Include="Controllers\Funcionario02Controller.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListarFuncionariosController.cs" />
@@ -169,6 +170,7 @@
     <Content Include="Views\Pacotes\ListarPacotes.cshtml" />
     <Content Include="Views\CadastroDePacotes\CadastrarPacotes.cshtml" />
     <Content Include="Views\Funcionario\FuncionarioPage.cshtml" />
+    <Content Include="Views\Funcionario02\Funcionario02.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
