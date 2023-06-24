@@ -10,15 +10,15 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário funcionário pode cadastrar novos pacotes no sistema.
+Nesse caso de uso o adm pode cadastrar novos pacotes no sistema.
 
 ### 2. Atores 
 
-Funcionário
+Adm
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O adm deve estar registrado no sistema e acessá lo com seu login (login e senha).
 
 ### 4. Pós-condições
 
@@ -30,9 +30,9 @@ O sistema mostra as condiçoes e espaço para adicionar um novo pacote.
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O funcionário clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar um novo pacote onde é exigido o número de ingressos (com limite mínimo de 10 ingressos por pacote), valor do pacote, tipo de sala (normal ou XD), tipo de assento(normal ou D-Box).|
-| 3. O funcionário adiciona a quantidade de ingressos, tipo de sala, assento e o valor, respeitando todas as exigências do sistema.| 4. O sistema atualiza as informações da lista de pacotes mostrando agora o novo pacote.|
-| 5. O funcionário visualiza o novo pacote na lista de pacotes atuais. |
+| 1. O adm clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar um novo pacote onde é exigido o número de ingressos (com limite mínimo de 10 ingressos por pacote), valor do pacote, tipo de sala (normal ou XD), tipo de assento(normal ou D-Box).|
+| 3. O adm adiciona a quantidade de ingressos, tipo de sala, assento e o valor, respeitando todas as exigências do sistema.| 4. O sistema atualiza as informações da lista de pacotes mostrando agora o novo pacote.|
+| 5. O adm visualiza o novo pacote na lista de pacotes atuais. |
 
 #### 5.2. Fluxos de Exceção
 
