@@ -30,7 +30,7 @@ O sistema mostra as condiçoes e espaço para adicionar uma nova sessão.
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O adm clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar uma nova sessão onde é exigido o nome do filme, descrição e poster|
+| 1. O adm clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar uma nova sessão onde é exigido o nome do filme, descrição e horario|
 | 3. O adm adiciona o nome do filme, descrição e poster no sistema.| 4. O sistema atualiza as informações da lista de sessões mostrando agora uma nova sessão.|
 | 5. O adm visualiza a nova sessão na lista de sessões atuais. |
 
@@ -38,7 +38,7 @@ O sistema mostra as condiçoes e espaço para adicionar uma nova sessão.
 
 | Exceção | Sistema |
 |:--------|:--------|
-| 1. Erro nas informaçoes de pacotes | se o funcionario tentar adicionar uma nova sessão com alguma informação invalida(nome do filme, descrição e poster) ou em campo vazio, o sistema retorna a mensagem de "Informaçoes invalidas" |
+| 1. Erro nas informaçoes de pacotes | se o funcionario tentar adicionar uma nova sessão com alguma informação invalida(nome do filme, descrição e horario) ou em campo vazio, o sistema retorna a mensagem de "Informaçoes invalidas" |
 
 
 ### 6. Protótipos de Interface
