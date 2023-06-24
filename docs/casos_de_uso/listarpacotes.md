@@ -10,7 +10,7 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário funcionário acessa o sistema e por meio do botão "pacotes" visualiza uma lista de pacotes existentes.
+Nesse caso de uso o adm acessa o sistema e por meio do botão "pacotes" visualiza uma lista de pacotes existentes.
 
 ### 2. Atores 
 
