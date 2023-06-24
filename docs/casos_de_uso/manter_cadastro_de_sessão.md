@@ -10,15 +10,15 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário funcionário pode cadastrar novas sessões no sistema.
+Nesse caso o adm pode cadastrar novas sessões no sistema.
 
 ### 2. Atores 
 
-Funcionário
+Adm
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O Adm deve estar registrado no sistema e acessá lo com seu login (login e senha).
 
 ### 4. Pós-condições
 
@@ -30,9 +30,9 @@ O sistema mostra as condiçoes e espaço para adicionar uma nova sessão.
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O funcionário clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar uma nova sessão onde é exigido o nome do filme, descrição e poster|
-| 3. O funcionário adiciona o nome do filme, descrição e poster no sistema.| 4. O sistema atualiza as informações da lista de sessões mostrando agora uma nova sessão.|
-| 5. O funcionário visualiza a nova sessão na lista de sessões atuais. |
+| 1. O adm clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar uma nova sessão onde é exigido o nome do filme, descrição e poster|
+| 3. O adm adiciona o nome do filme, descrição e poster no sistema.| 4. O sistema atualiza as informações da lista de sessões mostrando agora uma nova sessão.|
+| 5. O adm visualiza a nova sessão na lista de sessões atuais. |
 
 #### 5.2. Fluxos de Exceção
 
