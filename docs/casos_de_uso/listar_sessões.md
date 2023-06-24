@@ -10,19 +10,19 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário funcionário acessa o sistema e por meio do botão "sessões" visualiza uma lista de sessões existentes.
+Nesse caso de uso o adm acessa o sistema e por meio do botão "sessões" visualiza uma lista de sessões existentes.
 
 ### 2. Atores 
 
-Funcionário
+Adm
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O adm deve estar registrado no sistema .
 
 ### 4. Pós-condições
 
-O sistema mostra uma lista de sessões atuais (nome do filme e horario).
+O sistema mostra uma lista de sessões atuais (dia e horario).
 
 ### 5. Fluxos de Evento
 
@@ -30,7 +30,7 @@ O sistema mostra uma lista de sessões atuais (nome do filme e horario).
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O Funcionário clica no botão "sessões" no painel de controle (dashborad) de funcionário do AgendMovies.| 2. O sistema lista as sessões atuais do AgendMovies|
+| 1. O admo clica no botão "sessões" no painel de controle (dashborad) de adm do AgendMovies.| 2. O sistema lista as sessões atuais do AgendMovies|
 
 
 #### 5.2. Fluxos de Exceção
