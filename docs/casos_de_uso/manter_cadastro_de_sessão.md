@@ -1,0 +1,45 @@
+# Projeto AgendMovies
+
+## Especificação do caso de uso - Cadastro de sessão
+
+### Histórico da Revisão 
+
+|  Data  | Versão | Descrição | Autor |
+|:-------|:-------|:----------|:------|
+| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+
+### 1. Resumo 
+
+Nesse caso de uso o usuário funcionário pode cadastrar novas sessões no sistema.
+
+### 2. Atores 
+
+Funcionário
+
+### 3. Pré-condições
+
+O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+
+### 4. Pós-condições
+
+O sistema mostra as condiçoes e espaço para adicionar uma nova sessão.
+
+### 5. Fluxos de Evento
+
+#### 5.1. Fluxo Básico
+
+| Ator   | Sistema |
+|:-------|:--------|
+| 1. O funcionário clica em “adicionar"| 2. O sistema redireciona para a parte de adicionar uma nova sessão onde é exigido o nome do filme, descrição e poster|
+| 3. O funcionário adiciona o nome do filme, descrição e poster no sistema.| 4. O sistema atualiza as informações da lista de sessões mostrando agora uma nova sessão.|
+| 5. O funcionário visualiza a nova sessão na lista de sessões atuais. |
+
+#### 5.2. Fluxos de Exceção
+
+| Exceção | Sistema |
+|:--------|:--------|
+| 1. Erro nas informaçoes de pacotes | se o funcionario tentar adicionar uma nova sessão com alguma informação invalida(nome do filme, descrição e poster) ou em campo vazio, o sistema retorna a mensagem de "Informaçoes invalidas" |
+
+
+### 6. Protótipos de Interface
+`A ser desenvolvido pelo aluno.`
