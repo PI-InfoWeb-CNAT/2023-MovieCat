@@ -31,11 +31,11 @@ O sistema mostra o formulario de cadastro de funcionario.
 | Ator   | Sistema |
 |:-------|:--------|
 | 1.O usuario acesa a pagina de cadastro por meio do botão "adicionar funcionario" na pagina de "listar funcionario" | 2. O sistema exibe o formulario de cadastro de funcionario, com os seguintes campos; nome completo, CPF, celular, email, senha e confirmar senha.  |
-| 1.O usuario preenche os campos corretamente, e clica em cadastra | 2.O sistema retorna a mensagem "Funcionario cadastrado com sucesso", confirmando o cadastro|
+| 3.O usuario preenche os campos corretamente, e clica em cadastra | 4.O sistema retorna a mensagem "Funcionario cadastrado com sucesso", confirmando o cadastro|
 
 
 #### 5.2. Fluxos de Exceção
 
 | Exceção | Sistema |
 |:--------|:--------|
-|1. Erro nas credenciais | O sistema  |
+|1. Erro nas credenciais | Se o usuario colocar uma informação invalida ou um camo em branco, vai da erro e retornar a mensagem "Informações invalidas"|
