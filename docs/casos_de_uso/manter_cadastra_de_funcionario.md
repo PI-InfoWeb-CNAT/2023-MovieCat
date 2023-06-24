@@ -38,4 +38,4 @@ O sistema mostra o formulario de cadastro de funcionario.
 
 | Exceção | Sistema |
 |:--------|:--------|
-|1. Erro nas credenciais | Se o usuario colocar uma informação invalida ou um camo em branco, vai da erro e retornar a mensagem "Informações invalidas"|
+|1. Erro nas credenciais | Se o usuario colocar uma informação invalida(nome completo, CPF, celular, email, senha e confirmar senha) ou um campo em branco, vai da erro e retornar a mensagem "Informações invalidas"|
