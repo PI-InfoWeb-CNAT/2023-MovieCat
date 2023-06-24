@@ -10,15 +10,15 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário funcionário pode excluir um pacotes no sistema.
+Nesse caso de uso o Adm pode excluir um pacotes no sistema.
 
 ### 2. Atores 
 
-Funcionário
+Adm
 
 ### 3. Pré-condições
 
-O funcionário deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O adm deve estar registrado no sistema .
 
 ### 4. Pós-condições
 
@@ -30,8 +30,8 @@ O sistema mostra lista de pacotes com os seguintes botões "Excluir" e "Adiciona
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O funcionário clica em “Excluir"| 2. O sistema mostra a mensagem "Tem certeza que deseja excluir esse pacote?"|
-| 1. O funcionário clica em “Sim,tenho certeza"| 2. O sistema exclui o pacote do sistema |
+| 1. O adm clica em “Excluir"| 2. O sistema mostra a mensagem "Tem certeza que deseja excluir esse pacote?"|
+| 1. O adm clica em “Sim,tenho certeza"| 2. O sistema exclui o pacote do sistema |
 
 
 #### 5.2. Fluxos de Exceção
