@@ -10,7 +10,7 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso um visitantese cadastra no site, o possibilitando fazer compras e acesar o seu perfil no site.
+Nesse caso de uso um visitantese cadastra no site, o possibilitando fazer compras e acessar o seu perfil no site.
 
 ### 2. Atores 
 
