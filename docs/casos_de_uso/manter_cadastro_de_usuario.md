@@ -10,15 +10,15 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso um visitantese cadastra no site.
+Nesse caso de uso um visitantese cadastra no site, o possibilitando fazer compras e acesar o seu perfil no site.
 
 ### 2. Atores 
 
-Visitante
+Usuários visitantes.
 
 ### 3. Pré-condições
 
-O visitante deve acessar o site.
+O visitante deve acessar o link do cadastro.
 
 ### 4. Pós-condições
 
