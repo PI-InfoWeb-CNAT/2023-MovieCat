@@ -6,19 +6,19 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
 
 ### 1. Resumo 
 
-Nesse caso de uso um visitantese cadastra no site.
+Nesse caso de uso um visitantese cadastra no site, o possibilitando fazer compras e acessar o seu perfil no site.
 
 ### 2. Atores 
 
-Visitante
+Usuários visitantes.
 
 ### 3. Pré-condições
 
-O visitante deve acessar o site.
+O visitante deve acessar o link do cadastro.
 
 ### 4. Pós-condições
 

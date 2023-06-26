@@ -6,7 +6,7 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
 
 ### 1. Resumo 
 
@@ -14,11 +14,11 @@ Nesse caso de uso um adm cadastra um funcionario no sistema.
 
 ### 2. Atores 
 
-Adm 
+Usuarios administradores. 
 
 ### 3. Pré-condições
 
-O Adm deve existir no sistema.
+O Adm deve existir no sistema, e acessar a pagina atravez do botão "funcionarios" no dahsbord principal.
 
 ### 4. Pós-condições
 
