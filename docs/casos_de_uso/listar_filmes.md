@@ -6,7 +6,7 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
 
 ### 1. Resumo 
 
