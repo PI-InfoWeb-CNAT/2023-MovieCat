@@ -6,7 +6,7 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 00/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
 
 ### 1. Resumo 
 
@@ -18,7 +18,7 @@ Adm
 
 ### 3. Pré-condições
 
-O Adm deve estar registrado no sistema e acessá lo com seu login (login e senha).
+O Adm deve estar registrado no sistema e acessar a pagina pelo botão "sessão" no menu principal.
 
 ### 4. Pós-condições
 
