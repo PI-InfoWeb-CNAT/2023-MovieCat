@@ -14,11 +14,11 @@ Nesse caso de uso o adm acessa o sistema e por meio do botão "filmes" visualiza
 
 ### 2. Atores 
 
-Adm
+Usuários administradores.
 
 ### 3. Pré-condições
 
-O adm deve estar registrado no sistema .
+O administrador deve estar registrado no sistema, e acessar a pagina no botão "filmes" no dashborad.
 
 ### 4. Pós-condições
 
@@ -30,7 +30,7 @@ O sistema mostra uma lista de filmes atuais.
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O adm clica no botão "filmes" no painel de controle (dashborad) de adm do AgendMovies.| 2. O sistema lista os filmes atuais do AgendMovies|
+| 1. O administrador clica no botão "filmes" no painel de controle (dashborad) de adm do AgendMovies.| 2. O sistema lista os filmes atuais do AgendMovies|
 
 
 
