@@ -14,7 +14,7 @@ Nesse caso de uso o administrador acessa o sistema e por meio do botão "sessõe
 
 ### 2. Atores 
 
-Usuarios administradores.
+Usuários administradores.
 
 ### 3. Pré-condições
 
