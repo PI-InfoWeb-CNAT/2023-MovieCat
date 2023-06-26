@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="img\Animais_fantasticos.png" />
+    <Content Include="img\ara.jpg" />
     <Content Include="img\Bacurau.png" />
     <Content Include="img\Belo_desastre.png" />
     <Content Include="img\block01.png" />
@@ -114,8 +115,10 @@
     <Content Include="img\green.png" />
     <Content Include="img\Guardiao_das_galaxias.png" />
     <Content Include="img\Homem_aranha.png" />
+    <Content Include="img\image 336 %281%29.png" />
     <Content Include="img\insta.png" />
     <Content Include="img\John_Wick.png" />
+    <Content Include="img\loginbackground.png" />
     <Content Include="img\Logo.png" />
     <Content Include="img\logout.png" />
     <Content Include="img\logout_branco.png" />
@@ -131,11 +134,14 @@
     <Content Include="img\Sol.png" />
     <Content Include="img\twitter.png" />
     <Content Include="img\vizinho.png" />
+    <Content Include="styles\Cadastro_de_Funcionario.css" />
     <Content Include="script\script.js" />
     <Content Include="styles\adm.css" />
+    <Content Include="styles\filmes.css" />
     <Content Include="styles\funcionariopage.css" />
     <Content Include="styles\funcionario02.css" />
     <Content Include="styles\funcionario03.css" />
+    <Content Include="styles\funcionario_cadastrado.css" />
     <Content Include="styles\listafuncionarios.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\mapa.css" />
@@ -181,6 +187,7 @@
     <Content Include="Views\EsquecerSenha2etapa\EsquecerSenha2etapa.cshtml" />
     <Content Include="Views\CadastroFuncionarios\CadastroFuncionarios.cshtml" />
     <Content Include="Views\FuncionarioCadastrado\FuncionarioCadastrado.cshtml" />
+    <Content Include="Views\Filmes\Filmes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,7 +198,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Filmes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,7 +15,7 @@
 
             <div>
                 <a href="#.html"><p><img src="~/img/Sol.png"></p></a>
-                <a href="login.html"><p><img src="~/img/Perfil.png"></p></a>
+                <a href='@Url.Action("Login", "Login")'><p><img src="~/img/Perfil.png"></p></a>
             </div>
         </div>
     </header>
@@ -24,13 +24,14 @@
     <section>
         <div id="FCC">
             <ol>
-                <a href="ADM.html">
+                <a href='@Url.Action("Filmes", "Filmes")'>
                 <li><p>Filmes</p></li></a>
                 <a href="funcionario01.html">
                 <li><p>Calendario</p></li></a>
                 <a href="pacotes.html">
                 <li><p>Cinemas</p></li></a>
-                <a href='@Url.Action("MapaLinks", "Temporario")'><li><p>Mapa de links</p></li></a>
+                <a href='@Url.Action("MapaLinks", "Temporario")'>
+                <li><p>Mapa de links</p></li></a>
             </ol>
         </div>
 

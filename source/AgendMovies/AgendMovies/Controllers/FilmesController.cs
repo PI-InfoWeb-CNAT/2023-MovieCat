@@ -9,7 +9,7 @@ namespace AgendMovies.Controllers
     public class FilmesController : Controller
     {
         // GET: Filmes
-        public ActionResult Index()
+        public ActionResult Filmes()
         {
             return View();
         }
