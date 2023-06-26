@@ -6,32 +6,88 @@
     <link href="@Url.Content("~/styles/mapa.css")" rel="stylesheet" />
 </head>
 <body>
+
     <div id="FCC">
         <ol>
-            <a href='@Url.Action("Index", "Home")'>
-            <li><p>Home</p></li></a>
-            <a href='@Url.Action("AdmPage", "Adm")'>
-            <li><p>ADM</p></li></a>
-
-            <a href='@Url.Action("FuncionarioPage", "Funcionario")'>
-                <li>
-                    <p>DashboardFuncionario</p>
-                </li>
+            <a href='@Url.Action("Login", "Login")'>
+            <li>
+                <p>Login</p>
+            </li>
             </a>
-            <li><p>Funcionariopag01</p></li></a>
-            <<a href='@Url.Action("Funcionario02", "Funcionario02")'><li><p>Funcionario02</p></li></a>
-            <a href="funcionario03.html">
-            <li><p>Funcionario03</p></li></a>
-            <a href='@Url.Action("ListarFuncionarios", "ListarFuncionarios")'><li><p>Listar de Funcionarios</p></li></a>
-            <a href="login.html">
-            <li><p>Login</p></li></a>
-            <a href='@Url.Action("ListarPacotes", "Pacotes")'>
-            <li><p>Pacotes</p></li></a>
-            <a href='@Url.Action("CadastrarPacotes", "CadastroDePacotes")'>
-            <li><p>CadastroDePacotes</p></li></a>
+            <a href='@Url.Action("EsquecerSenha1etapa", "EsquecerSenha1etapa")'>
+            <li>
+                <p>Esquecer_Senha_1etapa</p>
+            </li></a>
+            <a href="esqueceu_a_senha.html">
+            </a>
+            <a href='@Url.Action("EsquecerSenha2etapa", "EsquecerSenha2etapa")'>
+            <li>
+            <p>Esquecer_Senha_2etapa</p>
+            </li>
+            </a>
         </ol>
     </div>
 
-    <h1>Já já coloco mais</h1>
+
+    <div id="FCC">
+        <ol>
+            <a href='@Url.Action("FuncionarioPage", "Funcionario")'>
+                <li>
+                    <p>Dashboard_Funcionário</p>
+                </li>
+            </a>
+            <a href='@Url.Action("Funcionario02", "Funcionario02")'>
+                <li>
+                    <p>Funcionario_sessões</p>
+                </li>
+            </a>
+            <a href='@Url.Action("Index", "MeuPerfil")'>
+                <li>
+                    <p>Funcionario_clientes</p>
+                </li>
+            </a>
+        </ol>
+    </div>
+
+    <div id="FCC">
+        <ol>
+            <a href='@Url.Action("AdmPage", "Adm")'>
+            <li><p>Dashboard_ADM</p></li></a>
+            <a href='@Url.Action("CadastrarPacotes", "CadastroDePacotes")'>
+            <li><p>ADM_CadastroPacotes</p></li></a>
+            <a href='@Url.Action("ListarPacotes", "Pacotes")'>
+            <li><p>ADM_ListarPacotes</p></li></a>
+            <a href='@Url.Action("ListarFuncionarios", "ListarFuncionarios")'>
+            <li><p>Lista de Funcionarios</p></li></a>
+            <a href='@Url.Action("CadastroFuncionarios", "CadastroFuncionarios")'>
+            <li><p>Cadastro_de_Funcionarios</p></li></a>
+            <a href='@Url.Action("FuncionarioCadastrado", "FuncionarioCadastrado")'>
+            <li><p>Funcionario_Cadastrado</p></li></a>
+        </ol>
+    </div>
+
+    <div id="FCC">
+        <ol>
+            <a href='@Url.Action("Index", "Home")'>
+            <li><p>LandPage</p></li></a>
+            <a href='@Url.Action("Filmes", "Filmes")'>
+            <li><p>Filmes</p></li></a>
+        </ol>
+    </div>
+
+    <div class="ord"><h1>O Apresentável</h1></div>
+    <div id="FCC">
+        <ol>
+            <a href='@Url.Action("Index", "Home")'>
+            <li><p>Index_HomePage</p></li></a>
+            <a href='@Url.Action("AdmPage", "Adm")'>
+            <li><p>ADM</p></li></a>
+            <a href='@Url.Action("CadastroFuncionarios", "CadastroFuncionarios")'>
+            <li><p>Cadastro_de_Funcionário</p></li></a>
+            <a href='@Url.Action("ListarPacotes", "Pacotes")'>
+            <li><p>Listar pacotes</p></li></a>
+        </ol>
+    </div>
+
 </body>
 </html>

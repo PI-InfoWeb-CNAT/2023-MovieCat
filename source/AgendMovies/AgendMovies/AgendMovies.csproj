@@ -148,11 +148,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdmController.cs" />
     <Compile Include="Controllers\CadastroDePacotesController.cs" />
+    <Compile Include="Controllers\CadastroFuncionariosController.cs" />
+    <Compile Include="Controllers\EsquecerSenha1etapaController.cs" />
+    <Compile Include="Controllers\EsquecerSenha2etapaController.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
     <Compile Include="Controllers\Funcionario02Controller.cs" />
+    <Compile Include="Controllers\FuncionarioCadastradoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListarFuncionariosController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacotesController.cs" />
     <Compile Include="Controllers\TemporarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +176,11 @@
     <Content Include="Views\CadastroDePacotes\CadastrarPacotes.cshtml" />
     <Content Include="Views\Funcionario\FuncionarioPage.cshtml" />
     <Content Include="Views\Funcionario02\Funcionario02.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\EsquecerSenha1etapa\EsquecerSenha1etapa.cshtml" />
+    <Content Include="Views\EsquecerSenha2etapa\EsquecerSenha2etapa.cshtml" />
+    <Content Include="Views\CadastroFuncionarios\CadastroFuncionarios.cshtml" />
+    <Content Include="Views\FuncionarioCadastrado\FuncionarioCadastrado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
