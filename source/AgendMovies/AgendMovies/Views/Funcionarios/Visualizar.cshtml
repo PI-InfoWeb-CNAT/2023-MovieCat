@@ -1,0 +1,64 @@
+﻿@model IQueryable<AgendMovies.Modelos.Funcionario>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/listafuncionarios.css")" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+        <div id="Header_Organizador">
+            <div>
+                <a href='@Url.Action("Index", "Home")'><p><img src="~/img/Logo.png"></p></a>
+            </div>
+
+            <div>
+                <a href="#.html"><p><img src="~/img/logout_branco.png"></p></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1>Lista de Funcionários</h1>
+        <p>Fundionários Bilheteria</p>
+        <div id="endireitar_o_endireitar">
+            <div id="endireitar">
+                <div></div>
+                <div class="wrapper">
+                    @for (int x = 0; x < 16; x++)
+                    {
+                        <div class="botao"><img src="~/img/mil.png"><p>Milton Shyon</p><a href="#.html"><div class="botao_dois"><p>Visualizar</p></div></a></div>
+                    }
+
+              
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <a href="#.html"><div class="add"><p>Adicionar funcionario</p></div></a>
+    </section>
+
+    <footer>
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+
+        <div>
+            <ol>
+                <a href="#.html">
+                    <li><img src="~/img/insta.png"></li>
+                </a>
+                <a href="#.html">
+                    <li><img src="~/img/face.png"></li>
+                </a>
+                <a href="#.html">
+                    <li><img src="~/img/twitter.png"></li>
+                </a>
+            </ol>
+        </div>
+    </footer>
+</body>
+</html>
