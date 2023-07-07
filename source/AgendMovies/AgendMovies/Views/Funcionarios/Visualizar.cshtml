@@ -12,7 +12,7 @@
 
         <div id="Header_Organizador">
             <div>
-                <a href='@Url.Action("Index", "Home")'><p><img src="~/img/Logo.png"></p></a>
+                <a href='@Url.Action("Visualizar", "Funcionarios")'><p><img src="~/img/Logo.png"></p></a>
             </div>
 
             <div>
@@ -28,9 +28,23 @@
             <div id="endireitar">
                 <div></div>
                 <div class="wrapper">
-                    @for (int x = 0; x < 16; x++)
+                    @foreach (var funcionario in Model)
                     {
-                        <div class="botao"><img src="~/img/mil.png"><p>Milton Shyon</p><a href="#.html"><div class="botao_dois"><p>Visualizar</p></div></a></div>
+                        <div class="botao">
+                            <img src="~/img/iconeFuncionario.png">
+                            <p>@Html.DisplayFor(modelItem => funcionario.nome)</p>
+                            <div class="botao_dois">
+                                <a href='@Url.Action("Excluir", "Funcionarios", new { id = funcionario.FuncionarioId } )'>Excluir</a>
+                             
+
+                            </div>
+                            <div class="botao_dois">
+                      
+                                @Html.ActionLink("Detalhes", "Detalhes", new { id = funcionario.FuncionarioId })
+                            </div>
+
+                    
+                        </div>
                     }
 
               
@@ -38,7 +52,7 @@
                 <div></div>
             </div>
         </div>
-        <a href="#.html"><div class="add"><p>Adicionar funcionario</p></div></a>
+        <a href="@Url.Action("Cadastrar", "Funcionarios")"><div class="add"><p>Adicionar funcionario</p></div></a>
     </section>
 
     <footer>

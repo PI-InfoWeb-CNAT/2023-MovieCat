@@ -1,0 +1,88 @@
+﻿@model AgendMovies.Modelos.Funcionario
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <title>cadastro de funcionario</title>
+
+    <style>
+        body {
+            background-color: black;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5em;
+            align-items: center;
+            width: 100%;
+            background-color: grey;
+            box-sizing: border-box;
+        }
+
+        main {
+            margin-top: 5em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+
+            main section {
+                display: flex;
+            justify-content: center;
+            align-items: center;
+                background-color: grey;
+                color: white;
+                padding: 1em;
+                width: 50%;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        section p{
+            width: 100%;
+            
+        }
+        section a {
+            color: white;
+            text-decoration: none;
+            background-color: #C00C0C;
+            border: 2px solid white;
+            padding: 1em;
+            border-radius: 10px;
+        }
+         .abaixo{
+             margin-bottom: 2em;
+         }
+    </style>
+</head>
+<body>
+    <header>
+
+        <a href='@Url.Action("Visualizar", "Funcionarios")'><p><img src="~/img/Logo.png"></p></a>
+
+
+
+        <a href="#.html"><p><img src="~/img/logout_branco.png"></p></a>
+
+    </header>
+    <main>
+        <section>
+            <p>Nome: @Html.DisplayFor(modelItem => Model.nome)</p>
+            <p>Email: @Html.DisplayFor(modelItem => Model.email)</p>
+            <p>CPF: @Html.DisplayFor(modelItem => Model.cpf)</p>
+            <p>Data nascimento: @Html.DisplayFor(modelItem => Model.data)</p>
+            <p class="abaixo">Telefone: @Html.DisplayFor(modelItem => Model.telefone)</p>
+
+            @Html.ActionLink("Voltar", "Visualizar")
+            @Html.ActionLink("Editar", "Editar", new { id = Model.FuncionarioId })
+        </section>
+    </main>
+</body>
+</html>
+

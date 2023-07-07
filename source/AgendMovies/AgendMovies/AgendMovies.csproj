@@ -122,6 +122,7 @@
     <Content Include="img\green.png" />
     <Content Include="img\Guardiao_das_galaxias.png" />
     <Content Include="img\Homem_aranha.png" />
+    <Content Include="img\iconeFuncionario.png" />
     <Content Include="img\image 336 %281%29.png" />
     <Content Include="img\insta.png" />
     <Content Include="img\John_Wick.png" />
@@ -199,6 +200,9 @@
     <Content Include="Views\FuncionarioCadastrado\FuncionarioCadastrado.cshtml" />
     <Content Include="Views\Filmes\Filmes.cshtml" />
     <Content Include="Views\Funcionarios\Visualizar.cshtml" />
+    <Content Include="Views\Funcionarios\Cadastrar.cshtml" />
+    <Content Include="Views\Funcionarios\Detalhes.cshtml" />
+    <Content Include="Views\Funcionarios\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

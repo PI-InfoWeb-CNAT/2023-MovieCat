@@ -1,0 +1,49 @@
+﻿@model AgendMovies.Modelos.Funcionario
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <title>cadastro de funcionario</title>
+    <link href="@Url.Content("~/styles/Cadastro_de_Funcionario.css")" rel="stylesheet" />
+</head>
+<body>
+
+    <main>
+        <div class="wrapper">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h1>Cadastro de Funcionários</h1>
+                @Html.HiddenFor(model => model.FuncionarioId)
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <div><p>Nome Completo*</p>@Html.TextBoxFor(model => model.nome, new { type = "text", required = "required", size = "40" }) </div>
+                <div><p>CPF*</p>@Html.TextBoxFor(model => model.cpf, new { type = "text", required = "required", size = "40" }) </div>
+                <div><p>Data de Nascimento*</p>@Html.TextBoxFor(model => model.data, new { type = "text", required = "required", size = "40" }) </div>
+                <div><p>Telefone*</p>@Html.TextBoxFor(model => model.telefone, new { type = "text", required = "required", size = "40" }) </div>
+                <div><p>Email*</p> @Html.TextBoxFor(model => model.email, new { type = "text", required = "required", size = "40" }) </div>
+                <div>
+                    <p>Senha*</p>
+                    <input class="p" type="text" name="Nome" size="40" />
+
+                </div>
+                <div>
+                    <p>Confirmar Senha*</p>
+                    @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" })
+                </div>
+
+                <div class="t">
+                    <button type="submit" class="btn">Criar</button>
+                </div>
+
+            }
+        </div>
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </main>
+</body>
+</html>

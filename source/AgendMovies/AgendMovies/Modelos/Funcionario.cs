@@ -12,13 +12,14 @@ namespace AgendMovies.Modelos
 
         public int FuncionarioId { get; set; }
 
-        public int data { get; set; }
+        public string data { get; set; }
 
         public int telefone { get; set; }
 
         public string email { get; set; }
         
         public string senha { get; set; }
+        public string cpf { get; set; }
 
     }
 }
