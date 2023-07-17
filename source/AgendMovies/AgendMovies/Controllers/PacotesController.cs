@@ -32,8 +32,12 @@ namespace AgendMovies.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Pacotes p)
         {
-            T.Pacotes.Add(p);
-            T.SaveChanges();
+            if (T.Pacotes.OrderBy(x => x.nome).Count() < 6)
+            {
+                T.Pacotes.Add(p);
+                T.SaveChanges();
+                return RedirectToAction("Visualizar");
+            }
             return RedirectToAction("Visualizar");
         }
 
@@ -44,10 +48,16 @@ namespace AgendMovies.Controllers
         }
         public ActionResult Delete()
         {
+
             Pacotes x = (Pacotes)Session["Pacote"];
-            Pacotes p = T.Pacotes.Find(x.PacotesId);
-            T.Pacotes.Remove(p);
-            T.SaveChanges();
+           
+            if (x != null)
+            {
+                Pacotes p = T.Pacotes.Find(x.PacotesId);
+                T.Pacotes.Remove(p);
+                T.SaveChanges();
+            }
+   
             return RedirectToAction("Visualizar");
         }
     }
