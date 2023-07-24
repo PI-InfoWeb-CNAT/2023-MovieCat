@@ -14,9 +14,13 @@
 
     <main>
         <div class="wrapper">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Cadastrar", "Funcionarios", FormMethod.Post,
+ new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
+
+                @Html.TextBox("arquivo", "", new { type = "file"})
+       
                 <h1>Cadastro de Funcionários</h1>
                 @Html.HiddenFor(model => model.FuncionarioId)
                 <ion-icon name="person-circle-outline"></ion-icon>

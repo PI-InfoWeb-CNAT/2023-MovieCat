@@ -30,21 +30,29 @@
                 <div class="wrapper">
                     @foreach (var funcionario in Model)
                     {
-                        <div class="botao">
+                    <div class="botao">
+                        @if (funcionario.ConteudoDaFoto == null)
+                        {
                             <img src="~/img/iconeFuncionario.png">
-                            <p>@Html.DisplayFor(modelItem => funcionario.nome)</p>
-                            <div class="botao_dois">
-                                <a href='@Url.Action("Excluir", "Funcionarios", new { id = funcionario.FuncionarioId } )'>Excluir</a>
-                             
+                        }
+                        else
+                        {
+                            <img src="@Url.Action("GetLogoTipo", "Funcionarios", new { id = funcionario.FuncionarioId } )" style="width: 70px; height:71px; border-radius: 100%;">
+                        }
 
-                            </div>
-                            <div class="botao_dois">
-                      
-                                @Html.ActionLink("Detalhes", "Detalhes", new { id = funcionario.FuncionarioId })
-                            </div>
+                        <p>@Html.DisplayFor(modelItem => funcionario.nome)</p>
+                        <div class="botao_dois">
+                            <a href='@Url.Action("Excluir", "Funcionarios", new { id = funcionario.FuncionarioId } )'>Excluir</a>
 
-                    
+
                         </div>
+                        <div class="botao_dois">
+
+                            @Html.ActionLink("Detalhes", "Detalhes", new { id = funcionario.FuncionarioId })
+                        </div>
+
+
+                    </div>
                     }
 
               

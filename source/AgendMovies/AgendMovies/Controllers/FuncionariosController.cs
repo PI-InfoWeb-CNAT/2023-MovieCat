@@ -44,18 +44,30 @@ namespace AgendMovies.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Funcionario f)
+        public ActionResult Cadastrar(Funcionario f, HttpPostedFileBase arquivo)
         {
+            if (arquivo != null)
+            {
+                f.TipoDaFoto = arquivo.ContentType;
+                f.ConteudoDaFoto = SetLogoTipo(arquivo);
+
+            }
             context.Funcionarios.Add(f);
             context.SaveChanges();
             return RedirectToAction("Visualizar");
         }
         [HttpPost]
-        public ActionResult Editar(Funcionario f)
+        public ActionResult Editar(Funcionario f, HttpPostedFileBase arquivo)
         {
             if (ModelState.IsValid)
             {
                 context.Entry(f).State = EntityState.Modified;
+                if (arquivo != null)
+                {
+                    f.TipoDaFoto = arquivo.ContentType;
+                    f.ConteudoDaFoto = SetLogoTipo(arquivo);
+
+                }
                 context.SaveChanges();
                 return RedirectToAction("Visualizar");
             }
@@ -73,6 +85,22 @@ namespace AgendMovies.Controllers
             context.Funcionarios.Remove(thiago);
             context.SaveChanges();
             return RedirectToAction("Visualizar");
+        }
+        private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
+        {
+            var bytesFile = new byte[arquivo.ContentLength];
+            arquivo.InputStream.Read(bytesFile, 0, arquivo.ContentLength);
+            return bytesFile;
+        }
+        public FileContentResult GetLogoTipo(int? id)
+        {
+
+            Funcionario  F = context.Funcionarios.Find(id);
+            if (F != null)
+            {
+                return File(F.ConteudoDaFoto, F.TipoDaFoto);
+            }
+            return null;
         }
     }
 }

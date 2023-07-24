@@ -20,6 +20,7 @@ namespace AgendMovies.Modelos
         
         public string senha { get; set; }
         public string cpf { get; set; }
-
+        public byte[] ConteudoDaFoto { get; set; }
+        public string TipoDaFoto { get; set; }
     }
 }
