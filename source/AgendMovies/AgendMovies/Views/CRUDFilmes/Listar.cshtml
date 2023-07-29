@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{
+    var idSele = TempData["Id"];
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <title>Agend Movies</title>
+    <link rel="stylesheet" href="~/styles/FilmeAdm.css" />
+    <link rel="icon" href="~/img/icon.svg" />
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="#"><img src="~/img/logoSite.png" alt="Logo do site" /></a>
+        </figure>
+
+        <figure>
+            <a href="#"><img src="~/img/logout_branco.png" alt="Icone de logout" /></a>
+        </figure>
+    </header>
+    <main>
+        <section>
+            <h2>Filmes</h2>
+            <div class="Conteudo">
+                <ol>
+                    @foreach (var Filme in Model)
+                    {
+                        if (idSele != null)
+                        {
+                            if (long.Parse(idSele.ToString()) == Filme.FilmeId)
+                            {
+                                <li><a  style="background-color: #a1a1a1 !important;" href="@Url.Action("Selecionar", "CRUDFilmes", new { id = Filme.FilmeId })">@Filme.Nome</a></li>
+                            }
+                            else
+                            {
+                                <li ><a  href="@Url.Action("Selecionar", "CRUDFilmes", new { id = Filme.FilmeId })">@Filme.Nome</a></li>
+                            }
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("Selecionar", "CRUDFilmes", new { id = Filme.FilmeId })">@Filme.Nome</a></li>
+                        }
+
+                    }
+
+                </ol>
+                <div>
+                    <ol>
+                        <li><a class="Excluir" href="@Url.Action("Delete", "CRUDFilmes")">Excluir</a></li>
+                        <li><a class="Adicionar" href="@Url.Action("Adicionar", "CRUDFilmes")">Adicionar</a></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2023 AgendMovies</p>
+        <ol>
+            <li><a href="#"><img src="~/img/insta.png" alt="Logo do Instagram" /></a></li>
+            <li><a href="#"><img src="~/img/face.png" alt="Logo do Facebook" /></a></li>
+            <li><a href="#"><img src="~/img/X.png" alt="Logo do Twitter" /></a></li>
+        </ol>
+    </footer>
+</body>
+</html>

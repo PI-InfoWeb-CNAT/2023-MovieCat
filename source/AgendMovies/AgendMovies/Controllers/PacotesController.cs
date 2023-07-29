@@ -44,8 +44,7 @@ namespace AgendMovies.Controllers
         public ActionResult Selecionar(long? id)
         {
             Pacotes p = T.Pacotes.Find(id);
-            Session["Pacote"] = T.Pacotes.Find(id);
-            TempData["Id"] = id;
+            Session["Pacote"] = T.Pacotes.Find(id);       
             return RedirectToAction("Visualizar");
         }
         public ActionResult Delete()

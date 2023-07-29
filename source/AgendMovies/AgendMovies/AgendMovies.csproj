@@ -104,6 +104,7 @@
     <Content Include="img\block02.png" />
     <Content Include="img\cadeiras.png" />
     <Content Include="img\Campeoes.png" />
+    <Content Include="img\CapaIndefinida.png" />
     <Content Include="img\ci12.png" />
     <Content Include="img\ci14.png" />
     <Content Include="img\ci18.png" />
@@ -122,12 +123,14 @@
     <Content Include="img\green.png" />
     <Content Include="img\Guardiao_das_galaxias.png" />
     <Content Include="img\Homem_aranha.png" />
+    <Content Include="img\icon.svg" />
     <Content Include="img\iconeFuncionario.png" />
     <Content Include="img\image 336 %281%29.png" />
     <Content Include="img\insta.png" />
     <Content Include="img\John_Wick.png" />
     <Content Include="img\loginbackground.png" />
     <Content Include="img\Logo.png" />
+    <Content Include="img\logoSite.png" />
     <Content Include="img\logout.png" />
     <Content Include="img\logout_branco.png" />
     <Content Include="img\mais+.png" />
@@ -142,9 +145,12 @@
     <Content Include="img\Sol.png" />
     <Content Include="img\twitter.png" />
     <Content Include="img\vizinho.png" />
+    <Content Include="img\X.png" />
     <Content Include="styles\Cadastro_de_Funcionario.css" />
     <Content Include="script\script.js" />
     <Content Include="styles\adm.css" />
+    <Content Include="styles\CriarFilmesADM.css" />
+    <Content Include="styles\FilmeAdm.css" />
     <Content Include="styles\filmes.css" />
     <Content Include="styles\funcionariopage.css" />
     <Content Include="styles\funcionario02.css" />
@@ -180,6 +186,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Filme.cs" />
     <Compile Include="Modelos\Funcionario.cs" />
     <Compile Include="Modelos\Pacotes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,6 +215,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Pacotes\Visualizar.cshtml" />
     <Content Include="Views\Pacotes\Cadastrar.cshtml" />
+    <Content Include="Views\CRUDFilmes\Listar.cshtml" />
+    <Content Include="Views\CRUDFilmes\Adicionar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,7 +227,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\CRUDFilmes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
