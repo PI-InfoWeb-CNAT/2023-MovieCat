@@ -30,19 +30,19 @@
                 <form action="#">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="text" id="email_colocado" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
+                        <input type="password" id="senha_colocada" required>
                         <label>Password</label>
                     </div>
                     <div class="lembrar">
                         <label><input type="checkbox">Se lembre de mim</label>
                         <a href='@Url.Action("EsquecerSenha1etapa", "EsquecerSenha1etapa")'>Esqueceu a senha?</a>
                     </div>
-                    <button type="submit" class="btn">Login</button>
+                    <input type="submit" value="Login" class="btn" onclick="logar(); return false">
                     <div class="login-registro">
 
                         <p class="ajuste">
@@ -61,17 +61,18 @@
     <script>
         function logar() {
 
-            var login = document.getElementById('nome').value;
-            var senha = document.getElementById('password').value;
+            var login = document.getElementById('email_colocado').value;
+            var senha = document.getElementById('senha_colocada').value;
 
             if (login == "miltongurgel@escolar.ifrn.edu.br" && senha == "246629") {
-                location.href = "index.html";
+                location.href = "/Home/Index";
             } else {
                 alert('Usurio ou senha incorretos.')
             }
-
-        }</script>
+        }
+    </script>
 
 </body>
 
 </html>
+

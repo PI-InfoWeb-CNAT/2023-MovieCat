@@ -9,6 +9,14 @@
     <meta name="viewport" content="width=device-height, initial-scale=1.0">
     <title>cadastro de funcionario</title>
     <link href="@Url.Content("~/styles/Cadastro_de_Funcionario.css")" rel="stylesheet" />
+    <style>
+        input[type="file"]{
+            display: none;
+        }
+        ion-icon:hover{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,11 +27,36 @@
             {
                 @Html.AntiForgeryToken()
 
-                @Html.TextBox("arquivo", "", new { type = "file"})
+                @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
        
                 <h1>Cadastro de Funcionários</h1>
                 @Html.HiddenFor(model => model.FuncionarioId)
-                <ion-icon name="person-circle-outline"></ion-icon>
+               
+                <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
+                <script>
+                    function EditarImagem() {
+                        var InputArquivo = document.getElementById("ColocarFotoDePerfil");
+                        const Imagem = document.getElementById('FotoTemp');
+
+                        InputArquivo.addEventListener("change", function (evento) {
+
+
+                            const Arquivo = evento.target.files[0];
+                            if (Arquivo) {
+                                const LeitorDeArquivo = new FileReader();
+                                LeitorDeArquivo.onload = function (e) {
+                                    Imagem.setAttribute('src', e.target.result);
+                                };
+                                LeitorDeArquivo.readAsDataURL(Arquivo);
+                            } else {
+                                Imagem.setAttribute('src', '~/img/EditarPerfil.png');
+                            }
+                        });
+                        InputArquivo.click();
+        
+
+                    }
+                </script>
                 <div><p>Nome Completo*</p>@Html.TextBoxFor(model => model.nome, new { type = "text", required = "required", size = "40" }) </div>
                 <div><p>CPF*</p>@Html.TextBoxFor(model => model.cpf, new { type = "text", required = "required", size = "40" }) </div>
                 <div><p>Data de Nascimento*</p>@Html.TextBoxFor(model => model.data, new { type = "text", required = "required", size = "40" }) </div>
