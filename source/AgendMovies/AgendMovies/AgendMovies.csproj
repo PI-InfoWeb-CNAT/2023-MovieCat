@@ -217,6 +217,8 @@
     <Content Include="Views\Pacotes\Cadastrar.cshtml" />
     <Content Include="Views\CRUDFilmes\Listar.cshtml" />
     <Content Include="Views\CRUDFilmes\Adicionar.cshtml" />
+    <Content Include="Views\CRUDFilmes\Editar.cshtml" />
+    <Content Include="Views\CRUDFilmes\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

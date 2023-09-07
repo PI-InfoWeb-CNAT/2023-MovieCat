@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -19,8 +20,55 @@ namespace AgendMovies.Controllers
         {
             return View();
         }
+        public ActionResult Editar(long? id)
+        {
+            try
+            {
+                Filme x = (Filme)Session["Filme"];
+                id = x.FilmeId;
+                return View(context.Filmes.Find(id));
+            }
+            catch
+            {
+                return RedirectToAction("Listar");
+            }
+           
+        }
+        public ActionResult Visualizar(long? id)
+        {
+            try
+            {
+                Filme x = (Filme)Session["Filme"];
+                id = x.FilmeId;
+                return View(context.Filmes.Find(id));
+            }
+            catch
+            {
+                return RedirectToAction("Listar");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Filme f, HttpPostedFileBase arquivo)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (arquivo != null)
+                {
+                    f.TipoDaFoto = arquivo.ContentType;
+                    f.ConteudoDaFoto = SetLogoTipo(arquivo);
+
+                }
+                context.Entry(f).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Listar");
+            }
+            return RedirectToAction("Listar");
 
 
+        }
         [HttpPost]
         public ActionResult Adicionar(Filme f, HttpPostedFileBase arquivo)
         {
@@ -76,7 +124,7 @@ namespace AgendMovies.Controllers
         public FileContentResult GetLogoTipo(int? id)
         {
 
-            Funcionario F = context.Funcionarios.Find(id);
+            Filme F = context.Filmes.Find(id);
             if (F != null)
             {
                 return File(F.ConteudoDaFoto, F.TipoDaFoto);

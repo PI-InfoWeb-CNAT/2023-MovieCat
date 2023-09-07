@@ -35,12 +35,12 @@ namespace AgendMovies.Controllers
         public ActionResult Editar(int? id)
         {
 
-            Funcionario thiago = context.Funcionarios.Find(id);
-            if (thiago == null)
+            Funcionario f = context.Funcionarios.Find(id);
+            if (f == null)
             {
                 return RedirectToAction("Visualizar");
             }
-            return View(thiago);
+            return View(f);
         }
 
         [HttpPost]
@@ -61,13 +61,13 @@ namespace AgendMovies.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(f).State = EntityState.Modified;
                 if (arquivo != null)
                 {
                     f.TipoDaFoto = arquivo.ContentType;
                     f.ConteudoDaFoto = SetLogoTipo(arquivo);
 
                 }
+                context.Entry(f).State = EntityState.Modified;
                 context.SaveChanges();
                 return RedirectToAction("Visualizar");
             }
