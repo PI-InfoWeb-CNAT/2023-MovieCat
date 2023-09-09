@@ -1,0 +1,178 @@
+﻿@model AgendMovies.Modelos.Sessao
+
+
+@{
+    Layout = null;
+    var sess = ViewBag.Sessoes as IEnumerable<AgendMovies.Modelos.Sessao>;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add_Exc_sessão</title>
+    <link href="@Url.Content("~/styles/adicionar_excluir_sessao.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/img/icon.svg" />
+</head>
+<body>
+
+    <header>
+        <div id="Header_Organizador">
+            <div>
+                <a href="index.html"><p><img src="~/img/Logo.png"></p></a>
+            </div>
+            <div>
+                <a href="login.html"><p><img src="~/img/logout_branco.png"></p></a>
+            </div>
+        </div>
+    </header>
+    <div><h1 id="LdS">Lista de Filmes</h1></div>
+
+    <div id="ordem">
+        <section>
+            @foreach (var item in sess)
+            {
+                <div id="vertical">
+                    <div id="dia_da_semana">
+                        <p id="D">@item.diaSemana</p>
+                        @item.data
+                    </div>
+
+                    <div id="Manha">
+                        <p>Manhã</p>
+                        <ol>
+                            <li>@item.manhaInicio</li>
+                            <li>@item.manhaFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="Tarde">
+                        <p>Tarde</p>
+                        <ol>
+                            <li>@item.tardeInicio</li>
+                            <li>@item.tardeFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="Noite">
+                        <p>Noite</p>
+                        <ol>
+                            <li>@item.noiteInicio</li>
+                            <li>@item.noiteFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="LegDub">
+                        <ol>
+                            @if (item.leg == true)
+                            {
+                                <li><p id="p">Leg</p></li>
+                            }
+                            @if (item.dub == true)
+                            {
+                                <li><p id="p">Dub</p></li>
+                            }
+
+
+                        </ol>
+                    </div>
+
+
+                </div>
+
+
+            }
+
+            <div id="b" style="margin: 0 auto; margin-bottom: 1em;">
+                <button>
+                    <a href="@Url.Action("Limpar", "Sessoes")" style="width: 100%; height: 100%; color: White; text-decoration: none; ">Limpar </a>
+                </button>
+            </div>
+    </div>
+    </section>
+    <section style="margin: 0 auto;">
+        @using (Html.BeginForm())
+        {
+            <div id="vertical">
+                <div id="dia_da_semana">
+                    <p id="D">@Model.diaSemana</p>
+                   
+                    @Html.TextBoxFor(model => model.data, new { type = "date", required = "required", id = "date" })
+                </div>
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.SessaoId)
+                @Html.HiddenFor(model => model.diaSemana)
+
+                <div id="Manha">
+                    <p>Manhã</p>
+                    <ol>
+
+
+                        <li>@Html.TextBoxFor(model => model.manhaInicio, new { type = "time", required = "required", id = "appt" })</li>
+                        <li>@Html.TextBoxFor(model => model.manhaFim, new { type = "time", required = "required", id = "appt" })</li>
+                    </ol>
+                </div>
+
+                <div id="Tarde">
+                    <p>Tarde</p>
+                    <ol>
+                        <li>@Html.TextBoxFor(model => model.tardeInicio, new { type = "time", required = "required", id = "appt" })</li>
+                        <li>@Html.TextBoxFor(model => model.tardeFim, new { type = "time", required = "required", id = "appt" })</li>
+                    </ol>
+                </div>
+
+                <div id="Noite">
+                    <p>Noite</p>
+                    <ol>
+                        <li>@Html.TextBoxFor(model => model.noiteInicio, new { type = "time", required = "required", id = "appt" })</li>
+                        <li>@Html.TextBoxFor(model => model.noiteFim, new { type = "time", required = "required", id = "appt" })</li>
+                    </ol>
+                </div>
+
+                <div id="LegDub">
+                    <ol>
+                        <li><p id="p">Leg</p>  @Html.EditorFor(model => model.leg)</li>
+                        <li><p id="p">Dub</p>  @Html.EditorFor(model => model.dub)</li>
+                    </ol>
+                </div>
+
+                <div id="b" style="margin: 0 auto; margin-bottom: 1em;">
+                    <button>
+                        <input type="submit" value="Editar" style="background-color: transparent; color: white; border: none;"/>
+                    </button>
+
+                </div>
+
+
+
+            </div>
+        }
+    </section>
+    </div>
+
+    <footer>
+
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+        <div>
+            <ol>
+                <a href="#.html">
+                <li><img src="img/insta.png"></li></a>
+                <a href="#.html">
+                <li><img src="img/face.png"></li></a>
+                <a href="#.html">
+                <li><img src="img/X.png"></li></a>
+            </ol>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>
+

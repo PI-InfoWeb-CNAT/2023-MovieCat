@@ -100,6 +100,9 @@
     <Content Include="img\ara.jpg" />
     <Content Include="img\Bacurau.png" />
     <Content Include="img\Belo_desastre.png" />
+    <Content Include="img\BlackFace.png" />
+    <Content Include="img\BlackInsta.png" />
+    <Content Include="img\BlackTwitter.png" />
     <Content Include="img\block01.png" />
     <Content Include="img\block02.png" />
     <Content Include="img\cadeiras.png" />
@@ -132,7 +135,9 @@
     <Content Include="img\Logo.png" />
     <Content Include="img\logoSite.png" />
     <Content Include="img\logout.png" />
+    <Content Include="img\logoutIcon.png" />
     <Content Include="img\logout_branco.png" />
+    <Content Include="img\Logo_cat.png" />
     <Content Include="img\mais+.png" />
     <Content Include="img\mais.png" />
     <Content Include="img\Mia_goth_pear.png" />
@@ -144,8 +149,12 @@
     <Content Include="img\red.png" />
     <Content Include="img\Sol.png" />
     <Content Include="img\twitter.png" />
+    <Content Include="img\Untitled design %281%29.png" />
+    <Content Include="img\Untitled design %282%29.png" />
+    <Content Include="img\Untitled design.png" />
     <Content Include="img\vizinho.png" />
     <Content Include="img\X.png" />
+    <Content Include="styles\adicionar_excluir_sessao.css" />
     <Content Include="styles\Cadastro_de_Funcionario.css" />
     <Content Include="script\script.js" />
     <Content Include="styles\adm.css" />
@@ -182,6 +191,7 @@
     <Compile Include="Controllers\ListarFuncionariosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacotesController.cs" />
+    <Compile Include="Controllers\SessoesController.cs" />
     <Compile Include="Controllers\TemporarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,6 +199,7 @@
     <Compile Include="Modelos\Filme.cs" />
     <Compile Include="Modelos\Funcionario.cs" />
     <Compile Include="Modelos\Pacotes.cs" />
+    <Compile Include="Modelos\Sessao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +230,8 @@
     <Content Include="Views\CRUDFilmes\Adicionar.cshtml" />
     <Content Include="Views\CRUDFilmes\Editar.cshtml" />
     <Content Include="Views\CRUDFilmes\Visualizar.cshtml" />
+    <Content Include="Views\Sessoes\Listar.cshtml" />
+    <Content Include="Views\Sessoes\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
