@@ -1,108 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
-    font-family: 'Marvel', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: red;
+    --text-color: black;
+    --bg-color: white;
+}
+
+#MenuTemp {
+    visibility: hidden;
+}
+
+#LinkMenuTemp {
+    visibility: visible !important;
+}
+
+#MenuTemp ol {
+    position: absolute;
+}
+
+#MenuTemp:hover {
+    visibility: visible;
+}
+
+
+/* customizar barra de scrollagem */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: var(--text-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
 }
 
 body {
-    background-color: black;
+    background: var(--text-color);
+    color: var (--bg-color);
+}
+
+section {
+    padding: 4.5rem 0 1.5rem;
 }
 
 header {
-    background-color: #3C3C3C;
-}
-
-    header div {
-        display: flex;
-    }
-
-#Header_Organizador { /*organiza o perfil, tela escura e a logo*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-    #Header_Organizador div p {
-        padding: 10px;
-    }
-
-/**/
-
-
-
-/* Cleyton */ /*o famoso Cleyton, feito pra resolver nossos problemas*/
-/* cleyton = div#cards_filmes ol a div */
-div#cards_filmes ol a div {
+    position: fixed;
     width: 100%;
-    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 5px;
-    border-radius: 0px 0px 10px 10px;
+    padding: 20px 100px;
+    transition: 0.5s;
 }
 
-    div#cards_filmes ol a div img {
-        width: min-content !important;
+    header.shadow {
+        background: var(--bg-color);
+        box-shadow: 0 0 4px rgb(14 55 54 / 15%);
     }
-/* Cleyton */
-#FCC ol { /*FCC = filmes calendario cinema*/
-    padding: 1em;
+
+        header.shadow .navbar a {
+            color: var(--text-color);
+        }
+
+.logo .bx {
+    font-size: 24px;
+    color: var (--main-color);
+}
+
+.navbar {
     display: flex;
-    gap: 200px;
-    justify-content: center;
-    align-items: center;
+    column-gap: 5rem;
 }
 
-    #FCC ol li {
-        display: flex;
-        list-style: none;
-        color: white;
-        background-color: #C00C0C;
-        width: 140px;
-        height: 40px;
-        border-radius: 5px;
-        align-items: center;
-        justify-content: center;
+    .navbar li {
+        position: relative;
     }
 
-    #FCC ol a {
-        text-decoration: none;
+    .navbar a {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--bg-color);
     }
 
-#FCC a:hover li {
-    background-color: #cf2a2a;
+        .navbar a::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            background: var(--main-color);
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            transition: 0.4s all linear;
+        }
+
+        .navbar a:hover::after, .navbar .home-active::after {
+            width: 100%;
+        }
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000001;
+    display: none;
 }
 
-#eventual_carrocel {
-    background-image: url('img/Eventual.png');
-    background-size: 100%;
-    height: 400px;
+.btn {
+    padding: 0.7rem 1.4rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 0.5rem;
 }
-/**/
 
-#cards_filmes ol {
+.btn-01 {
+    padding: 0.7rem 1.4rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 0.5rem;
+    width: 9em;
+}
+
+.btn:hover {
+    background: red;
+}
+
+.conatiner {
+    width: 100%;
+    min-height: 1040px;
+    position: relative;
     display: flex;
-    list-style: none;
-    justify-content: space-evenly;
+    align-items: center;
+    background: white;
 }
 
-    #cards_filmes ol a li img {
-        width: 200px;
-        border-radius: 10px 10px 0px 0px;
+    .conatiner img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
     }
 
-#cards_filmes h1 {
+.swiper-pagination-bullet {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 0.2rem !important;
+    background: var(--bg-color) !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    width: 1.5rem !important;
+    background: var(--main-color) !important;
+}
+
+
+.home-text {
+    z-index: 100;
+    display: flex;
+    padding: 0 150px;
+    position: relative;
+    bottom: -12em;
+    right: -4em;
+    width: 33em;
+    align-content: space-around;
+    flex-direction: column;
+    font-size: 2em;
     color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 35px;
 }
 
-/**/
+.home-text {
+    z-index: 100;
+    padding: 0 150px;
+}
+
+    .home-text span {
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+/*    font-size: 2em;
+    color: white;; h1*/
+home-text h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--main-color);
+    color: white;
+}
 
 #container {
     display: grid;
@@ -115,8 +227,6 @@ div#cards_filmes ol a div {
         padding: 2em;
     }
 
-/**/
-
 #ver_mais {
     padding: 10px;
     border-color: white;
@@ -128,7 +238,7 @@ div#cards_filmes ol a div {
 }
 
     #ver_mais:hover {
-        color: #5177d2;
+        color: #c62128;
     }
 
 div #ver_mais {
@@ -144,46 +254,143 @@ div #ver_mais {
 #limitador a {
     text-decoration: none;
 }
-/**/
 
-#block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.movies-container {
+    max-width: 968px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-    #block img {
-        padding: 2em;
-    }
+.box .box-img {
+    width: 100%;
+    height: 270px;
+}
 
-#p_block {
-    text-align: center;
-    font-size: 35px;
+.box .box-img {
     color: white;
 }
 
-/**/
+    .box .box-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-footer {
-    background-color: #3C3C3C;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 121px;
+    .box .box-img:hover {
+        transform: translateY(-10px);
+        transition: 0.2s all linear;
+    }
+
+.box h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-    footer div ol {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
+.box span {
+    font-size: 13px;
+}
+
+.box {
+    color: white;
+}
+
+#container #dv {
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+    #container #dv h2 {
+        font-size: 15px;
+        color: #ebebeb;
     }
 
-        footer div ol li {
-            padding: 25px;
+    #container #dv #dvo {
+        display: flex;
+        width: 33em;
+        justify-content: space-between;
+        padding: 0em;
+        align-items: center;
+    }
+
+.footer {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+    .social .img {
+        padding: 2px;
+        font-size: 2rem;
+    }
+
+        .social .img:hover {
+            transition: 0.2s all linear;
         }
 
-    footer div p {
-        color: white;
-        padding: 25px;
-    }
+.menu-trocadetela-icon button {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-trocadetela ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.menu-trocadetela .nav item {
+    display: block;
+    padding-top: 1.2rem;
+}
+
+.open {
+    display: block;
+}
+
+footer div img {
+    width: 2em;
+    margin: 2em;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#loucura {
+    width: 1.5em;
+}
+
+#loucura2 {
+    width: 5em;
+}
+
+#dh12 {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+}

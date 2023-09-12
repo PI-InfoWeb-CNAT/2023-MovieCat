@@ -2,146 +2,330 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
-    <link href="@Url.Content("~/styles/style.css")" rel="stylesheet"/>
+    <title>MovieCat Menu Principal</title>
+    <link rel="stylesheet" href="@Url.Content("~/styles/style.css")"/>
+    
+  <!-- link carrosel -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </head>
 <body>
     <header>
 
-        <div id="Header_Organizador">
-            <div>
-                <a href='@Url.Action("MapaLinks", "Temporario")'><p><img src="~/img/Logo.png"></p></a>
-            </div>
-
-            <div>
-                <a href="#.html"><p><img src="~/img/Sol.png"></p></a>
-                <a href='@Url.Action("Login", "Login")'><p><img src="~/img/Perfil.png"></p></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 246 -->
-    <section>
-        <div id="FCC">
-            <ol>
-                <a href='@Url.Action("Filmes", "Filmes")'>
-                <li><p>Filmes</p></li></a>
-                <a href="funcionario01.html">
-                <li><p>Calendario</p></li></a>
-                <a href="pacotes.html">
-                <li><p>Cinemas</p></li></a>
-                <a href='@Url.Action("MapaLinks", "Temporario")'>
-                <li><p>Mapa de links</p></li></a>
-            </ol>
-        </div>
-
-        <a href="#.html">
-            <div id="eventual_carrocel">
-            </div>
+        <a href="#" class="logo">
+            <img src="~/img/logo.png">
         </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href='@Url.Action("Index", "Home")' class="home-active">Home</a></li>
+            <li><a href="#filmes">Filmes</a></li>
+            <li><a href="#emcartaz">Em Cartaz</a></li>
+            <li><a href="#sobrenos">Sobre Nós</a></li>
+            <!-- MENU TEMPORÁRIO -->
+            <li id="MenuTemp">
+                <a id="LinkMenuTemp" href="#sobrenos">Dashboards</a>
+                <ol>
+                    <li><a href="DashboardADM.html">ADM</a></li>
+                    <li><a href="DashboardFuncionario.html">Funcionário</a></li>
+                    <li><a href="#">Cliente</a></li>
+                </ol>
+            </li>
+        </ul>
 
-        <div id="cards_filmes">
-            <h1>Em Breve</h1>
-            <ol>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/Campeoes.png">
-                    <div>
-                        <img src="~/img/ci14.png" alt="classificação indicativa">
-                        <img src="~/img/dbox.png" alt="dbox">
-                    </div>
-                </li>
-                </a>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/Elemental.png">
-                    <div>
-                        <img src="~/img/ciL.png" alt="classificação indicativa">
-                        <img src="~/img/dbox.png" alt="dbox">
-                    </div>
-                </li>
-                </a>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/John_Wick.png">
-                    <div>
-                        <img src="~/img/ci14.png" alt="classificação indicativa">
-                        <img src="~/img/dbox.png" alt="dbox">
-                    </div>
-                </li>
-                </a>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/O_nascimento_do_mal.png">
-                    <div>
-                        <img src="~/img/ci12.png" alt="classificação indicativa">
-                        <img src="~/img/dbox.png" alt="dbox">
-                    </div>
-                </li>
-                </a>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/Que_horas_eu_te_pego.png">
-                    <div>
-                        <img src="~/img/ciL.png" alt="classificação indicativa">
-                    </div>
-                </li>
-                </a>
-                <a href="listafuncionarios.html">
-                <li>
-                    <img src="~/img/vizinho.png">
-                    <div>
-                        <img src="~/img/ciL.png" alt="classificação indicativa">
-                    </div>
-                </li>
-                </a>
+        <a href="#" class="btn">Entrar</a>
 
-            </ol>
+
+    </header>
+    <!-- home -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide conatiner">
+                <img src="~/img/home1.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="swiper-slide conatiner">
+                <img src="~/img/home2.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="swiper-slide conatiner">
+                <img src="~/img/image 364.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+
         </div>
 
-        <div id="limitador">
-            <!--como isso ta funcionando eu n sei 00:10-->
-            <div></div>
-            <a href="#.html"><div><h1 id="ver_mais">VER TODOS</h1></div></a>
-            <div></div>
-        </div>
-
-        <p id="p_block">Em Cartaz</p>
-
-        <div id="container">
-            <div><a href="#.html"><img src="~/img/Bacurau.png"></a></div>
-            <div><a href="#.html"><img src="~/img/John_Wick.png"></a></div>
-            <div><a href="#.html"><img src="~/img/O_nascimento_do_mal.png"></a></div>
-            <div><a href="#.html"><img src="~/img/Que_horas_eu_te_pego.png"></a></div>
-        </div>
-
-        <div id="limitador">
-            <!--como isso ta funcionando eu n sei 00:10-->
-            <div></div>
-            <a href="#.html"><div><h1 id="ver_mais">VER TODOS</h1></div></a>
-            <div></div>
-        </div>
-
-        <p id="p_block">APROVEITE</p>
-        <div id="block">
-            <div><a href="#.html"><img src="~/img/block01.png"></a></div>
-            <div><a href="#.html"><img src="~/img/block02.png"></a></div>
-        </div>
-
-
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
     </section>
+    <!-- em cartaz -->
+    <section class="emcartaz" id="emcartaz">
+        <h2 class="heading">Em Cartaz</h2>
+        <div id="container">
+
+
+            <div id="dv"><a href="#.html"><img src="~/img/beattlejuice.png"></a><div id="dvo"> <h1>Nome</h1> <img src="img/12.png"></div><h2>120 min | Action </h2></div>
+
+            <!-- <h3>Beattlejuice</h3>
+            <span>120 min | Ação</span> -->
+            <div id="dv"><a href="#.html"><img src="~/img/bacural.png"></a><div id="dvo"> <h1>Nome</h1> <img src="img/12.png"></div><h2>120 min | Action </h2></div>
+
+
+            <div id="dv"><a href="#.html"><img src="~/img/thelastofus.png"></a> <div id="dvo"> <h1>Nome</h1> <img src="img/12.png"></div><h2>120 min | Action </h2></div>
+
+            <div id="dv"><a href="#.html"><img src="~/img/homemaranha.png"></a><div id="dvo"> <h1>Nome</h1> <img src="img/12.png"></div><h2>120 min | Action </h2></div>
+
+        </div>
+        <div id="limitador">
+            <!--como isso ta funcionando eu n sei 00:10-->
+            <div><a href="#.html"><h1 id="ver_mais">VER TODOS</h1></a></div>
+        </div>
+    </section>
+
+    <section class="filmes" id="filmes">
+        <h2 class="heading">No Catálogo</h2>
+        <!-- movies conatiner -->
+        <div class="movies-container">
+            <!-- caixa 1 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 2 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 3 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 4 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 5 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 6 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 7 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 8 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 9 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 10 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="embreve" id="embreve">
+        <h2 class="heading">Em Breve</h2>
+        <!-- em breve container -->
+        <div class="movies-container">
+            <!-- caixa 1 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 2 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 3 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 4 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+            <!-- caixa 5 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="~/img/image 4.png">
+                </div>
+                <div id="dh12">
+                    <div>
+                        <h3>Beattlejuice</h3>
+                        <span>120 min | Ação</span>
+                    </div>
+                    <div><img src="~/img/12.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <footer>
         <div>
-            <p>Copyright © 2023 AgendMovies</p>
+            <img id="loucura2" src="img/logomoviecat.png">
         </div>
-
         <div>
-            <ol>
-                <a href="#.html"><li><img src="~/img/insta.png"></li></a>
-                <a href="#.html"><li><img src="~/img/face.png"></li></a>
-                <a href="#.html"><li><img src="~/img/twitter.png"></li></a>
-            </ol>
+            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
+            <img src="~/img/figma.png">
+            <img src="~/img/github.png">
         </div>
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- link customizar carrosel -->
+    <script src="script.js"></script>
 </body>
 </html>
