@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>MovieCat Menu Principal</title>
-    <link rel="stylesheet" href="@Url.Content("~/styles/style.css")"/>
-    
-  <!-- link carrosel -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
+
+    <!-- link carrosel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
 </head>
 <body>
@@ -107,6 +108,21 @@
         <!-- movies conatiner -->
         <div class="movies-container">
             <!-- caixa 1 -->
+            @foreach (var Filme in Model)
+            {
+                <div class="box">
+                    <div class="box-img">
+                        <img src="~/img/image 4.png">
+                    </div>
+                    <div id="dh12">
+                        <div>
+                            <h3>@Filme.Nome</h3>
+                            <span>120 min | Ação</span>
+                        </div>
+                        <div><img src="~/img/12.png"></div>
+                    </div>
+                </div>
+            }
             <div class="box">
                 <div class="box-img">
                     <img src="~/img/image 4.png">
