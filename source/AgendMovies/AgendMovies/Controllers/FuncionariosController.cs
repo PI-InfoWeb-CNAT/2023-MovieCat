@@ -44,17 +44,19 @@ namespace AgendMovies.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Cadastrar(Funcionario f, HttpPostedFileBase arquivo)
         {
-            if (arquivo != null)
-            {
-                f.TipoDaFoto = arquivo.ContentType;
-                f.ConteudoDaFoto = SetLogoTipo(arquivo);
-
-            }
-            context.Funcionarios.Add(f);
-            context.SaveChanges();
-            return RedirectToAction("Visualizar");
+            
+                if (arquivo != null)
+                {
+                    f.TipoDaFoto = arquivo.ContentType;
+                    f.ConteudoDaFoto = SetLogoTipo(arquivo);
+                }
+                context.Funcionarios.Add(f);
+                context.SaveChanges();
+                return RedirectToAction("Visualizar");
+            
         }
         [HttpPost]
         public ActionResult Editar(Funcionario f, HttpPostedFileBase arquivo)

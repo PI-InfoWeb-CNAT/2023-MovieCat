@@ -8,12 +8,12 @@ namespace AgendMovies.Modelos
 {
     public class Funcionario
     {
+       
+        public int FuncionarioId { get; set; }
         [Required(ErrorMessage = "Você já conheceu alguém sem nome?")]
         public string nome { get; set; }
 
-        public int FuncionarioId { get; set; }
-
-        [StringLength(8, ErrorMessage = "Insira uma data de nascimento completa e válida, por favor.", MinimumLength = 8)]
+        [StringLength(10, ErrorMessage = "Insira uma data de nascimento completa e válida, por favor.", MinimumLength = 10)]
         [Required(ErrorMessage = "Você já conheceu alguém que não nasceu?")]
         public string data { get; set; }
 
@@ -25,10 +25,10 @@ namespace AgendMovies.Modelos
         public string email { get; set; }
 
         [StringLength(30, ErrorMessage = "Sua senha deve ter no mínimo 5 caracteres!", MinimumLength = 5)]
-        [Required(ErrorMessage = "Por favor, escreva a sinopse do filme.")]
+        [Required(ErrorMessage = "Por favor, escreva a senha.")]
         public string senha { get; set; }
 
-        [StringLength(11, ErrorMessage = "Insira o CPF completo, incluindo os dois últimos dígitos verificadores!", MinimumLength = 1)]
+        [StringLength(11, ErrorMessage = "Insira o CPF completo, incluindo os dois últimos dígitos verificadores!", MinimumLength = 2)]
         [Required(ErrorMessage = "Por favor, insira o CPF.")]
         public string cpf { get; set; }
         public byte[] ConteudoDaFoto { get; set; }

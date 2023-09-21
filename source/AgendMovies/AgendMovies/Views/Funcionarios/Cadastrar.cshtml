@@ -9,14 +9,25 @@
     <meta name="viewport" content="width=device-height, initial-scale=1.0">
     <title>cadastro de funcionario</title>
     <link href="@Url.Content("~/styles/Cadastro_de_Funcionario.css")" rel="stylesheet" />
+
+    @* Scriprs do barra automatico *@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    @* Scriprs do barra automatico *@
     <style>
-        input[type="file"]{
+        input[type="file"] {
             display: none;
         }
-        ion-icon:hover{
+
+        ion-icon:hover {
             cursor: pointer;
         }
+
+        .wrapper form > div p span {
+            color: #ff5454;
+        }
     </style>
+    
 </head>
 <body>
 
@@ -28,10 +39,10 @@
                 @Html.AntiForgeryToken()
 
                 @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
-       
+
                 <h1>Cadastro de Funcionários</h1>
                 @Html.HiddenFor(model => model.FuncionarioId)
-               
+
                 <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
                 <script>
                     function EditarImagem() {
@@ -53,34 +64,57 @@
                             }
                         });
                         InputArquivo.click();
-        
+
 
                     }
                 </script>
-                <div><p>Nome Completo*</p>@Html.TextBoxFor(model => model.nome, new { type = "text", required = "required", size = "40" }) </div>
-                <div><p>CPF*</p>@Html.TextBoxFor(model => model.cpf, new { type = "text", required = "required", size = "40" }) </div>
-                <div><p>Data de Nascimento*</p>@Html.TextBoxFor(model => model.data, new { type = "text", required = "required", size = "40" }) </div>
-                <div><p>Telefone*</p>@Html.TextBoxFor(model => model.telefone, new { type = "text", required = "required", size = "40" }) </div>
-                <div><p>Email*</p> @Html.TextBoxFor(model => model.email, new { type = "text", required = "required", size = "40" }) </div>
+              
+                <div><p>Nome Completo*   @Html.ValidationMessageFor(model => model.nome, "")</p>@Html.EditorFor(model => model.nome, new { type = "text", required = "required", size = "40" }) </div>
+              
+                <div><p>CPF*   @Html.ValidationMessageFor(model => model.cpf, "")</p>@Html.EditorFor(model => model.cpf, new { type = "text", required = "required", size = "40" }) </div>
+              
+                <div><p>Data de Nascimento*   @Html.ValidationMessageFor(model => model.data, "")</p>@Html.EditorFor(model => model.data, new { type = "text", required = "required", size = "40" }) </div>
+               
+                <div><p>Telefone*  @Html.ValidationMessageFor(model => model.telefone, "")</p>@Html.EditorFor(model => model.telefone, new { type = "text", required = "required", size = "40" }) </div>
+               
+                <div>
+                    <p>Email*  @Html.ValidationMessageFor(model => model.email, "")</p> @Html.EditorFor(model => model.email, new { type = "email", required = "required", size = "40" })
+
+                </div>
+
+
                 <div>
                     <p>Senha*</p>
                     <input class="p" type="text" name="Nome" size="40" />
 
                 </div>
                 <div>
-                    <p>Confirmar Senha*</p>
+                    <p>Confirmar Senha*  @Html.ValidationMessageFor(model => model.senha, "")</p>
                     @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" })
                 </div>
-
+              
                 <div class="t">
                     <button type="submit" class="btn">Criar</button>
                 </div>
 
+
             }
         </div>
-        <script src="script.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+        @* Scripts da validação *@
+        <script src="@Url.Content("~/scripts/jquery-3.4.1.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.js")">
+        </script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")">
+        </script>
+        @* Scripts da validação *@
+
+        <script>
+            $(document).ready(function () {
+                $('#data').mask('00/00/0000');
+            });
+        </script>
     </main>
 </body>
 </html>
