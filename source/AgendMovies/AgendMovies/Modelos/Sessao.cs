@@ -18,5 +18,6 @@ namespace AgendMovies.Modelos
         public string noiteFim { get; set; }
         public bool dub { get; set; }
         public bool leg { get; set; }
+       
     }
 }
