@@ -11,7 +11,7 @@
 
 ### 1. Resumo 
 
-Nesse caso o adm pode cadastrar varias sessões de um filme em horarios diferentes no sistema.
+Nesse caso o adm pode cadastrar varias sessões de um filme sendo DUB ou LEG, em horarios diferentes no sistema.
 
 ### 2. Atores 
 
