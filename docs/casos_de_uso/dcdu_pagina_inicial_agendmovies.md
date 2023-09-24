@@ -1,6 +1,6 @@
-# Projeto AgendMovies
+# Projeto MovieCat
 
-## Especificação do caso de uso - Página Inicial AgendMovies
+## Especificação do caso de uso - Página Inicial MovieCat
 
 ### Histórico da Revisão 
 
@@ -10,8 +10,7 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o usuário acessa o endereço do AgendMovies e o sistema exibe a LandPage com o menu de acesso para as demais páginas, a opção de login, uma exibição de filmes a serem exibidos, os filmes em cartaz e as funcionalidades que o cinema dispõe (cadeiras xd e salas d-box) 
-
+Nesse caso de uso o usuário acessa o endereço do MovieCat e o sistema exibe a LandPage com o menu de acesso para as demais páginas(Filmes, em cartaz, sobre nos, dashbords(com os tipos de acesso, cliente, funcionario e adm).), a opção de login, uma exibição de filmes a serem exibidos, os filmes em cartaz, catalogo e os em breve.
 ### 2. Atores 
 
 Visitantes, clientes, funcionários e administradores.
@@ -30,19 +29,17 @@ _
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O usuário acessa a página do AgendMovies.| 2. O sistema exibe o HomePage AgendMovies, permitindo ao usuário visualizar o menu de acesso para as demais páginas |
+| 1. O usuário acessa a página do MovieCat.| 2. O sistema exibe o HomePage MovieCat, permitindo ao usuário visualizar o menu de acesso para as demais páginas |
 | 3. O usuário seleciona o ícone de perfil na página | 4. O sistema redireciona para página de login //e/ou de cadastro |
 | 5. O usuário faz o login ou se cadastra no sistema| 6. O sistema redireciona novamente para a HomePage, agora com a possibilidade de fazer pedidos no site |
-| 7. O usuário clica no ícone de tela com a opção “mudar tema”  | 8. O sistema altera o tema do site para o tema oposto ao que está naquele momento.|
-| 9. O usuário clica em “filmes”  | 10. O sistema exibe a lista de filmes disponíveis separados por tópicos (Nesta semana, em promoção, em breve,D-Box e XD ) .|
-| 11. O usuário clica em determinado filme. | 12. O sistema o redireciona para uma página interna onde ele pode visualizar detalhes do filme, os horários de exibição dele e também fazer o pedido de um pacote. |
-| 13. O usuário volta a página home e seleciona calendário. | 14. O sistema exibe uma lista de filmes que estarão disponíveis em breve exibidos por ano e mês. |
-| 15. O usuário volta a página home e seleciona cinema. | 16. O sistema  exibe a página de cinema mais próximos onde pode ser filtrado por localização . |
-| 17. O usuário filtra por determinada localização. | 18. O sistema mostra o cinema mais próximo da localização filtrada. |
-| 19. O usuário volta a pagina home e seleciona “compra ingresso” do cartaz. | 20. O sistema redireciona para a pagina de compra de ingresso daquele filme do cartaz.|
-| 21. O usuario volta a pagina home, e seleciona “ver mais” em " Em breve”. | 22. O Sistema redireciona para o calendário. |
-| 23. O usuário volta para homePage e seleciona “ver mais” em “em cartaz” | 24. O sistema redireciona para a pagina de filmes.|
-
+| 7. O usuário clica em "Em cartaz". | 8. O sistema exibe uma lista de filmes que estão em cartaz no cinema. |
+| 9. O usuário clica em “filmes”  | 10. O sistema exibe a redereciona para "catalogo" onde exibe uma lista de filmes disponíveis .|
+| 11. O usuário clica em determinado filme. | 12. O sistema o redireciona para uma página interna onde ele pode visualizar detalhes do filme(Sinopse, diretor, genero, duração, destribuidora elenco e classificação), os horários(dia da semana e horario) de exibição e tipo da sessão(LEG ou DUB) e também fazer o pedido de um pacote. |
+| 13. O usuário volta para homePage e seleciona “ver mais” em “em cartaz” | 14. O sistema redireciona para a pagina de filmes.|
+| 15. O usuário Clica em "sobre nos". | 16. O sistema  exibe uma página com as considerações dos desenvolvedores do site. |
+| 17. O usuário arrasta o mause sobre "dashbord". | 18. O sistema  exibe opções de acesso de diferentes usuarios, (ADM, funcionario e cliente) onde pode ser derecionado para diferentes tipos de acesso. |
+| 19.O usuário Clica em "ver pacotes". | 20. O Sistema redireciona para tela de pacote do filme selecionado onde exide as seguintes informaçoes (Sinopse, diretor, genero, duração, destribuidora elenco e classificação) e os horarios (dia da semana e horario) de exibição e tipo de sessão (LEG ou DUB). |
+| 21. *******O usuário clica no ícone de tela com a opção “mudar tema”  | 22. O sistema altera o tema do site para o tema oposto ao que está naquele momento.|
 #### 5.2. Fluxos de Exceção
 
 | Exceção | Sistema |
@@ -50,5 +47,5 @@ _
 | 1. Compra de ingresso sem cadastro| Se o funcionário tentar comprar um pacote de ingressos sem possuir cadastro prévio, o sistema deve apresentar a mensagem de “Para realizar compras no site necessita de cadastro prévio ou login deseja entrar ou fazer cadastro? *link para tela de login/cadastro*”. |
 
 ### 6. Protótipos de Interface
-https://www.figma.com/file/kU2Ogqn2V2mUKLoDF249vz/AgendMovies?type=design&node-id=0%3A1&t=ppw9288UsgGnDo1W-1
+https://www.figma.com/file/Tf9R49Kc4vXWyyZdIGJ6oS/MovieCat?type=design&node-id=0-1&mode=design&t=jWPAjvdSx0PR4b4h-0
 
