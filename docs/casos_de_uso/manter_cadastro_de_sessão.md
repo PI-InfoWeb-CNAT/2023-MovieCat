@@ -11,7 +11,7 @@
 
 ### 1. Resumo 
 
-Nesse caso o adm pode cadastrar novas sessões no sistema.
+Nesse caso o adm pode cadastrar varias sessões de um filme no sistema.
 
 ### 2. Atores 
 
