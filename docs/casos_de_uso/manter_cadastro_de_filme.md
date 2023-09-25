@@ -32,8 +32,7 @@ O sistema mostra as condições e espaço para adicionar um novo filme.
 | Ator   | Sistema |
 |:-------|:--------|
 | 1. O adm clica em “Cadastra filme"| 2. O sistema redireciona para a parte de adicionar um novo filme onde é exigido; nome do filme, genero, categoria, classificação, duração, sinopse e poster.|
-| 3. O adm adiciona o nome do filme, genero, categoria, classificação, duração, sinopse e poster no sistema.| 4. O sistema atualiza as informações da lista de filmes mostrando agora um novo filme.|
-| 5. O adm visualiza o novo filme na lista de filmes. |
+| 3. O adm adiciona o nome do filme, genero, categoria, classificação, duração, sinopse e poster no sistema.| 4. O sistema atualiza as informações da lista de filmes.|
 
 #### 5.2. Fluxos de Exceção
 
