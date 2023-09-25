@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+
+#borda{
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+}
+
+section h1{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  padding: 1em;
+    
+  
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
+  color: white;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper a{
+  text-decoration: none;
+  color: white;
+}
+
+.botao{
+  padding: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  background-color: #8c8c8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 200px;
+  height: 70px;
+  font-size: 30px;
+}
+
+.botao:hover{
+  background-color: #a6a6a6;
+}
+
+#endireitar{
+      align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    width: 40em;
+    height: 25em;
+}
+
+section #endireitar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#endireitar_o_endireitar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#acrescentar div img{
+  width: 40px;
+    background-color: green;
+    border-radius: 10px;
+}
+
+#acrescentar div img:hover{
+  background-color: #55c355;
+}
+
+#acrescentar input{
+  width: 246px;
+  height: 60px;
+}
+
+#acrescentar{
+  display: flex;
+    align-items: center;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    gap: 20em;
+    justify-content: center;
+}
+
+#acrescentar_safado{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/**/
+
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  width: 100%;
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+}

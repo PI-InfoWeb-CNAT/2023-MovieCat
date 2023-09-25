@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  width: 100%;
+  background-color: #ffffff;
+}
+
+#Header_Organizador {
+  display: flex;
+  justify-content: space-between;
+}
+
+#md{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding-right: 3em;
+  }
+
+#hli{
+  display: flex;
+  gap: 7em;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+#hli li p{
+  font-size: 25px;
+}
+
+#per{
+  font-size: 25px;
+}
+
+
+footer{
+  
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 1em 10px;
+}
+
+footer ol{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+footer ol li{
+  margin-left: 1em;
+}
+
+footer p{
+  margin-left: 1.5em;
+  color: white;
+}
+
+
+#sec01{
+    background-color: #C62128;
+    color: white;
+}
+}
+
+#projetor{
+  width: 100%;
+}
+
+#sec02{
+  color: white;
+  background-color: black;
+}
+
+#ccc{
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#hum{
+  font-size: 32px;
+  color: #282829;
+}
+
+#humm{
+  position: relative;
+    bottom: -29px;
+  font-size: 32px;
+  color: #282829;
+}
+
+#hummm{
+  font-size: 32px;
+  color: #282829;
+  position: relative;
+    bottom: -5px;
+}
+
+#humli{
+    width: 98%;
+    height: 32em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    margin: 1em;
+  text-align: center;
+}
+
+#humli2{
+  width: 75%;
+    height: 32em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    margin: 1em;
+  text-align: center;
+}
+#humli2 img{
+    width: 100%;
+}
+
+#humli img{
+  width: 280px;
+}
+
+#listra{
+    display: flex;
+    height: 2em;
+    background-color: #000000;
+    align-items: center;
+    justify-content: center;
+}
+
+#listrav{
+  background-color: #D91010;
+    height: 1px;
+    width: 90%;
+}
+
+  footer div img{
+  width: 2em;
+  margin: 2em;
+
+}
+
+footer div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  
+}
+
+#loucura{
+  width: 1.5em;
+  
+}
+
+#loucura2{
+  width: 5em;
+}

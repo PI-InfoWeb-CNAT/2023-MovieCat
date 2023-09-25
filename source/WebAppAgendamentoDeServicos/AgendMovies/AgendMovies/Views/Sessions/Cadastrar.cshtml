@@ -1,0 +1,161 @@
+﻿@model AgendMovies.Modelos.Sessao
+
+@{
+    Layout = null;
+    var nulo = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "-", Text = "---------" }
+    };
+    var fs = ViewBag.Filmes as SelectList;
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MovieCat</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/estilos/EditarSessao.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/estilos/Principal.css")" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <style>
+        .DiaDaSemana{
+            display: flex;
+            justify-content: space-around;
+            align-content:center;
+            flex-wrap:wrap;
+        }
+        option{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="@Url.Action("Home", "Administradores")">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pacotes</a></li>
+            <li><a href="#">Agenda</a></li>
+        </ol>
+        <div>
+            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
+            <p>Perfil</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section>
+
+            <h1>Cadastro de sessões</h1>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                
+
+                <label for="Filmes">
+                    <p>Filme:</p>
+                    @if (ViewBag.Filmes != null && fs.Count() != 0)
+                    {
+                        @Html.DropDownListFor(model => model.NomeFilme, ViewBag.Filmes as SelectList, new { required = "required", id = "Filmes" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => model.NomeFilme, nulo, new { required = "required", id = "Filmes" })
+                    }
+                </label>
+
+                <div id="seg">
+                    <div>
+                        <p>Dia:</p>  @Html.TextBoxFor(model => model.data, new { type = "date", required = "required" })
+                    </div>
+                    <div>
+                        <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10" })
+                    </div>
+                </div>
+
+                <div class="horario">
+                    <div>
+                        <p>Horário de início:</p>
+                        @Html.TextBoxFor(model => model.horaInicio, new { type = "time", required = "required" })
+                    </div>
+                    <div>
+                        <p>Horário de fim:</p>
+                        @Html.TextBoxFor(model => model.horaFim, new { type = "time", required = "required" })
+                    </div>
+                </div>
+
+                @Html.LabelFor(model => model.nacional)
+
+                @Html.EditorFor(model => model.nacional, new { @class = "control-label col-md-2" })
+
+                @Html.LabelFor(model => model.dub)
+
+                @Html.EditorFor(model => model.dub, new { @class = "control-label col-md-2" })
+
+
+                @Html.LabelFor(model => model.leg)
+
+                @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })
+
+   
+            <label for="DiasS">
+                <p>Dia da semana:</p>
+               @{ 
+                 var Dias = new List<SelectListItem>
+                {
+                    new SelectListItem { Value = "seg", Text = "Segunda" },
+                    new SelectListItem { Value = "ter", Text = "Terça" },
+                    new SelectListItem { Value = "qua", Text = "Quarta" },
+                    new SelectListItem { Value = "qui", Text = "Quinta" },
+                    new SelectListItem { Value = "sex", Text = "Sexta" },
+                    new SelectListItem { Value = "sab", Text = "Sabado" },
+                    new SelectListItem { Value = "dom", Text = "Domingo" }
+                };
+               }
+               
+                    @Html.DropDownListFor(model => model.IdFilme, Dias, new { required = "required", id = "DiasS" })
+                
+            </label>
+
+     
+
+                <div id="b">
+                    <div>
+                        <input type="submit" id="botao" value="CADASTRAR">
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+    <footer>
+        <img src="~/img/logoFooter.png" />
+        <ol>
+            <li><a href=#><img src="~/img/github.png" /></a></li>
+            <li><a href=#><img src="~/img/facebook.png" /></a></li>
+            <li><a href=#><img src="~/img/twitter.png" /></a></li>
+        </ol>
+    </footer>
+</body>
+</html>

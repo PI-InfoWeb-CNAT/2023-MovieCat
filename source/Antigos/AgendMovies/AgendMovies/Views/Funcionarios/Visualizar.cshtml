@@ -1,0 +1,86 @@
+﻿@model IQueryable<AgendMovies.Modelos.Funcionario>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/listafuncionarios.css")" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+        <div id="Header_Organizador">
+            <div>
+                <a href='@Url.Action("AdmPage", "Adm")'><p><img src="~/img/Logo.png"></p></a>
+            </div>
+
+            <div>
+                <a href="#.html"><p><img src="~/img/logout_branco.png"></p></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1>Lista de Funcionários</h1>
+        <p>Fundionários Bilheteria</p>
+        <div id="endireitar_o_endireitar">
+            <div id="endireitar">
+                <div></div>
+                <div class="wrapper">
+                    @foreach (var funcionario in Model)
+                    {
+                    <div class="botao">
+                        @if (funcionario.ConteudoDaFoto == null)
+                        {
+                            <img src="~/img/iconeFuncionario.png">
+                        }
+                        else
+                        {
+                            <img src="@Url.Action("GetLogoTipo", "Funcionarios", new { id = funcionario.FuncionarioId } )" style="width: 70px; height:71px; border-radius: 100%;">
+                        }
+
+                        <p>@Html.DisplayFor(modelItem => funcionario.nome)</p>
+                        <div class="botao_dois">
+                            <a href='@Url.Action("Excluir", "Funcionarios", new { id = funcionario.FuncionarioId } )'>Excluir</a>
+
+
+                        </div>
+                        <div class="botao_dois">
+
+                            @Html.ActionLink("Detalhes", "Detalhes", new { id = funcionario.FuncionarioId })
+                        </div>
+
+
+                    </div>
+                    }
+
+              
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <a href="@Url.Action("Cadastrar", "Funcionarios")"><div class="add"><p>Adicionar funcionario</p></div></a>
+    </section>
+
+    <footer>
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+
+        <div>
+            <ol>
+                <a href="#.html">
+                    <li><img src="~/img/insta.png"></li>
+                </a>
+                <a href="#.html">
+                    <li><img src="~/img/face.png"></li>
+                </a>
+                <a href="#.html">
+                    <li><img src="~/img/twitter.png"></li>
+                </a>
+            </ol>
+        </div>
+    </footer>
+</body>
+</html>

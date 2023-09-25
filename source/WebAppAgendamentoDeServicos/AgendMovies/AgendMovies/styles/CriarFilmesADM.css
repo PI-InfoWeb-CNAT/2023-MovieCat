@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Marvel', sans-serif;
+}
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  min-height: 100vh;
+  align-items: center;
+  flex-wrap:wrap;
+}
+header, footer{
+  width: 100%;
+  background-color: #3C3C3C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 1em 10px;
+}
+header{
+  margin-bottom: 2em;
+}
+footer{
+    margin-top: 2em;
+}
+footer ol{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+}
+footer ol li{
+  margin-left: 1em;
+}
+footer p{
+  margin-left: 1.5em;
+  color: white;
+}
+
+
+
+
+
+main{
+  width: 100%;
+  box-sizing: border-box;
+}
+section{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+h2{
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 300%;
+}
+main figure{
+  margin-right: 2.5em;
+  cursor: pointer;
+}
+main figure img{
+  width: 425px;
+  height: 607px;
+  border: 1px solid #E3E3E3;
+}
+form > div{
+  display: flex;
+  align-items: top;
+  
+}
+label{
+  color: white;
+  width: 127px !important;
+  text-align: right;
+  margin-right: 10px;
+}
+input[type="text"], textarea, select{
+  border: 1px solid #C00C0C;
+  background-color: transparent;
+  color: white;
+  outline: none;
+
+}
+select{
+  padding: 10px 5px;
+  width: 167px;
+    margin-bottom: 15px;
+}
+#Indicativa{
+  width: 71px;
+   margin-bottom: 25px;
+}
+option{
+  background-color: black !important;
+}
+
+textarea{
+  resize:none;
+  width: 400px;
+  height: 188px;
+  padding: 10px 5px;
+
+}
+input[type="text"]{
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  padding-bottom: 5px;
+  max-width: 327px;
+  width: 327px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"]{
+  width: min-content;
+  margin: 0 auto;
+   border: none;
+  padding: 1em 3em;
+  font-size: 150%;
+  margin-top: 1em;
+}
+
+.Adicionar{
+   background-color: #00900E;
+  border: 2px solid #B2B2B2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 0.7em;
+}
+.Adicionar:hover{
+  background-color: #04b916;
+}
+.Adicionar:hover{
+  background-color: #04b916;
+}
+

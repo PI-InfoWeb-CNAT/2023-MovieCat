@@ -1,0 +1,119 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Sessao>
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add_Exc_sessão</title>
+    <link href="@Url.Content("~/styles/adicionar_excluir_sessao.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/img/icon.svg" />
+</head>
+<body>
+
+    <header>
+        <div id="Header_Organizador">
+            <div>
+                <a href="index.html"><p><img src="~/img/Logo.png"></p></a>
+            </div>
+            <div>
+                <a href="login.html"><p><img src="~/img/logout_branco.png"></p></a>
+            </div>
+        </div>
+    </header>
+    <div><h1 id="LdS">Lista de Filmes</h1></div>
+
+    <div id="ordem">
+        <section>
+            @foreach (var item in Model)
+            {
+                <div id="vertical">
+                    <div id="dia_da_semana">
+                        <p id="D"><a href="@Url.Action("Selecionar", "Sessoes", new { id = item.SessaoId })" style="color: red; text-decoration: none;">@item.diaSemana</a></p>
+                        @item.data
+                    </div>
+
+                    <div id="Manha">
+                        <p>Manhã</p>
+                        <ol>
+                            <li>@item.manhaInicio</li>
+                            <li>@item.manhaFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="Tarde">
+                        <p>Tarde</p>
+                        <ol>
+                            <li>@item.tardeInicio</li>
+                            <li>@item.tardeFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="Noite">
+                        <p>Noite</p>
+                        <ol>
+                            <li>@item.noiteInicio</li>
+                            <li>@item.noiteFim</li>
+                        </ol>
+                    </div>
+
+                    <div id="LegDub">
+                        <ol>
+                            @if (item.leg == true)
+                            {
+                                <li><p id="p">Leg</p></li>
+                            }
+                            @if (item.dub == true)
+                            {
+                                <li><p id="p">Dub</p></li>
+                            }
+
+
+                        </ol>
+                    </div>
+
+                    <div id="b">
+                        <button>
+                            <a href="@Url.Action("Editar", "Sessoes", new { id = item.SessaoId })" style="width: 100%; height: 100%; color: white; text-decoration: none;">Editar </a>
+                        </button>
+                    </div>
+                </div>
+
+
+            }
+
+            <div  id="b" style="margin: 0 auto; margin-bottom: 1em;">
+                <button >
+                    <a  href="@Url.Action("Limpar", "Sessoes")" style="width: 100%; height: 100%; color: White; text-decoration: none; ">Limpar </a>
+                </button>
+            </div>
+    </div>
+    </section>
+    </div>
+
+    <footer>
+
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+        <div>
+            <ol>
+                <a href="#.html">
+                <li><img src="img/insta.png"></li></a>
+                <a href="#.html">
+                <li><img src="img/face.png"></li></a>
+                <a href="#.html">
+                <li><img src="img/X.png"></li></a>
+            </ol>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>

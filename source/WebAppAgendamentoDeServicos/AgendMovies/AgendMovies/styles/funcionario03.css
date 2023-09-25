@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+#caixa{
+  display: flex;
+  justify-content: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+}
+
+h1{
+  color: white;
+}
+
+section img{
+  width: 60px;
+  padding: 10px;
+}
+
+#caixa img{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+#nome_Ftres{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/**/
+#caixa_menor{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+#Sala_do_filme{
+  color: white;
+}
+
+
+/**/
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+}

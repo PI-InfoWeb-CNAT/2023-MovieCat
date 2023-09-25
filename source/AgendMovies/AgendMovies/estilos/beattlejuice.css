@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style-type: none;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  color: black;
+}
+
+h2{
+  font-size: 1.5em;
+  color: white;
+}
+/*header ajeitado começa aqui  */
+header{
+  position: relative;
+  background-color: white;
+}
+.navbar {
+  align-items: center;
+}
+.navbar a{
+  color: black;
+}
+#md{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+#per{
+  font-size: 1rem;
+}
+/*termina aqui (é bom colocar num codigo geral mas por enquanto copia e cola, mudei html tbm)  */
+
+/* migalha de pão  */
+#migalha{
+  display: flex;
+  column-gap: 1em;
+  color: white;
+}
+#migalha li a{
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+}
+
+#hli{
+  display: flex;
+  gap: 7em;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+#hli li p{
+  font-size: 25px;
+}
+main>div>div{
+ max-width: 968px;
+  margin: 0 auto;
+}
+main>div{
+   background: linear-gradient(black, white);
+}
+
+
+#info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info_do_filme{
+  padding-right: 3em;
+}
+
+#h1_do_nome_do_filme{
+  color: white;
+  padding: 2em 0;
+  font-size: 2em;
+}
+
+#disp_para_a_sinopse_e_img{
+  display:flex;
+  color: white;
+}
+.h1li{
+  color: white;
+  font-size: 1.3em;
+}
+
+#ol1{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1em;
+}
+#ol1 li{
+  padding: 1em 0;
+}
+#ol1 img{
+  width:30px;
+}
+#borda{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 2em;
+}
+#info_nome{
+  color: black;
+}
+div.segunda{
+  padding: 7em 0;
+  background-image: none;
+  background-color: black;
+  color: white;
+}
+div.segunda a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+div.segunda section{
+  padding: 0;
+}
+div.sessoes{
+  visibility: hidden;
+  position: absolute;
+  margin: 0;
+  padding: 2em 1em;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+div.sessoes p{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+div.sessoes p img{
+  margin-left: 10px;
+}
+#dias{
+  display: flex;
+  column-gap: 2em;
+  justify-content: center;
+  padding: 2em 0 0 0;
+}
+#dias>div{
+    padding: 1em;
+}
+#primeira_section{
+  padding: 72px 0;
+}
+#infodia1{
+  margin: 0;
+  padding: 2em 1em;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+#infodia1 p {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+#infodia1 img {
+    margin-left: 10px;
+}
+    #dia1{
+  border: 2px solid white;
+}

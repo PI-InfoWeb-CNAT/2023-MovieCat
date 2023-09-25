@@ -1,0 +1,136 @@
+﻿@model AgendMovies.Modelos.Filme
+
+@{
+    Layout = null;
+}
+
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <title>Agend Movies</title>
+    <link rel="stylesheet" href="~/styles/CriarFilmesADM.css" />
+    <link rel="icon" href="~/img/icon.svg" />
+    <style>
+        .Esconde {
+            display: none;
+        }
+    </style>
+    <script>
+function AtualizarImg(doc, input){
+        var Img = document.getElementById(doc);
+        var Inp = document.getElementById(input);
+
+        Inp.addEventListener("change", function (evento) {
+
+
+            const Arquivo = evento.target.files[0];
+            if (Arquivo) {
+                const LeitorDeArquivo = new FileReader();
+                LeitorDeArquivo.onload = function (e) {
+                    Img.setAttribute('src', e.target.result);
+                };
+                LeitorDeArquivo.readAsDataURL(Arquivo);
+            }
+        });
+        Inp.click();
+      }</script>
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="index.html"><img src="~/img/logoSite.png" alt="Logo do site" /></a>
+        </figure>
+
+        <figure>
+            <a href="#"><img src="~/img/logout_branco.png" alt="Icone de logout" /></a>
+        </figure>
+    </header>
+    <main>
+        <section>
+            <figure onclick="AtualizarImg('CapaFilme', 'InputImg')">
+                @if (Model.ConteudoDaFoto == null)
+                {
+                    <img id="CapaFilme" src="~/img/CapaIndefinida.png" alt="Capa do filme" />
+                }
+                else
+                {
+                    <img id="CapaFilme" src="@Url.Action("GetLogoTipo", "CRUDFilmes", new {id = Model.FilmeId})" alt="Capa do filme" />
+                }
+            </figure>
+            <div>
+                <h2>Cadastro de Filme</h2>
+                @using (Html.BeginForm("Editar", "CRUDFilmes", FormMethod.Post,
+new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "")
+
+                    @Html.HiddenFor(model => model.FilmeId)
+                    @Html.HiddenFor(model => model.ConteudoDaFoto)
+                    @Html.HiddenFor(model => model.TipoDaFoto)
+        
+                    @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
+
+
+                    <div>
+                        <label for="NomeFilme">Nome do filme:</label>
+                        @Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })
+                    </div>
+                    <div>
+
+                        @{
+
+                            var gens = new List<SelectListItem>
+                                                                {
+                                new SelectListItem { Value = "Ação", Text = "Ação" },
+                                new SelectListItem { Value = "Comedia", Text = "Comedia" },
+                                new SelectListItem { Value = "Terror", Text = "Terror" },
+                                new SelectListItem { Value = "Aventura", Text = "Aventura" },
+                                new SelectListItem { Value = "Romance", Text = "Romance" },
+                                new SelectListItem { Value = "Drama", Text = "Drama" }
+                            };
+                        }
+                        <label for="Genero">Genero:</label>
+                        @Html.DropDownListFor(model => model.Genero, gens, new { required = "required", id = "Genero" })
+                    </div>
+                    <div>
+
+                        @{
+
+                            var ind = new List<SelectListItem>
+                                                                            {
+                                new SelectListItem { Value = "Livre", Text = "Livre" },
+                                new SelectListItem { Value = "10", Text = "10" },
+                                new SelectListItem { Value = "12", Text = "12" },
+                                new SelectListItem { Value = "14", Text = "14" },
+                                new SelectListItem { Value = "16", Text = "16" },
+                                new SelectListItem { Value = "18", Text = "18" }
+                            };
+                        }
+                        <label for="Indicativa">Classificação indicativa:</label>
+                        @Html.DropDownListFor(model => model.Indicativa, ind, new { required = "required", id = "Indicativa" })
+                    </div>
+                    <div>
+                        <label for="Sinopse">Sinopse:</label>
+                        @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "Sinopse" })
+                    </div>
+                    <input class="Adicionar" type="submit" value="Editar" />
+
+                }
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2023 AgendMovies</p>
+        <ol>
+            <li><a href="#"><img src="~/img/insta.png" alt="Logo do Instagram" /></a></li>
+            <li><a href="#"><img src="~/img/face.png" alt="Logo do Facebook" /></a></li>
+            <li><a href="#"><img src="~/img/X.png" alt="Logo do Twitter" /></a></li>
+        </ol>
+    </footer>
+</body>
+</html>

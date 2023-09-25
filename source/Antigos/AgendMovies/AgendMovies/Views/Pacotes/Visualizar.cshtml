@@ -1,0 +1,107 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Pacotes>
+
+@{ 
+    var idSele = TempData["Id"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/pacotes.css")" rel="stylesheet" />
+    @*<style>
+        #modal
+        {
+            position: absolute;
+            width: 100%;
+            height: 15vh;
+            left:0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 148, 255);
+            color: white;
+        }
+
+    </style>*@
+</head>
+<body>
+    <header>
+
+        <div id="Header_Organizador">
+            <div>
+                <a href='@Url.Action("AdmPage", "Adm")'><p><img src="~/img/Logo.png"></p></a>
+            </div>
+
+            <div>
+                <a href="#"><p><img src="~/img/logout_branco.png"></p></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        @*@if (@TempData["Message"] != null)
+        {
+            <div id="modal">
+             
+                    @TempData["Message"]
+              
+                
+            </div>
+        }*@
+        <h1>Pacotes Atuais</h1>
+        <div id="endireitar_o_endireitar">
+            <div id="endireitar">
+                <div></div>
+                <div class="wrapper">
+                    @foreach (var p in Model)
+                    {
+                        if (idSele != null)
+                        {
+                            if (long.Parse(idSele.ToString()) == p.PacotesId)
+                            {
+                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao" style="background-color: rgb(0, 148, 255);"><p>@p.ingressos por @p.valor R$</p></div></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.ingressos por @p.valor R$</p></div></a>
+                            }
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.ingressos por @p.valor R$</p></div></a>
+                        }
+
+
+                    }
+                    @for (int a = 0; a < 6 - ViewBag.Quant; a++)
+                    {
+                        <a href="#.html"><div class="botao"><p>- - - - - - - - - -</p></div></a>
+                    }
+                    <a href="@Url.Action("Delete", "Pacotes")"><div class="botao_vermelho"><p>Excluir</p></div></a>
+                    <a href='@Url.Action("Cadastrar", "Pacotes")'><div class="botao_verde"><p>Adicionar +</p></div></a>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <p>Copyright © 2023 AgendMovies</p>
+        </div>
+
+        <div>
+            <ol>
+                <a href="#.html">
+                <li><img src="~/img/insta.png"></li></a>
+                <a href="#.html">
+                <li><img src="~/img/face.png"></li></a>
+                <a href="#.html">
+                <li><img src="~/img/twitter.png"></li></a>
+            </ol>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+
+*{
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+body{
+  background-color: black;
+}
+
+header{
+  background-color: #3C3C3C;
+}
+
+header div{
+  display: flex;
+}
+
+#Header_Organizador{/*organiza o perfil, tela escura e a logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header_Organizador div p{
+  padding: 10px;
+}
+
+/**/
+
+section{
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;  
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  justify-content: center;
+  padding: 2em 4m;
+  width: 55%;
+ 
+  
+}
+#vertical{
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+section a{
+  text-decoration: none;
+}
+
+
+
+footer{
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 121px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+footer div ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+footer div ol li{
+  padding: 25px;
+}
+
+footer div p{
+  color: white;
+  padding: 25px;
+  font-size: 15px;
+}
+
+#LdS{
+  text-align: center;
+  color: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 6px;
+  width: 740px;
+  margin: 12px auto;
+}
+
+#dia_da_semana{
+    width: 14em;
+    height: 7em;
+    margin-top: 1em;
+    margin-left: 1em;
+    background-color: #2F2F2F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  color: white;
+}
+
+#dia_da_semana #D{
+  color: red;
+  font-size: 4em;
+  text-align: center;
+}
+
+#Manha{
+  display: flex;
+  margin-top: 1em;
+  background-color: #262626;
+  justify-content: space-around;
+  flex-direction: column;
+
+  width: 8em;
+  box-sizing: border-box;
+
+}
+
+#Manha ol li{
+    background-color: #545454;
+    list-style: none;
+    width: 100%;
+    height: 56%;
+    display: flex;
+   box-sizing: border-box;
+    justify-content: center;
+    color: white;
+
+}
+
+#Tarde{
+  display: flex;
+  margin-top: 1em;
+  background-color: #262626;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 8em;
+}
+
+#Tarde ol li{
+      background-color: #545454;
+    list-style: none;
+    width: 100%;
+    height: 56%;
+  display: flex;
+    justify-content: center;
+  color: white;
+}
+
+#Noite{
+  display: flex;
+  margin-top: 1em;
+  background-color: #262626;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 8em;
+}
+
+#Noite ol li{
+      background-color: #545454;
+    list-style: none;
+    width: 100%;
+    height: 56%;
+  display: flex;
+    justify-content: center;
+  color: white;
+}
+
+p{
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+#LegDub{
+  display: flex;
+    margin-top: 1em;
+    margin-right: 1em;
+    background-color: #262626;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 6em;
+}
+
+#LegDub ol li{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 81%;
+    justify-content: center;
+    align-items: center;
+}
+
+#LegDub ol li:hover{
+    background-color: #545454;
+}
+#LegDub ol li #p:hover{
+    color: #b80000;
+}
+
+#LegDub ol{
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+#ordem{
+    display: flex;
+    justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+#appt{
+ width: 50%; 
+
+}
+
+#vertical{
+  display: flex;
+}
+
+#b{/*id da div que guarda o buttom*/
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
+#b button{
+  color: white;
+  font-family: 'Marvel';
+  background-color: red;
+  border-color: gray;
+  height: 3em;
+  width: 8em;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#b button:hover{
+  background-color: #ff6b6b;
+  border-color: #adadad;
+}
