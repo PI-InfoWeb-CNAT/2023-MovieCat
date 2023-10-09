@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace AgendMovies.Controllers
 {
-    public class FuncionarioCadastradoController : Controller
+    public class ClienteController : Controller
     {
-        // GET: FuncionarioCadastrado
-        public ActionResult FuncionarioCadastrado()
+        // GET: Cliente
+        public ActionResult Index()
         {
             return View();
         }

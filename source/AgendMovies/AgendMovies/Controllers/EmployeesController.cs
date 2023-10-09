@@ -24,7 +24,7 @@ namespace AgendMovies.Controllers
             if (arquivo != null)
             {
                 f.TipoDaFoto = arquivo.ContentType;
-                f.ConteudoDaFoto = SetLogoTipo(arquivo);
+                f.Foto = SetLogoTipo(arquivo);
             }
             Banco.Funcionarios.Add(f);
             Banco.SaveChanges();
@@ -43,7 +43,7 @@ namespace AgendMovies.Controllers
             Funcionario F = Banco.Funcionarios.Find(id);
             if (F != null)
             {
-                return File(F.ConteudoDaFoto, F.TipoDaFoto);
+                return File(F.Foto, F.TipoDaFoto);
             }
             return null;
         }

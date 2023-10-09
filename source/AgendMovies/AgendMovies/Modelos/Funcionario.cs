@@ -31,7 +31,7 @@ namespace AgendMovies.Modelos
         [StringLength(11, ErrorMessage = "Insira o CPF completo, incluindo os dois últimos dígitos verificadores!", MinimumLength = 2)]
         [Required(ErrorMessage = "Por favor, insira o CPF.")]
         public string cpf { get; set; }
-        public byte[] ConteudoDaFoto { get; set; }
+        public byte[] Foto { get; set; }
         public string TipoDaFoto { get; set; }
     }
 }

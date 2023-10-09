@@ -331,27 +331,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Banco_de_Dados\Tabelas.cs" />
     <Compile Include="Controllers\AdmController.cs" />
-    <Compile Include="Controllers\AdministradoresController.cs" />
-    <Compile Include="Controllers\CadastroDePacotesController.cs" />
-    <Compile Include="Controllers\CadastroFuncionariosController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CRUDFilmesController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\EsquecerSenha1etapaController.cs" />
-    <Compile Include="Controllers\EsquecerSenha2etapaController.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
-    <Compile Include="Controllers\Funcionario02Controller.cs" />
-    <Compile Include="Controllers\FuncionarioCadastradoController.cs" />
-    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ListarFuncionariosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\PacotesController.cs" />
-    <Compile Include="Controllers\SessionsController.cs" />
-    <Compile Include="Controllers\SessoesController.cs" />
-    <Compile Include="Controllers\TemporarioController.cs" />
+    <Compile Include="Controllers\SessaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -410,7 +399,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Cliente\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Sessao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

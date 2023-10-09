@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendMovies.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,11 @@ namespace AgendMovies.Controllers
 {
     public class AdmController : Controller
     {
-        // GET: Adm
-        public ActionResult AdmPage()
-        {
-            return View();
+            // GET: Administradores
+            Tabelas Banco = new Tabelas();
+            public ActionResult Home()
+            {
+                return View(Banco.Filmes.OrderBy(f => f.FilmeId));
+            }
         }
     }
-}
