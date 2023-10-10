@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendMovies.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,7 @@ namespace AgendMovies.Controllers
     public class FilmesController : Controller
     {
         // GET: Filmes
-        public ActionResult Filmes()
-        {
+        
             Tabelas Banco = new Tabelas();
             // GET: Movies
             public ActionResult Cadastrar()
@@ -54,4 +54,4 @@ namespace AgendMovies.Controllers
                 return null;
             }
         }
-    }
+    } 

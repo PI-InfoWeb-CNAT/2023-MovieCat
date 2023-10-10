@@ -388,9 +388,9 @@
     <Content Include="Views\Administradores\Home.cshtml" />
     <Content Include="Views\Movies\Cadastrar.cshtml" />
     <Content Include="Views\Employees\Cadastrar.cshtml" />
-    <Content Include="Views\Sessions\Cadastrar.cshtml" />
     <Content Include="Views\Home\PedidoPacote.cshtml" />
     <Content Include="Views\Cliente\Cadastrar.cshtml" />
+    <Content Include="Views\Sessao\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -402,7 +402,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Sessao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

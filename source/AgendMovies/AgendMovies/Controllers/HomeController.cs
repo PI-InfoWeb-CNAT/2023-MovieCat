@@ -24,76 +24,76 @@ namespace AgendMovies.Controllers
             {
                 x.Sessoes = new List<Sessao>();
 
-                if (dia == "seg" || dia == null)
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.seg == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else if (dia == "ter" )
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.ter == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else if(dia == "qua")
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.qua == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else if (dia == "qui")
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.qui == true && s != null)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else if (dia == "sex")
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.sex == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else if (dia == "sab")
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.sab == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
-                    {
-                        if (s.IdFilme == x.FilmeId && s.dom == true)
-                        {
-                            x.Sessoes.Add(s);
-                        }
-                    }
-                }
+                //if (dia == "seg" || dia == null)
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.seg == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else if (dia == "ter" )
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.ter == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else if(dia == "qua")
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.qua == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else if (dia == "qui")
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.qui == true && s != null)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else if (dia == "sex")
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.sex == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else if (dia == "sab")
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.sab == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                //    {
+                //        if (s.IdFilme == x.FilmeId && s.dom == true)
+                //        {
+                //            x.Sessoes.Add(s);
+                //        }
+                //    }
+                //}
                 ViewBag.Dia = dia;
                 return View(x);
             }

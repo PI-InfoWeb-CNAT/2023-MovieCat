@@ -3,7 +3,7 @@
 @{
     Layout = null;
     var nulo = new List<SelectListItem>
-    {
+{
         new SelectListItem { Value = "-", Text = "---------" }
     };
     var fs = ViewBag.Filmes as SelectList;
@@ -22,13 +22,29 @@
     <link rel="stylesheet" href="@Url.Content("~/estilos/Principal.css")" />
     <link rel="icon" href="~/img/Logo_aba.png" />
     <style>
-        .DiaDaSemana{
+        .DiaDaSemana {
             display: flex;
             justify-content: space-around;
-            align-content:center;
-            flex-wrap:wrap;
+            align-content: center;
+            flex-wrap: wrap;
         }
-        option{
+        #SalaQunt {
+            margin: 1em 0;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+         #SalaQunt > div{
+              display: flex;
+         
+            align-content: center;
+         }
+        .SalaQuantidade{
+            background-color: black;
+            border-color: white;
+        }
+        option {
             color: white;
             background-color: black;
         }
@@ -61,7 +77,7 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
-                
+
 
                 <label for="Filmes">
                     <p>Filme:</p>
@@ -77,12 +93,22 @@
 
                 <div id="seg">
                     <div>
-                        <p>Dia:</p>  @Html.TextBoxFor(model => model.data, new { type = "date", required = "required" })
+                        <p>Dia Inicio:</p>  @Html.TextBoxFor(model => model.data, new { type = "date", required = "required" })
                     </div>
                     <div>
-                        <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10" })
+                        <p>Dia Final:</p> <input type="date" name="dataf" required  />
                     </div>
                 </div>
+                <div id="SalaQunt">
+                    <div>
+                            <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10", @class = "SalaQuantidade" })
+                    </div>
+                    <div>
+                        <p>Quantidade por dia:</p> <input type="number" name="quant" required min="1" class="SalaQuantidade"/>
+                     </div>
+                </div>
+
+              
 
                 <div class="horario">
                     <div>
@@ -90,12 +116,12 @@
                         @Html.TextBoxFor(model => model.horaInicio, new { type = "time", required = "required" })
                     </div>
                     <div>
-                        <p>Horário de fim:</p>
-                        @Html.TextBoxFor(model => model.horaFim, new { type = "time", required = "required" })
+                        <p>Duração</p>
+                        @Html.TextBoxFor(model => model.Duracao, new { type = "number", required = "required" })
                     </div>
                 </div>
 
-                @Html.LabelFor(model => model.nacional)
+                @*@Html.LabelFor(model => model.nacional)
 
                 @Html.EditorFor(model => model.nacional, new { @class = "control-label col-md-2" })
 
@@ -106,29 +132,12 @@
 
                 @Html.LabelFor(model => model.leg)
 
-                @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })*@
 
-   
-            <label for="DiasS">
-                <p>Dia da semana:</p>
-               @{ 
-                 var Dias = new List<SelectListItem>
-                {
-                    new SelectListItem { Value = "seg", Text = "Segunda" },
-                    new SelectListItem { Value = "ter", Text = "Terça" },
-                    new SelectListItem { Value = "qua", Text = "Quarta" },
-                    new SelectListItem { Value = "qui", Text = "Quinta" },
-                    new SelectListItem { Value = "sex", Text = "Sexta" },
-                    new SelectListItem { Value = "sab", Text = "Sabado" },
-                    new SelectListItem { Value = "dom", Text = "Domingo" }
-                };
-               }
-               
-                    @Html.DropDownListFor(model => model.IdFilme, Dias, new { required = "required", id = "DiasS" })
-                
-            </label>
 
-     
+
+
+
 
                 <div id="b">
                     <div>

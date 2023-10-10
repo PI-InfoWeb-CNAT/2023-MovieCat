@@ -25,7 +25,7 @@ namespace AgendMovies.Controllers
                 f.TipoDaFoto = arquivo.ContentType;
                 f.Foto = SetLogoTipo(arquivo);
             }
-            Banco.Funcionarios.Add(f);
+            Banco.Clientes.Add(f);
             Banco.SaveChanges();
             return RedirectToAction("Visualizar", "Funcionarios");
 

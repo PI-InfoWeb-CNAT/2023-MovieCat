@@ -112,7 +112,7 @@
                 <div>
                     <h2>Compre seus pacotes de ingressos pelo nosso site!</h2>
                     <section id="dias">
-                        @if ((ViewBag.Dia) as string == "seg")
+                        @*@if ((ViewBag.Dia) as string == "seg")
                         {
                             <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG<br>10/10</a></div>
                             <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER<br>10/10</a></div>
@@ -181,11 +181,11 @@
                             <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX<br>10/10</a></div>
                             <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB<br>10/10</a></div>
                             <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM<br>10/10</a></div>
-                        }
+                        }*@
 
                     </section>
                     <section id="sec_sessoes">
-                        @if (Model.Sessoes != null && Model.Sessoes.Any())
+                        @*@if (Model.Sessoes != null && Model.Sessoes.Any())
                         {
                             <div id="infodia1" >
                            
@@ -209,7 +209,7 @@
                                
                                 }
                             </div>
-                        }
+                        }*@
 
 
                     </section>
