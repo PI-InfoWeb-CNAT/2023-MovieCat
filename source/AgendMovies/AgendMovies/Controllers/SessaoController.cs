@@ -1,6 +1,7 @@
 ﻿using AgendMovies.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -25,87 +26,42 @@ namespace AgendMovies.Controllers
                 ViewBag.Filmes = new SelectList(filmes, "Value", "Text");
                 return View(new Sessao());
             }
+            public ActionResult Editar(long id)
+            {
+                
+                Sessao s = Banco.Sessoes.Find(id);
+                if (s != null)
+                {
+                    Filme f = Banco.Filmes.Find(s.IdFilme);
+                s.NomeFilme = f.Nome;
+                    return View(s);
+                }
+                 return RedirectToAction("Cadastrar");
+            }
             [HttpPost]
-            public ActionResult Cadastrar(Sessao s, string quant, string dataf)
+            public ActionResult Editar(Sessao s)
+             {
+
+                Banco.Entry(s).State = EntityState.Modified;
+                Banco.SaveChanges();
+                return RedirectToAction("Cadastrar");
+             }
+            [HttpPost]
+            public ActionResult Cadastrar(Sessao s, string quant, string dataf, string datai)
             {
                 if (s.NomeFilme != "-")
                 {
-                //if (s.IdFilme == "seg")
-                //{
-                //    s.seg = true;
-                //    s.ter = false;
-                //    s.qua = false;
-                //    s.qui = false;
-                //    s.sex = false;
-                //    s.sab = false;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "ter")
-                //{
-                //    s.seg = false;
-                //    s.ter = true;
-                //    s.qua = false;
-                //    s.qui = false;
-                //    s.sex = false;
-                //    s.sab = false;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "qua")
-                //{
-                //    s.seg = false;
-                //    s.ter = false;
-                //    s.qua = true;
-                //    s.qui = false;
-                //    s.sex = false;
-                //    s.sab = false;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "qui")
-                //{
-                //    s.seg = false;
-                //    s.ter = false;
-                //    s.qua = false;
-                //    s.qui = true;
-                //    s.sex = false;
-                //    s.sab = false;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "sex")
-                //{
-                //    s.seg = false;
-                //    s.ter = false;
-                //    s.qua = false;
-                //    s.qui = false;
-                //    s.sex = true;
-                //    s.sab = false;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "sab")
-                //{
-                //    s.seg = false;
-                //    s.ter = false;
-                //    s.qua = false;
-                //    s.qui = false;
-                //    s.sex = false;
-                //    s.sab = true;
-                //    s.dom = false;
-                //}
-                //if (s.IdFilme == "dom")
-                //{
-                //    s.seg = false;
-                //    s.ter = false;
-                //    s.qua = false;
-                //    s.qui = false;
-                //    s.sex = false;
-                //    s.sab = false;
-                //    s.dom = true;
-                //}
+               
                 string[] nomes = s.NomeFilme.Split('-');
                 s.NomeFilme = nomes[0];
                 s.IdFilme = nomes[1];
-                
-                string diaInicialStr = s.ToString();
-                string diaFinalStr = dataf;
+                Filme f = Banco.Filmes.Find(s.IdFilme);
+
+                string[] datasInicial = datai.Split('-');
+                string[] datasFinal =dataf.Split('-');
+
+                string diaInicialStr = datasInicial[2]+"/" + datasInicial[1]+ "/"+datasInicial[0];
+                string diaFinalStr = datasFinal[2] + "/" + datasFinal[1] + "/" + datasFinal[0];
                 string horaInicialStr = s.horaInicio;
                 string duracaoMin = s.Duracao.ToString();
                 string numSessoes = quant;
@@ -114,24 +70,25 @@ namespace AgendMovies.Controllers
                 DateTime dia = diaInicial;
                 while (dia <= diaFinal)
                 {
-                    Console.WriteLine($"Sessões do Dia: {dia}");
                     TimeSpan horario = TimeSpan.Parse(horaInicialStr);
                     TimeSpan duracao = new TimeSpan(0, int.Parse(duracaoMin), 0);
                     for (int k = 0; k < int.Parse(numSessoes); k++)
                     {
                         DateTime data = dia + horario;
-                        horario = horario + duracao;
+                        
                         // Colocar o inserir no banco aqui!
                         Sessao se = new Sessao();
                         se.IdFilme = s.IdFilme;
-                        se.data = s.data;
+                        se.data = data;
                         se.Sala = s.Sala;
-                        se.Idioma = Idioma.Orig;
                         se.horaInicio = horario.ToString();
-                        // Banco.Sessoes.Add(s);
-                        // Console.WriteLine(data.ToString());
+                        se.Duracao = duracaoMin;
+                        se.NomeFilme = f.Nome;
+
                         Banco.Sessoes.Add(se);
                         Banco.SaveChanges();
+                        horario = horario + duracao;
+
 
                     }
                    
@@ -139,8 +96,8 @@ namespace AgendMovies.Controllers
                 }
                 
                 }
-
-                return RedirectToAction("Home", "Administradores");
+            
+            return RedirectToAction("Home", "Administradores");
 
             }
         }

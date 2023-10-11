@@ -391,6 +391,8 @@
     <Content Include="Views\Home\PedidoPacote.cshtml" />
     <Content Include="Views\Cliente\Cadastrar.cshtml" />
     <Content Include="Views\Sessao\Cadastrar.cshtml" />
+    <Content Include="Views\Filmes\Cadastrar.cshtml" />
+    <Content Include="Views\Sessao\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

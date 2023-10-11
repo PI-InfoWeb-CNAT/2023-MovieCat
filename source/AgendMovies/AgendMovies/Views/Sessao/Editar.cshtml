@@ -3,10 +3,11 @@
 @{
     Layout = null;
     var nulo = new List<SelectListItem>
-{
-        new SelectListItem { Value = "-", Text = "---------" }
+    {
+        new SelectListItem { Value = "-", Text = Model.IdFilme + " - "+ Model.NomeFilme }
     };
     var fs = ViewBag.Filmes as SelectList;
+    var Filme = Model.IdFilme + " - " + Model.NomeFilme;
 }
 
 
@@ -28,6 +29,7 @@
             align-content: center;
             flex-wrap: wrap;
         }
+
         #SalaQunt {
             margin: 1em 0;
             display: flex;
@@ -35,15 +37,17 @@
             align-content: center;
             flex-wrap: wrap;
         }
-         #SalaQunt > div{
-              display: flex;
-         
-            align-content: center;
-         }
-        .SalaQuantidade{
+
+            #SalaQunt > div {
+                display: flex;
+                align-content: center;
+            }
+
+        .SalaQuantidade {
             background-color: black;
             border-color: white;
         }
+
         option {
             color: white;
             background-color: black;
@@ -77,38 +81,31 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
-
+                @Html.HiddenFor(model => model.NomeFilme)
+                @Html.HiddenFor(model => model.IdFilme)
+                @Html.HiddenFor(model => model.SessaoId)
 
                 <label for="Filmes">
-                    <p>Filme:</p>
-                    @if (ViewBag.Filmes != null && fs.Count() != 0)
-                    {
-                        @Html.DropDownListFor(model => model.NomeFilme, ViewBag.Filmes as SelectList, new { required = "required", id = "Filmes" })
-                    }
-                    else
-                    {
-                        @Html.DropDownListFor(model => model.NomeFilme, nulo, new { required = "required", id = "Filmes" })
-                    }
+
+
+                    @Filme
+
                 </label>
 
                 <div id="seg">
                     <div>
-                        <p>Dia Final:</p> <input type="date" name="datai" required />
+                        <p>Data:</p> @Html.EditorFor(model => model.data)
                     </div>
-                    <div>
-                        <p>Dia Final:</p> <input type="date" name="dataf" required  />
-                    </div>
+
                 </div>
                 <div id="SalaQunt">
                     <div>
-                            <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10", @class = "SalaQuantidade" })
+                        <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10", @class = "SalaQuantidade" })
                     </div>
-                    <div>
-                        <p>Quantidade por dia:</p> <input type="number" name="quant" required min="1" class="SalaQuantidade"/>
-                     </div>
+
                 </div>
 
-              
+
 
                 <div class="horario">
                     <div>
@@ -122,23 +119,23 @@
                 </div>
                 <div>
                     <div>
-                        <p>Duração</p>
+                        <p>Idioma:</p>
                         @Html.EnumDropDownListFor(model => model.Idioma, new { required = "required" })
                     </div>
                 </div>
 
                 @*@Html.LabelFor(model => model.nacional)
 
-                @Html.EditorFor(model => model.nacional, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.nacional, new { @class = "control-label col-md-2" })
 
-                @Html.LabelFor(model => model.dub)
+            @Html.LabelFor(model => model.dub)
 
-                @Html.EditorFor(model => model.dub, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.dub, new { @class = "control-label col-md-2" })
 
 
-                @Html.LabelFor(model => model.leg)
+            @Html.LabelFor(model => model.leg)
 
-                @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })*@
+            @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })*@
 
 
 
