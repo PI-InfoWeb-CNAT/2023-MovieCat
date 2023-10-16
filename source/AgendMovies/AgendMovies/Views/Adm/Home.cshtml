@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <link rel="stylesheet" href="@Url.Content("~/estilos/DashboardADM.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/estilos/Principal.css")" />
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="#">Funcionários</a></li>
+        </ol>
+        <div>
+            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
+            <p>Perfil</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+        <h1>MEUS SERVIÇOS</h1>
+        <section>
+            <ol id="ccc">
+
+                <a href="@Url.Action("Cadastrar","Filmes")">
+                <li id="humli">
+                    <img src="~/img/placa.png"><h1 id="hum">
+                        Cadastrar
+                        Filmes
+                    </h1>
+                </li></a>
+
+                <a href="@Url.Action("Cadastrar","Sessao")">
+                <li id="humli">
+                    <img src="~/img/coisas.png"><h1 id="humm">
+                        Cadastrar
+                        Sessões
+                    </h1>
+                </li></a>
+
+                <a href="@Url.Action("Cadastrar","Employees")">
+                <li id="humli2">
+                    <img src="~/img/pc.png"><h1 id="hummm">
+                        Cadastrar
+                        Funcionários
+                    </h1>
+                </li></a>
+
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <img src="~/img/logoFooter.png" />
+        <ol>
+            <li><a href=#><img src="~/img/github.png" /></a></li>
+            <li><a href=#><img src="~/img/facebook.png" /></a></li>
+            <li><a href=#><img src="~/img/twitter.png" /></a></li>
+        </ol>
+    </footer>
+</body>
+</html>

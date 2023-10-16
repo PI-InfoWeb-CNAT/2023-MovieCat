@@ -30,11 +30,11 @@ namespace AgendMovies.Controllers
                     }
                     Banco.Filmes.Add(filme);
                     Banco.SaveChanges();
-                    return RedirectToAction("Home", "Administradores");
+                    return RedirectToAction("Home", "Adm");
                 }
                 catch
                 {
-                    return RedirectToAction("Home", "Administradores");
+                    return RedirectToAction("Home", "Adm");
                 }
             }
             private byte[] SetLogoTipo(HttpPostedFileBase arquivo)

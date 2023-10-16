@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+input{
+  outline: none;
+  color: white;
+}
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  width: 100%;
+  background-color: #ffffff;
+}
+
+#loucura{
+  width: 1.5em;
+
+}
+
+#loucura2{
+  width: 5em;
+}
+
+main{
+  display: flex;
+  background: black;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-top: 6em;
+}
+
+main h1{
+  color: white;
+  text-align: center;
+}
+
+main p{
+  color: white;
+}
+
+.horario{
+  display: flex;
+    gap: 5em;
+}
+
+.horario div{
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  gap: 13px;
+}
+
+#seg{
+      display: flex;
+    justify-content: space-around;
+    gap: 8em;
+}
+
+#seg div{
+      display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+#seg div input{
+      border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    background-color: transparent;
+    color: white;
+}
+
+label{
+  display: flex;
+  gap: 13px;
+}
+
+label input{
+    width: 37em;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    background-color: transparent;
+    margin-bottom: 2em;
+}
+
+.horario div input{
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+  color: white;
+}
+
+#botao{
+      color: white;
+    background-color: darkgreen;
+    width: 10em;
+    height: 3.5em;
+    border-radius: 1em;
+    text-align: center;
+}
+
+#b{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+}
+
+#hli li p{
+   color: black;
+}
+
+.box .box-img{
+  width: 100%;
+  height: 270px;
+}
+
+.box .box-img{
+  color: white;
+}
+
+.box .box-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box .box-img:hover{
+  transform: translateY(-10px);
+  transition: 0.2s all linear;
+}
+
+.box h3{
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.box span{
+  font-size: 13px;
+}
+
+.box{
+  color: white;
+}
+
+.movies-container{
+  max-width: 968px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.heading{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--main-color);
+    color: white;
+}
+
+.dh12{
+  display: flex;
+  justify-content: space-between;
+  margin: 3px;
+}
+
+.botoes{
+  display: flex;
+  align-items: center;
+}
+
+.botoes li{
+  width: 50px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0em 0em;
+}
+
+.botoes a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
