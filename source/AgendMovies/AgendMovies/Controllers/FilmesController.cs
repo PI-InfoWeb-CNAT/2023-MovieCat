@@ -37,7 +37,14 @@ namespace AgendMovies.Controllers
                     return RedirectToAction("Home", "Adm");
                 }
             }
-            private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
+            public ActionResult Listar()
+            {
+            List<Filme> Filmes = Banco.Filmes.ToList();
+            //o método listar é feito com o list, entre o maior e o menor é o tipo da lista. depois chama a variavel que contem o banco, voce chama filmes e transforma em lista com o tolist
+
+                return View(Filmes);
+            }
+        private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
             {
                 var bytesFile = new byte[arquivo.ContentLength];
                 arquivo.InputStream.Read(bytesFile, 0, arquivo.ContentLength);
@@ -53,5 +60,7 @@ namespace AgendMovies.Controllers
                 }
                 return null;
             }
+            
+            
         }
     } 

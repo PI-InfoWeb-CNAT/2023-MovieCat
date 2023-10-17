@@ -1,0 +1,111 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/ListarFilmes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/styles/Principal.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="img/Logo_aba.png" />
+
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Filmess</a></li>
+            <li><a href="#">Sessões</a></li>
+            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Pacotes</a></li>
+        </ol>
+        <div>
+            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
+            <p>Perfil</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section id="sect">
+            <select name="cars" aria-placeholder="Genero">
+                <option value="g">Gênero</option>
+                <option value="Algo 1">Algo 1</option>
+                <option value="Algo 2">Algo 2</option>
+                <option value="algo 3">algo 3</option>
+                <option value="Capivara">Capivara</option>
+            </select>
+
+            <input type="text" id="fname" name="fname" placeholder="Diretor"> <!--<img src="img/fil.png">-->
+
+            <input type="text" id="fname" name="fname" placeholder="Elenco"> <!--<img src="img/userr.png">-->
+
+            <input type="text" placeholder="..." /><br></br> <!--<img src="img/sear.png">-->
+        </section>
+
+        <section class="filmes">
+            <h2 class="heading">Filmes cadastrados no sistema</h2>
+            <!-- movies conatiner -->
+            <div class="movies-container">
+                <!-- caixa 1 -->
+                @foreach (var m in Model)
+                {
+                <div class="box">
+                    <div class="box-img">
+                        @if (m.ConteudoDaFoto == null)
+                        {
+                            <img src="~/img/image 4.png">
+                        }
+                        else
+                        {
+                            <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = m.FilmeId })">
+                        }
+                    </div>
+
+                    <div class="dh12">
+                        <div>
+                            <h3>@m.Nome</h3>
+                            <span>@m.Duracao | @m.Genero</span>
+                        </div>
+                        <div>
+                            @{
+                                var classi = m.Indicativa + ".png";
+                            }
+                            <img src="~/img/@classi">
+                        </div>
+                    </div>
+                    <div>
+                        <ol class="botoes">
+                            <a href="#"><li><img src="~/img/oljo.png"></li><p>Ver </p></a>
+                            <a href="#"><li><img src="~/img/pen.png"></li><p>Editar</p></a>
+                            <a href="#"><li><img src="~/img/lixo.png"></li><p>Excluir</p></a>
+                        </ol>
+                    </div>
+                </div>
+                }
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <img id="loucura2" src="~/img/logomoviecat.png">
+
+        <ol>
+            <li><a href=#>    <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg"></a></li>
+            <li><a href=#><img src="~/img/figma.png"></a></li>
+            <li><a href=#><img src="~/img/github.png"></a></li>
+        </ol>
+    </footer>
+</body>
+</html>  

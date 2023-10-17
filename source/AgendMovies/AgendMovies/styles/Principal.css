@@ -65,6 +65,7 @@ footer{
   box-sizing: border-box;
   width: 100%;
     padding: 80px 100px;
+    background-color: white !important;
 }
 footer > ol{
   display: flex;
@@ -75,6 +76,10 @@ footer > ol{
 footer > ol li{
   margin: 0 1em;
 
+}
+footer > ol li img{
+    width: 32px;
+    height: 32px;
 }
 main{
   color: white;
