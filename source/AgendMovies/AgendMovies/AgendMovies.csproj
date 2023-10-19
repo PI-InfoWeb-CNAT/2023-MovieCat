@@ -148,9 +148,11 @@
     <Content Include="Content\DataTables-1.10.2\swf\copy_csv_xls.swf" />
     <Content Include="Content\DataTables-1.10.2\swf\copy_csv_xls_pdf.swf" />
     <Content Include="Content\Site.css" />
+    <Content Include="script\beattlejuice.js" />
     <Content Include="styles\beattlejuice.css" />
     <Content Include="styles\CadastrarFilmes.css" />
     <Content Include="styles\EditarSessao.css" />
+    <Content Include="styles\ListarFuncionarios.css" />
     <Content Include="styles\ListarSessoes.css" />
     <Content Include="styles\Principal.css" />
     <Content Include="Global.asax" />
@@ -399,6 +401,7 @@
     <Content Include="Views\Adm\Home.cshtml" />
     <Content Include="Views\Sessao\Listar.cshtml" />
     <Content Include="Views\Filmes\Listar.cshtml" />
+    <Content Include="Views\Employees\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

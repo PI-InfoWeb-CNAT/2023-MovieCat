@@ -33,5 +33,7 @@ namespace AgendMovies.Modelos
         public string cpf { get; set; }
         public byte[] Foto { get; set; }
         public string TipoDaFoto { get; set; }
+
+        public byte[] ConteudoDaFoto { get; set; }
     }
 }

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Funcionario>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/DashboardPrincipal.css">
+    <link href="@Url.Content("~/styles/ListarFuncionarios.css")" rel="stylesheet" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <script src="@Url.Content("~/script/beattlejuice.js")"></script>
+</head>
+<body>
+    <header>
+        <a href="@Url.Content("~/styles/Principal.css")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Sessões</a></li>
+            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Pacotes</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
+            <p id="per">Perfil</p>
+        </div>
+    </header>
+    <!-- 246 -->
+    <body>
+        <main>
+
+        <section>
+            <h1>funcionários cadastrados no sistema</h1>
+                <div id="organizando_colunas">
+                    @foreach (var f in Model)
+                    {
+                    <div>
+                        <ol class="olol">
+                            @if (f.ConteudoDaFoto == null)
+                            {
+                                <li class="imgp"><img src="img/funcionario_Mar.png"><p>@f.nome</p></li>
+                            }
+                            else
+                            {
+                                <img src="@Url.Action("GetLogoTipo", "Funcionarios", new { id = f.FuncionarioId })">
+                            }
+                            <ol class="botoes">
+                                <a href="VerFuncionarios.html">
+                                <li><img src="img/oljo.png"></li>
+                                <p>Ver </p></a>
+                                <a href="EditarFuncionario.html">
+                                <li><img src="img/pen.png"></li>
+                                <p>Editar</p></a>
+                                <a href="#">
+                                <li><img src="img/lixo.png"></li>
+                                <p>Excluir</p></a>
+                            </ol>
+</div>
+
+                    }
+                </div>
+            </section>
+
+        </main>
+
+    </body>
+    <footer>
+        <div>
+            <img id="loucura2" src="img/logomoviecat.png">
+        </div>
+        <div>
+            <img id="loucura" src="img/replit-icon-seeklogo.com.svg">
+            <img src="img/figma.png">
+            <img src="img/Documents/gith.png">
+        </div>
+    </footer>
+</body>
+</html>

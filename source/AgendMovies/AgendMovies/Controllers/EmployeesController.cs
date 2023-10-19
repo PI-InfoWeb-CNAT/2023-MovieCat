@@ -31,6 +31,15 @@ namespace AgendMovies.Controllers
             return RedirectToAction("Visualizar", "Funcionarios");
 
         }
+
+        public ActionResult Listar()
+        {
+            List<Funcionario> Funcionarios = Banco.Funcionarios.ToList();
+            //o método listar é feito com o list, entre o maior e o menor é o tipo da lista. depois chama a variavel que contem o banco, voce chama filmes e transforma em lista com o tolist
+
+            return View(Funcionarios);
+        }
+
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
         {
             var bytesFile = new byte[arquivo.ContentLength];
