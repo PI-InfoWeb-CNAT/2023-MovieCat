@@ -55,6 +55,32 @@ namespace AgendMovies.Controllers
                 return RedirectToAction("Cadastrar");
             }
 
+        public void Excluir (string filmeId)
+        {
+            var filmeParaExcluir = Banco.Filmes.FirstOrDefault(f => f.FilmeId == filmeId);
+
+            if (filmeParaExcluir != null)
+            {
+                Banco.Filmes.Remove(filmeParaExcluir);
+                Banco.SaveChanges();
+            }
+        }
+
+        //public ActionResult Excluir(string filmeid)
+        //{
+        //    var filme = Banco.Filmes.Find(id);
+
+        //    if (filme == null)
+        //    {
+        //        return HttpNotFound(); // Página de erro 404
+        //    }
+
+        //    Banco.Filmes.Remove(filme);
+        //    Banco.SaveChanges();
+
+        //    return RedirectToAction("Listar"); // Redireciona para a página de listagem de filmes após a exclusão
+        //}
+
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
             {
                 var bytesFile = new byte[arquivo.ContentLength];
