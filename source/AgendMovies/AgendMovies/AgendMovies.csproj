@@ -402,6 +402,7 @@
     <Content Include="Views\Sessao\Listar.cshtml" />
     <Content Include="Views\Filmes\Listar.cshtml" />
     <Content Include="Views\Employees\Listar.cshtml" />
+    <Content Include="Views\Filmes\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

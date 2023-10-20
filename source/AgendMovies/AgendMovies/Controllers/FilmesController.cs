@@ -1,6 +1,7 @@
 ﻿using AgendMovies.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,13 +38,23 @@ namespace AgendMovies.Controllers
                     return RedirectToAction("Home", "Adm");
                 }
             }
-            public ActionResult Listar()
+        public ActionResult Listar()
             {
+
             List<Filme> Filmes = Banco.Filmes.ToList();
             //o método listar é feito com o list, entre o maior e o menor é o tipo da lista. depois chama a variavel que contem o banco, voce chama filmes e transforma em lista com o tolist
 
                 return View(Filmes);
             }
+
+        public ActionResult Editar(Filme filme)
+            {
+
+                Banco.Entry(filme).State = EntityState.Modified;
+                Banco.SaveChanges();
+                return RedirectToAction("Cadastrar");
+            }
+
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
             {
                 var bytesFile = new byte[arquivo.ContentLength];
