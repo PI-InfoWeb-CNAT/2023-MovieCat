@@ -5,111 +5,167 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Editar</title>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")">
+    <link href="@Url.Content("~/styles/EditarFilmes.css")" rel="stylesheet" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <script src="beattlejuice.js"></script>
+    <script>
+        function AtualizarImg(doc, input) {
+            var Img = document.getElementById(doc);
+            var Inp = document.getElementById(input);
+
+            Inp.addEventListener("change", function (evento) {
+
+
+                const Arquivo = evento.target.files[0];
+                if (Arquivo) {
+                    const LeitorDeArquivo = new FileReader();
+                    LeitorDeArquivo.onload = function (e) {
+                        Img.setAttribute('src', e.target.result);
+                    };
+                    LeitorDeArquivo.readAsDataURL(Arquivo);
+                }
+            });
+            Inp.click();
+        }</script>
+    <style>
+        .Esconde{
+            display: none;
+        }
+        input{
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Filme</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.FilmeId)
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Sinopse, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Sinopse, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Sinopse, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Indicativa, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Indicativa, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Indicativa, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.ConteudoDaFoto, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @if (Model.ConteudoDaFoto == null)
-                    {
-                        <img src="~/img/image 4.png">
-                    }
-                    else
-                    {
-                        <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = Model.FilmeId })">
-                    }
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.TipoDaFoto, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TipoDaFoto, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TipoDaFoto, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Categoria, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Categoria, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Categoria, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Duracao, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Duracao, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Duracao, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Distribuidora, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Distribuidora, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Distribuidora, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Sessões</a></li>
+            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Pacotes</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html"><p><img src="img/funcionario_Mar.png"></p></a>
+            <p id="per">Perfil</p>
         </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+    </header>
+    <!-- 246 -->
+    <body>
+        <main>
+            <div>
+                <div>
+
+
+                    <section id="primeira_section">
+                        <ol id=migalha>
+                            <li><a href="index.html">Home</a></li>
+                            <li></li>
+                            <li> <a href="#">Migalha</a></li>
+                            <li></li>
+                            <li> <a href="beattlejuice.html">Migalha</a></li>
+                        </ol>
+
+                        <div id="info_do_filme">
+                            <div id="local_da_img" onclick="AtualizarImg('CapaFilme', 'InputImg')">
+                                <img id="CapaFilme" src="~/img/castelo_animado.png" width="400px">
+                            </div>
+                            <div id="info">
+                                <div id="info_nome">
+                                    <h1>O Castelo Animado</h1>
+                                    <p>120 min | Aventura </p>
+                                </div>
+                                <div id="idade">
+                                    <img src="img/12.png">
+                                </div>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Editar", "Filmes", FormMethod.Post, new { enctype = "multipart/form-data", @class = "disp_para_a_sinopse_e_img" }))
+                        {
+                            @Html.HiddenFor(model => model.FilmeId)
+                            @Html.HiddenFor(model => model.ConteudoDaFoto)
+                            @Html.HiddenFor(model => model.TipoDaFoto)
+
+                            <div id="local_da_sinopse">
+
+                                <div id="orgph"><div><img src="img/pen.png"></div><h1 class="h1li">Sinopse:</h1></div>
+                                <br>
+                                @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
+
+                                <div id="ori"><p>Nome do filme: </p>@Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })</div>
+
+                                <div id="ori">
+                                    <p>Gênero:</p>  @Html.TextBoxFor(model => model.Genero, new { type = "text", required = "required", id = "coloco_um_nome_legal_depois" })
+
+                                    <p>Categoria:</p><select id="Indicativa">
+                                        <p>Categoria</p>
+                                        <option value="Em Breve"><p>Em Breve</p></option>
+                                        <option value="Em Cartaz"><p>Em Cartaz</p></option>
+                                        <option value="Filmes Em Estréia"><p>Filmes Em Estréia</p></option>
+                                    </select>
+                                </div>
+
+                                <div id="ori2">
+                                    <p>Classificação</p>
+
+                                    @{
+                                        var inds = new List<SelectListItem>
+                                                                                                                                                                                                                                                                    {
+                                            new SelectListItem { Value = "Livre", Text = "Livre" },
+                                                new SelectListItem { Value = "10", Text = "10" },
+                                                new SelectListItem { Value = "12", Text = "12" },
+                                                new SelectListItem { Value = "14", Text = "14" },
+                                                new SelectListItem { Value = "16", Text = "16" },
+                                                new SelectListItem { Value = "18", Text = "18" }
+                                         };
+                                    }
+
+
+                                    @Html.DropDownListFor(model => model.Indicativa, inds, new { id = "Indicativa" })
+
+                                    <p>Duração</p>
+                                    @Html.TextBoxFor(model => model.Duracao, new { type = "number", id = "it", min = "10", max = "300" })
+                                </div>
+
+                                <br>
+                                <div id="dtxt">
+                                    <p>Sinopse</p>
+                                    @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "txt" })
+                                </div>
+                                <div id="butd">
+                                    @*<button type="submit" id="but"><p>SALVAR</p></button>*@
+                                    <input type="submit" id="but" value="SALVER" />
+                                </div>
+                            </div>
+
+
+
+
+                        }
+                    </section>
+                    </div>
+
+                    
+</main>
+    </body>
+    <footer>
+        <div>
+            <img id="loucura2" src="img/logomoviecat.png">
+        </div>
+        <div>
+            <img id="loucura" src="img/replit-icon-seeklogo.com.svg">
+            <img src="img/figma.png">
+            <img src="img/Documents/gith.png">
+        </div>
+    </footer>
 </body>
 </html>

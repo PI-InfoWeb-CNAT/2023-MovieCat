@@ -86,9 +86,9 @@
                     </div>
                     <div>
                         <ol class="botoes">
-                            <a href="#"><li><img src="~/img/oljo.png"></li><p>Ver </p></a>
+                            <a href="@Url.Action("VerFilmes", "Filmes", new { id = m.FilmeId, dia = "seg" })"><li><img src="~/img/oljo.png"></li><p>Ver </p></a>
                             <a href="@Url.Action("Editar", "Filmes", new { id = m.FilmeId})"><li><img src="~/img/pen.png"></li><p>Editar</p></a>
-                            <a href="#"><li><img src="~/img/lixo.png"></li><p>Excluir</p></a>
+                            <a href="@Url.Action("Excluir", "Filmes", new { id = m.FilmeId })"><li><img src="~/img/lixo.png"></li><p>Excluir</p></a>
                         </ol>
                     </div>
                 </div>

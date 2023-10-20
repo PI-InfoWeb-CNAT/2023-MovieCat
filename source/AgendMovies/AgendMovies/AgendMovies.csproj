@@ -151,6 +151,7 @@
     <Content Include="script\beattlejuice.js" />
     <Content Include="styles\beattlejuice.css" />
     <Content Include="styles\CadastrarFilmes.css" />
+    <Content Include="styles\EditarFilmes.css" />
     <Content Include="styles\EditarSessao.css" />
     <Content Include="styles\ListarFuncionarios.css" />
     <Content Include="styles\ListarSessoes.css" />
@@ -332,6 +333,7 @@
     <Content Include="styles\pacotes.css" />
     <Content Include="styles\pacotes_create.css" />
     <Content Include="styles\style.css" />
+    <Content Include="styles\VerFilmes.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -403,7 +405,7 @@
     <Content Include="Views\Filmes\Listar.cshtml" />
     <Content Include="Views\Employees\Listar.cshtml" />
     <Content Include="Views\Filmes\Editar.cshtml" />
-    <Content Include="Views\Filmes\Excluir.cshtml" />
+    <Content Include="Views\Filmes\VerFilmes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

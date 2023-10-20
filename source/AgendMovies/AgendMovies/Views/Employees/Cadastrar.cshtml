@@ -64,9 +64,10 @@
             </a>
         </h1>
         <ol>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pacotes</a></li>
-            <li><a href="#">Agenda</a></li>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a class="pagAtual" href="@Url.Action("Listar", "Funcionarios")">Funcionários</a></li>
         </ol>
         <div>
             <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>

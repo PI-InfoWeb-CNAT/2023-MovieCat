@@ -53,27 +53,15 @@ namespace AgendMovies.Controllers
             Filme filme = Banco.Filmes.Find(id);
             if (filme == null)
             {
-                return RedirectToAction("Editar");
+                return RedirectToAction("Listar");
             }
             return View(filme);
-        }
-
-        public void Excluir (string filmeId)
-        {
-            var filmeParaExcluir = Banco.Filmes.FirstOrDefault(f => f.FilmeId == filmeId);
-
-            if (filmeParaExcluir != null)
-            {
-                Banco.Filmes.Remove(filmeParaExcluir);
-                Banco.SaveChanges();
-            }
         }
 
         [HttpPost]
         public ActionResult Editar(Filme filme, HttpPostedFileBase arquivo)
         {
-            if (ModelState.IsValid)
-            {
+            try { 
                 if (arquivo != null)
                 {
                     filme.TipoDaFoto = arquivo.ContentType;
@@ -82,43 +70,133 @@ namespace AgendMovies.Controllers
                 }
                 Banco.Entry(filme).State = EntityState.Modified;
                 Banco.SaveChanges();
-                return RedirectToAction("Visualizar");
+                return RedirectToAction("Listar", "Filmes");
             }
-            return RedirectToAction("Visualizar");
+            catch
+            {
+                return RedirectToAction("Listar", "Filmes");
+            }
+            
         }
 
-        //public ActionResult Excluir(string filmeid)
-        //{
-        //    var filme = Banco.Filmes.Find(id);
+        public ActionResult Excluir(string id)
+        {
+        
+           Filme filme = Banco.Filmes.Find(id);
 
-        //    if (filme == null)
-        //    {
-        //        return HttpNotFound(); // Página de erro 404
-        //    }
+           if (filme != null)
+            {
+                Banco.Filmes.Remove(filme);
+                Banco.SaveChanges();
+               // Página de erro 404
+            }
+            return RedirectToAction("Listar");
 
-        //    Banco.Filmes.Remove(filme);
-        //    Banco.SaveChanges();
 
-        //    return RedirectToAction("Listar"); // Redireciona para a página de listagem de filmes após a exclusão
-        //}
+            // Redireciona para a página de listagem de filmes após a exclusão
+        }
 
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
-            {
-                var bytesFile = new byte[arquivo.ContentLength];
-                arquivo.InputStream.Read(bytesFile, 0, arquivo.ContentLength);
-                return bytesFile;
-            }
-            public FileContentResult GetLogoTipo(string id)
-            {
-
-                Filme F = Banco.Filmes.Find(id);
-                if (F != null)
-                {
-                    return File(F.ConteudoDaFoto, F.TipoDaFoto);
-                }
-                return null;
-            }
-            
-            
+        {
+            var bytesFile = new byte[arquivo.ContentLength];
+            arquivo.InputStream.Read(bytesFile, 0, arquivo.ContentLength);
+            return bytesFile;
         }
-    } 
+        public FileContentResult GetLogoTipo(string id)
+        {
+
+            Filme F = Banco.Filmes.Find(id);
+            if (F != null)
+            {
+                return File(F.ConteudoDaFoto, F.TipoDaFoto);
+            }
+            return null;
+        }
+
+        public ActionResult VerFilmes(string id, string dia)
+        {
+            Filme x = Banco.Filmes.Find(id);
+            if (x != null)
+            {
+                x.Sessoes = new List<Sessao>();
+
+                if (dia == "seg" || dia == null)
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Monday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "ter")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Tuesday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "qua")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Wednesday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "qui")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Thursday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "sex")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Friday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "sab")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                ViewBag.Dia = dia;
+                return View(x);
+            }
+            return RedirectToAction("Index");
+        }
+    }
+            
+            
+    }
+ 
