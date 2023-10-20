@@ -47,13 +47,16 @@ namespace AgendMovies.Controllers
                 return View(Filmes);
             }
 
-        public ActionResult Editar(Filme filme)
-            {
+        public ActionResult Editar(string id)
+        {
 
-                Banco.Entry(filme).State = EntityState.Modified;
-                Banco.SaveChanges();
-                return RedirectToAction("Cadastrar");
+            Filme filme = Banco.Filmes.Find(id);
+            if (filme == null)
+            {
+                return RedirectToAction("Editar");
             }
+            return View(filme);
+        }
 
         public void Excluir (string filmeId)
         {
@@ -64,6 +67,24 @@ namespace AgendMovies.Controllers
                 Banco.Filmes.Remove(filmeParaExcluir);
                 Banco.SaveChanges();
             }
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Filme filme, HttpPostedFileBase arquivo)
+        {
+            if (ModelState.IsValid)
+            {
+                if (arquivo != null)
+                {
+                    filme.TipoDaFoto = arquivo.ContentType;
+                    filme.ConteudoDaFoto = SetLogoTipo(arquivo);
+
+                }
+                Banco.Entry(filme).State = EntityState.Modified;
+                Banco.SaveChanges();
+                return RedirectToAction("Visualizar");
+            }
+            return RedirectToAction("Visualizar");
         }
 
         //public ActionResult Excluir(string filmeid)

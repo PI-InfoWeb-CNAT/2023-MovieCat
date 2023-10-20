@@ -57,8 +57,14 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ConteudoDaFoto, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ConteudoDaFoto, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ConteudoDaFoto, "", new { @class = "text-danger" })
+                    @if (Model.ConteudoDaFoto == null)
+                    {
+                        <img src="~/img/image 4.png">
+                    }
+                    else
+                    {
+                        <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = Model.FilmeId })">
+                    }
                 </div>
             </div>
     
