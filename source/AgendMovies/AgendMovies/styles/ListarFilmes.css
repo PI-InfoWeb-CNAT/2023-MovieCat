@@ -224,3 +224,7 @@ label {
         background-color: transparent;
         color: white;
     }
+
+.classificacao {
+    width: 40px;
+}

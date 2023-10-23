@@ -48,6 +48,90 @@ namespace AgendMovies.Controllers
             return View(fs);
 
         }
+
+        public ActionResult VerSessoes(string Id, string dia)
+        {
+
+            Filme x = Banco.Filmes.Find(Id);
+            if (x != null)
+            {
+                x.Sessoes = new List<Sessao>();
+
+                if (dia == "seg" || dia == null)
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Monday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "ter")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Tuesday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "qua")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Wednesday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "qui")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Thursday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "sex")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Friday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else if (dia == "sab")
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Sessao s in Banco.Sessoes.OrderBy(se => se.SessaoId).ToList())
+                    {
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            x.Sessoes.Add(s);
+                        }
+                    }
+                }
+                ViewBag.Dia = dia;
+                return View(x);
+            }
+            return RedirectToAction("Index");
+        }
         public ActionResult Editar(long id)
         {
                 
@@ -122,6 +206,7 @@ namespace AgendMovies.Controllers
         return RedirectToAction("Home", "Adm");
 
         }
+
          
     }
 }
