@@ -20,7 +20,11 @@ namespace AgendMovies.Controllers
             List<SelectListItem> filmes = new List<SelectListItem>();
             foreach (Filme f in fs)
             {
-                filmes.Add(new SelectListItem { Value = f.Nome + "-" + f.FilmeId, Text = f.Nome + "(" + f.FilmeId + ")" });
+                if (f.Categoria != "Em Breve")
+                {
+                    filmes.Add(new SelectListItem { Value = f.Nome + "-" + f.FilmeId, Text = f.Nome + "(" + f.FilmeId + ")" });
+                }
+               
             }
 
             ViewBag.Filmes = new SelectList(filmes, "Value", "Text");

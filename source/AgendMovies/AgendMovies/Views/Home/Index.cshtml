@@ -161,14 +161,14 @@
                         </div>
                         <div id="dh12">
                             <div>
-                                @if (f.Nome.ToString().Length == 13)
+                                @if (f.Nome.ToString().Length <= 13)
                                 {
                                     <h3>@f.Nome</h3>
                                 }
                                 else
                                 {
 
-                                    <h3>@f.Nome.ToString().Substring(0, 13).ToString() ...</h3>
+                                    <h3>@f.Nome.ToString().Substring(0, 10).ToString() ...</h3>
                                 }
                                 @{
                                     var x = f.Indicativa.ToString() + ".png";
