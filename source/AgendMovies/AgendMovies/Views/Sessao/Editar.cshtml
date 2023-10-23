@@ -19,8 +19,8 @@
     <meta charset="utf-8">
     <title>MovieCat</title>
 
-    <link rel="stylesheet" href="@Url.Content("~/estilos/EditarSessao.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/estilos/Principal.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/EditarSessao.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")" />
     <link rel="icon" href="~/img/Logo_aba.png" />
     <style>
         .DiaDaSemana {
@@ -57,14 +57,15 @@
 <body>
     <header>
         <h1>
-            <a href="@Url.Action("Home", "Administradores")">
+            <a href="@Url.Action("Index", "Home")">
                 <img src="~/img/logo.png" alt="yy" />
             </a>
         </h1>
         <ol>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pacotes</a></li>
-            <li><a href="#">Agenda</a></li>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
         </ol>
         <div>
             <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>

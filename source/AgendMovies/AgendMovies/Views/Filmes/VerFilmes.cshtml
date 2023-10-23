@@ -22,10 +22,10 @@
         </a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Filmes</a></li>
-            <li><a href="#">Sessões</a></li>
-            <li><a href="#">Funcionários</a></li>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
         </ul>
         <div id=md>
             <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
@@ -43,10 +43,12 @@
                     <section id="primeira_section">
                         <ol id=migalha>
                             <li><a href="index.html">Home</a></li>
+                            <li>></li>
                             <li></li>
                             <li> <a href="#">Filmes</a></li>
+                            <li>></li>
                             <li></li>
-                            <li> <a href="beattlejuice.html">Realizar Pedido</a></li>
+                            <li> <a href="beattlejuice.html">Ver Filme</a></li>
                         </ol>
 
                         <h1 id="h1_do_nome_do_filme">@Model.Nome</h1>

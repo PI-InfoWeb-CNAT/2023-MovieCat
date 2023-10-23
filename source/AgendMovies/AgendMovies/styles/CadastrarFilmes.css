@@ -21,7 +21,28 @@ body{
   flex-wrap:wrap;
 }
 
-header{
+header {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#Header_Organizador {
+    display: flex;
+    justify-content: space-between;
+}
+
+#md {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding-right: 3em;
+}
+
+#per {
+    font-size: 25px;
+}
+
+/*header{
   margin-bottom: 2em;
    width: 100%;
   background-color: #ffffff;
@@ -31,7 +52,7 @@ header{
   align-content: center;
   box-sizing: border-box;
   padding: 1em 10px;
-}
+}*/
 footer{
     margin-top: 2em;
    width: 100%;

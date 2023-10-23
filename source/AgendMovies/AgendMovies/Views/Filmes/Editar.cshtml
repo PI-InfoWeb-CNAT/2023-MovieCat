@@ -43,16 +43,16 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">
+        <a href="@Url.Action("Index", "Home")" class="logo">
             <img src="~/img/logo.png">
         </a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Filmes</a></li>
-            <li><a href="#">Sessões</a></li>
-            <li><a href="#">Funcionários</a></li>
-            <li><a href="#">Pacotes</a></li>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+            <li><a href="@Url.Action("Index", "Home")">Pacotes</a></li>
         </ul>
         <div id=md>
             <a href="#.html"><p><img src="img/funcionario_Mar.png"></p></a>

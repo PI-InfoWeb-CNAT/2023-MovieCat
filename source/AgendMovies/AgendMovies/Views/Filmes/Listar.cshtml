@@ -17,16 +17,16 @@
 <body>
     <header>
         <h1>
-            <a href="index.html">
+            <a href="@Url.Action("Index", "Home")">
                 <img src="~/img/logo.png" alt="yy" />
             </a>
         </h1>
         <ol>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Filmess</a></li>
-            <li><a href="#">Sessões</a></li>
-            <li><a href="#">Funcionários</a></li>
-            <li><a href="#">Pacotes</a></li>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+            <li><a href="@Url.Action("Index", "Home")">Pacotes</a></li>
         </ol>
         <div>
             <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
