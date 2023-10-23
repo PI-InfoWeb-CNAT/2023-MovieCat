@@ -142,7 +142,7 @@ namespace AgendMovies.Controllers
             s.NomeFilme = f.Nome;
                 return View(s);
             }
-                return RedirectToAction("Cadastrar");
+                return RedirectToAction("VerSessoes", new { id = s.IdFilme, dia = "seg" });
         }
         [HttpPost]
         public ActionResult Editar(Sessao s)
@@ -150,7 +150,7 @@ namespace AgendMovies.Controllers
 
             Banco.Entry(s).State = EntityState.Modified;
             Banco.SaveChanges();
-            return RedirectToAction("Cadastrar");
+            return RedirectToAction("VerSessoes", new { id = s.IdFilme, dia = "seg" });
             }
         [HttpPost]
         public ActionResult Cadastrar(Sessao s, string quant, string dataf, string datai)
@@ -207,6 +207,23 @@ namespace AgendMovies.Controllers
 
         }
 
-         
+        public ActionResult Excluir(long? id)
+        {
+
+            Sessao s = Banco.Sessoes.Find(id);
+
+            if (s != null)
+            {
+                Banco.Sessoes.Remove(s);
+                Banco.SaveChanges();
+                // Página de erro 404
+            }
+            return RedirectToAction("VerSessoes", new { id = s.IdFilme, dia = "seg" });
+
+
+            // Redireciona para a página de listagem de filmes após a exclusão
+        }
+
+
     }
 }
