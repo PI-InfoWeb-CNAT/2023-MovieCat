@@ -17,7 +17,7 @@ namespace AgendMovies.Modelos
         [Required(ErrorMessage = "Você já conheceu alguém que não nasceu?")]
         public string data { get; set; }
 
-        [StringLength(15, ErrorMessage = "Insira um número de telefone válido, por favor.", MinimumLength = 15)]
+        [StringLength(11, ErrorMessage = "Insira um número de telefone válido, por favor.", MinimumLength = 11)]
         [Required(ErrorMessage = "Por favor, insira um número de telefone.")]
         public string telefone { get; set; }
 

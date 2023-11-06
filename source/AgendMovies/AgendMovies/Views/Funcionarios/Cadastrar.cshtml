@@ -85,12 +85,12 @@
 
                 <div>
                     <p>Senha*</p>
-                    <input class="p" type="text" name="Nome" size="40" />
+                    <input class="p" type="password" name="Nome" size="40" />
 
                 </div>
                 <div>
                     <p>Confirmar Senha*  @Html.ValidationMessageFor(model => model.senha, "")</p>
-                    @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" })
+                    @Html.TextBoxFor(model => model.senha, new { type = "password", required = "required", size = "40" })
                 </div>
               
                 <div class="t">
