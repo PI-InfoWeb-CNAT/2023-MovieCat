@@ -40,6 +40,16 @@ namespace AgendMovies.Controllers
             }
             return RedirectToAction("Visualizar");
         }
+        //public ActionResult Cadastrar(Pacotes p)
+        //{
+        //    if (T.Pacotes.OrderBy(x => x.nome).Count() < 6)
+        //    {
+        //        T.Pacotes.Add(p);
+        //        T.SaveChanges();
+        //        return RedirectToAction("Visualizar");
+        //    }
+        //    return RedirectToAction("Visualizar");
+        //}
 
         public ActionResult Selecionar(long? id)
         {

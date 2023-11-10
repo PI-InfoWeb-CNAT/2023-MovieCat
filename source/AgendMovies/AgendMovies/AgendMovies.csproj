@@ -407,6 +407,7 @@
     <Content Include="Views\Filmes\Editar.cshtml" />
     <Content Include="Views\Filmes\VerFilmes.cshtml" />
     <Content Include="Views\Sessao\VerSessoes.cshtml" />
+    <Content Include="Views\Pacotes\CadastrarPacotes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
