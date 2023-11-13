@@ -16,7 +16,6 @@ namespace AgendMovies.Controllers
             return View(new Cliente());
         }
         [HttpPost]
-        
         public ActionResult Cadastrar(Cliente f, HttpPostedFileBase arquivo)
         {
 
@@ -25,8 +24,24 @@ namespace AgendMovies.Controllers
                 f.TipoDaFoto = arquivo.ContentType;
                 f.Foto = SetLogoTipo(arquivo);
             }
-            Banco.Clientes.Add(f);
+         
+            Cliente cliente = Banco.Clientes.OrderBy(cli => cli.Id).Where(c => c.Email == f.Email).First();
+            if (cliente == null)
+            {
+                Banco.Clientes.Add(f);
+            }
             Banco.SaveChanges();
+            return RedirectToAction("Cadastrar", "Cliente");
+        }
+        [HttpPost]
+        public ActionResult Login(Cliente f)
+        {
+            Cliente cliente = Banco.Clientes.FirstOrDefault(c => c.Email == f.Email && c.Senha == f.Senha);
+            if(cliente != null)
+            {
+                Session["Cliente"] = cliente;
+                return RedirectToAction("Index", "Home");
+            }
             return RedirectToAction("Cadastrar", "Cliente");
         }
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
@@ -45,5 +60,6 @@ namespace AgendMovies.Controllers
             }
             return null;
         }
+        
     }
 }
