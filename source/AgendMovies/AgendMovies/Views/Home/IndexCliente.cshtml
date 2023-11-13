@@ -1,0 +1,265 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+@{ 
+    Layout = null;
+    var ClienteLogado = ViewBag.ClienteLogado as AgendMovies.Modelos.Cliente;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MovieCat Menu Principal</title>
+    <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
+
+    <!-- link carrosel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        .CapaFilmePequena {
+            width: 180px !important;
+            height: 270px !important;
+        }
+
+        .CapaFilmeGrande {
+            width: 559px !important;
+            height: 842px !important;
+        }
+
+        .ClassiIndicati {
+            width: 40px !important;
+            height: 40px !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Index", "Home")" class="home-active">Home</a></li>
+            <li><a href="#filmes">Filmes</a></li>
+            <li><a href="#emcartaz">Em Cartaz</a></li>
+            <li><a href="#sobrenos">Sobre Nós</a></li>
+            <!-- MENU TEMPORÁRIO -->
+            <li id="MenuTemp">
+                <a id="LinkMenuTemp" href="#sobrenos">Dashboards</a>
+                <ol>
+                    <li><a href="@Url.Action("Home", "Adm")">ADM</a></li>
+                    <li><a href="DashboardFuncionario.html">Funcionário</a></li>
+                    <li><a href="#">Cliente</a></li>
+                </ol>
+            </li>
+        </ul>
+
+        <a href="#" class="btn">@ClienteLogado.Nome</a>
+
+
+    </header>
+    <!-- home -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide conatiner">
+                <img src="~/img/home1.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="swiper-slide conatiner">
+                <img src="~/img/home2.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="swiper-slide conatiner">
+                <img src="~/img/image 364.png" alt="">
+                <div class="home-text">
+                    <span>KIMI NO WA PRODUTORA</span>
+                    <h1>Your Name</h1>
+                    <a href="#" class="btn-01">Ver Pacotes</a>
+                    <!-- <a href="#" class="play"> -->
+                    <!-- </a> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <!-- em cartaz -->
+    <section class="emcartaz" id="emcartaz">
+        <h2 class="heading">Em Cartaz</h2>
+        <div id="container">
+
+            @foreach (var f in Model)
+            {
+                if (f.Categoria == "Em Cartaz")
+                {
+                    <div id="dv">
+                        <a href="@Url.Action("PedidoPacote","Home", new {Id = f.FilmeId, dia = "seg"})">
+                            @if (f.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/image 4.png">
+                            }
+                            else
+                            {
+                                <img class="CapaFilmeGrande" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
+                            }
+                        </a>
+                        <div id="dvo">
+
+                            <h3>@f.Nome</h3>
+
+
+                            @{
+                                var x = f.Indicativa.ToString() + ".png";
+                            }
+                            <div><img class="ClassiIndicati" src="~/img/@x"></div>
+                        </div>
+                        <span>@f.Duracao min | @f.Genero</span>
+                    </div>
+                }
+            }
+
+
+            <!-- <h3>Beattlejuice</h3>
+            <span>120 min | Ação</span> -->
+
+        </div>
+        <div id="limitador">
+            <!--como isso ta funcionando eu n sei 00:10-->
+            <div><a href="#.html"><h1 id="ver_mais">VER TODOS</h1></a></div>
+        </div>
+    </section>
+
+    <section class="filmes" id="filmes">
+        <h2 class="heading">No Catálogo</h2>
+        <!-- movies conatiner -->
+        <div class="movies-container">
+            <!-- caixa 1 -->
+            @foreach (var f in Model)
+            {
+                if (f.Categoria == "Filmes em Estreia")
+                {
+                    <div class="box">
+                        <div class="box-img">
+                            @if (f.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/image 4.png">
+                            }
+                            else
+                            {
+                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
+                            }
+
+                        </div>
+                        <div id="dh12">
+                            <div>
+                                @if (f.Nome.ToString().Length <= 13)
+                                {
+                                    <h3>@f.Nome</h3>
+                                }
+                                else
+                                {
+
+                                    <h3>@f.Nome.ToString().Substring(0, 10).ToString() ...</h3>
+                                }
+                                @{
+                                    var x = f.Indicativa.ToString() + ".png";
+                                }
+                                <span>@f.Duracao min | @f.Genero</span>
+
+                            </div>
+                            <img class="ClassiIndicati" src="~/img/@x">
+
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+
+    <section class="embreve" id="embreve">
+        <h2 class="heading">Em Breve</h2>
+        <!-- em breve container -->
+        <div class="movies-container">
+
+            @foreach (var f in Model)
+            {
+                if (f.Categoria == "Em Breve")
+                {
+                    <div class="box">
+                        <div class="box-img">
+                            @if (f.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/image 4.png">
+                            }
+                            else
+                            {
+                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
+                            }
+
+                        </div>
+                        <div id="dh12">
+                            <div>
+                                <h3>@f.Nome</h3>
+                                <span>@f.Duracao min | @f.Genero</span>
+                            </div>
+                            @{
+                                var x = f.Indicativa.ToString() + ".png";
+                            }
+                            <div><img class="ClassiIndicati" src="~/img/@x"></div>
+                        </div>
+                    </div>
+                }
+            }
+
+            <!-- caixa 1 -->
+
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div>
+            <img id="loucura2" src="~/img/logomoviecat.png">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
+            <img src="~/img/figma.png">
+            <img src="~/img/github.png">
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- link customizar carrosel -->
+    <script src="@Url.Content("~/script/script.js")"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

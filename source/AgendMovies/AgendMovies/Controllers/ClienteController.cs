@@ -24,8 +24,16 @@ namespace AgendMovies.Controllers
                 f.TipoDaFoto = arquivo.ContentType;
                 f.Foto = SetLogoTipo(arquivo);
             }
-         
-            Cliente cliente = Banco.Clientes.OrderBy(cli => cli.Id).Where(c => c.Email == f.Email).First();
+
+            Cliente cliente;
+            try 
+            {
+                cliente=  Banco.Clientes.OrderBy(cli => cli.Id).Where(c => c.Email == f.Email).First(); 
+            }
+            catch
+            {
+                cliente = null;
+            }
             if (cliente == null)
             {
                 Banco.Clientes.Add(f);
@@ -40,7 +48,7 @@ namespace AgendMovies.Controllers
             if(cliente != null)
             {
                 Session["Cliente"] = cliente;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("IndexCliente", "Home");
             }
             return RedirectToAction("Cadastrar", "Cliente");
         }
