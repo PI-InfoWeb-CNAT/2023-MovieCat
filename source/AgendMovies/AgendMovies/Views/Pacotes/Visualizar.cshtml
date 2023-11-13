@@ -61,16 +61,16 @@
                         {
                             if (long.Parse(idSele.ToString()) == p.PacotesId)
                             {
-                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao" style="background-color: rgb(0, 148, 255);"><p>@p.ingressos por @p.valor R$</p></div></a>
+                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao" style="background-color: rgb(0, 148, 255);"><p>@p.nome</p></div></a>
                             }
                             else
                             {
-                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.ingressos por @p.valor R$</p></div></a>
+                                <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.nome</p></div></a>
                             }
                         }
                         else
                         {
-                            <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.ingressos por @p.valor R$</p></div></a>
+                            <a href="@Url.Action("Selecionar", "Pacotes", new { id = p.PacotesId })"><div class="botao"><p>@p.nome</p></div></a>
                         }
 
 

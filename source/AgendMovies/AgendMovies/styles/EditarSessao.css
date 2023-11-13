@@ -165,6 +165,7 @@ main p{
 label{
   display: flex;
   gap: 13px;
+  color: black;
 }
 
 label select{
@@ -202,4 +203,8 @@ label select{
 
 #hli li p{
    color: black;
+}
+
+#NomePacote{
+    color: black;
 }
