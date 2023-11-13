@@ -36,30 +36,33 @@
                 <!--<p class="description description-second">or use your email for registration:</p>-->
 
                 @using (Html.BeginForm("Cadastrar", "Cliente", FormMethod.Post,
-new { enctype = "multipart/form-data", @class = "form" }))
-            <label class="label-input" for="">
-                <i class="far fa-user icon-modify"></i>
-                <input type="text" placeholder="Name">
-            </label>
+                new { enctype = "multipart/form-data", @class = "form" }))
 
-                <label class="label-input" for="">
-                    <i class="far fa-user icon-modify"></i>
-                    <input id="cpf" type="text" placeholder="CPF" pattern="[0-9]{11}">
+                {
+
+                   <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        @Html.EditorFor(model => model.Nome, new { type = "text", required = "required", size = "40" })
                 </label>
 
-                <label class="label-input" for="">
-                    <i class="far fa-envelope icon-modify"></i>
-                    <input type="email" placeholder="Email">
-                </label>
+                   <label class="label-input" for="">
+                       <i class="far fa-user icon-modify"></i>
+                       @Html.EditorFor(model => model.Cpf, new { type = "text", required = "required", size = "40" })
+                   </label>
 
-                <label class="label-input" for="">
-                    <i class="fas fa-lock icon-modify"></i>
-                    <input type="password" placeholder="Password">
-                </label>
+                   <label class="label-input" for="">
+                       <i class="far fa-envelope icon-modify"></i>
+                       @Html.EditorFor(model => model.Email, new { type = "email", required = "required", size = "40" })
+                   </label>
+
+                   <label class="label-input" for="">
+                       <i class="fas fa-lock icon-modify"></i>
+                       @Html.TextBoxFor(model => model.Senha, new { type = "password", required = "required", size = "40" })
+                   </label>
 
 
-                <button class="btn btn-second">inscreva-se</button>
-                </form>
+                <button class="btn btn-second">Inscreva-se</button>
+            }
             </div><!-- second column -->
         </div><!-- first content -->
         <div class="content second-content">
@@ -92,5 +95,14 @@ new { enctype = "multipart/form-data", @class = "form" }))
         </div><!-- second-content -->
     </div>
     <script src="@Url.Content("~/script/login.js")"></script>
+
+    @* Scripts da validação *@
+    <script src="@Url.Content("~/scripts/jquery-3.4.1.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")">
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")">
+    </script>
+    @* Scripts da validação *@
 </body>
 </html>
+

@@ -16,7 +16,7 @@ namespace AgendMovies.Controllers
             return View(new Cliente());
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult Cadastrar(Cliente f, HttpPostedFileBase arquivo)
         {
 
@@ -27,8 +27,7 @@ namespace AgendMovies.Controllers
             }
             Banco.Clientes.Add(f);
             Banco.SaveChanges();
-            return RedirectToAction("Visualizar", "Funcionarios");
-
+            return RedirectToAction("Cadastrar", "Cliente");
         }
         private byte[] SetLogoTipo(HttpPostedFileBase arquivo)
         {
