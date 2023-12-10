@@ -87,10 +87,11 @@
                     @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required", id = "NomePacote" })
                 </div>
                 <div>
-                    <p>Quantidade de Ingressos:</p> <input type="number" name="quant" required min="1" class="SalaQuantidade" />
+
+                    <p>Quantidade de Ingressos:</p>  @Html.TextBoxFor(model => model.ingressos, new { type = "number", required = "required", @class = "SalaQuantidade" })
                 </div>
                 <div>
-                    <p>Valor:</p> <input type="number" name="quant" required min="1" class="SalaQuantidade" />
+                    <p>Valor:</p>  @Html.TextBoxFor(model => model.valor, new { type = "number", required = "required", @class = "SalaQuantidade" })
                 </div>
 
 

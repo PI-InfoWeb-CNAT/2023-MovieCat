@@ -1,0 +1,15 @@
+﻿@model AgendMovies.Modelos.Compra
+@{
+    Layout = null;
+    var cliente = ViewData["Cliente"] as AgendMovies.Modelos.Cliente;
+    var sessao = ViewData["Sessao"] as long?;
+    var pacotes = ViewData["Pacotes"] as SelectList;
+
+}
+@using (Html.BeginForm("FazerCompra", "Cliente", FormMethod.Post))
+{
+    @Html.DropDownListFor(model => model.IdPacote, pacotes, new { required = "required" });
+    <input hidden type="number" name="IdCliente" value="@cliente.Id" />
+    <input hidden type="number" name="IdSessao" value="@sessao" />
+    <input onclick="Sucesso()" type="submit" value="Comprar" />
+}

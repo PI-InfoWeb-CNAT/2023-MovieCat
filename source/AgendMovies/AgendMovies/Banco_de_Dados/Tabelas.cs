@@ -16,6 +16,7 @@ namespace AgendMovies.Modelos
         public DbSet<Pacotes> Pacotes { get; set; }
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
+        public DbSet<Compra> Compras { get; set; }
 
 
     }

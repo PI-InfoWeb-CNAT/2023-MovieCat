@@ -29,13 +29,23 @@ namespace AgendMovies.Controllers
         }
         public ActionResult PedidoPacote(string Id, string dia) 
         {
-            
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                ViewBag.ClienteLogado = c;
+                List<SelectListItem> ps = new List<SelectListItem>();
+                foreach (Pacotes p in BD.Pacotes.OrderBy(p => p.PacotesId))
+                {
+                    ps.Add(new SelectListItem { Value = p.PacotesId.ToString(), Text = p.nome + "(" + p.ingressos + "-"+p.valor+")" });
+                }
+                ViewBag.Pacotes = new SelectList(ps, "Value", "Text");
+            }
             Filme x = BD.Filmes.Find(Id);
             if (x != null)
             {
                 x.Sessoes = new List<Sessao>();                  
                 
-                if (dia == "seg" || dia == null)
+                if (dia == "seg")
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {

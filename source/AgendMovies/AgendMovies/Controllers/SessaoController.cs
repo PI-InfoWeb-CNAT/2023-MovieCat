@@ -22,7 +22,7 @@ namespace AgendMovies.Controllers
             {
                 if (f.Categoria != "Em Breve")
                 {
-                    filmes.Add(new SelectListItem { Value = f.Nome + "-" + f.FilmeId, Text = f.Nome + "(" + f.FilmeId + ")" });
+                    filmes.Add(new SelectListItem { Value = f.FilmeId, Text = f.Nome + "(" + f.FilmeId + ")" });
                 }
                
             }
@@ -159,15 +159,15 @@ namespace AgendMovies.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Sessao s, string quant, string dataf, string datai)
         {
-            if (s.NomeFilme != "-")
+            if (s.NomeFilme != "" || s.NomeFilme != null)
             {
                
-            string[] nomes = s.NomeFilme.Split('-');
-            s.NomeFilme = nomes[0];
-            s.IdFilme = nomes[1];
-            Filme f = Banco.Filmes.Find(s.IdFilme);
+            
+            Filme f = Banco.Filmes.Find(s.NomeFilme);
+            s.NomeFilme = f.Nome;
+            s.IdFilme = f.FilmeId;
 
-            string[] datasInicial = datai.Split('-');
+                string[] datasInicial = datai.Split('-');
             string[] datasFinal =dataf.Split('-');
 
             string diaInicialStr = datasInicial[2]+"/" + datasInicial[1]+ "/"+datasInicial[0];
@@ -193,7 +193,7 @@ namespace AgendMovies.Controllers
                     se.Sala = s.Sala;
                     se.horaInicio = horario.ToString();
                     se.Duracao = duracaoMin;
-                    se.NomeFilme = f.Nome;
+                    se.NomeFilme = s.NomeFilme;
 
                     Banco.Sessoes.Add(se);
                     Banco.SaveChanges();

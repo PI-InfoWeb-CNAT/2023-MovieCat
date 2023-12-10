@@ -354,10 +354,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Compra.cs" />
     <Compile Include="Modelos\Filme.cs" />
     <Compile Include="Modelos\Funcionario.cs" />
     <Compile Include="Modelos\Pacotes.cs" />
     <Compile Include="Modelos\Sessao.cs" />
+    <Compile Include="Modelos\VerPerfilView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -409,6 +411,8 @@
     <Content Include="Views\Sessao\VerSessoes.cshtml" />
     <Content Include="Views\Pacotes\CadastrarPacotes.cshtml" />
     <Content Include="Views\Home\IndexCliente.cshtml" />
+    <Content Include="Views\Home\ComprarForm.cshtml" />
+    <Content Include="Views\Cliente\VerPerfilCompras.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
