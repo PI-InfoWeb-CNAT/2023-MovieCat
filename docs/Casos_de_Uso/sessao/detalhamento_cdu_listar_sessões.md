@@ -7,6 +7,7 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+| 11/12/2023 | **1.1** | Versão Final  | Milton Shyon |
 
 ### 1. Resumo 
 
@@ -40,4 +41,4 @@ O sistema mostra uma lista de sessões atuais (dia e horario).
 | | |
 
 ### 6. Protótipos de Interface
-`A ser desenvolvido pelo aluno.`
+https://www.figma.com/file/Tf9R49Kc4vXWyyZdIGJ6oS/MovieCat?type=design&node-id=0-1&mode=design&t=oTgL2btAqADIzauD-0
