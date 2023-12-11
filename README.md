@@ -22,7 +22,7 @@ Todo material está publicado sob licença [GPL-3.0](https://github.com/PI-InfoW
 
 =ᗢ=  [Diagrama de casos de uso](docs/Casos_de_Uso)
 
-=ᗢ=  [Detalhamento de casos de uso](./docs/casos_de_uso)
+=ᗢ=  [Detalhamento de casos de uso](./docs/Casos_de_Uso)
 
 =ᗢ=  [Diagrama de classes de domínio](./docs/Diagramas/DiagramaDeClasses.jpeg)
 
