@@ -1,0 +1,41 @@
+# Projeto MovieCat
+
+## Especificação do caso de uso - Login usuario
+
+### Histórico da Revisão 
+
+|  Data  | Versão | Descrição | Autor |
+|:-------|:-------|:----------|:------|
+| 26/06/2023 | **1.00** | Versão Inicial  | Rita de Cassia |
+
+### 1. Resumo 
+
+Nesse caso de uso um usuario cadastrado no site faz login no sistema, o possibilitando fazer compras e acessar o seu perfil no site.
+
+### 2. Atores 
+
+Usuários Cliente.
+
+### 3. Pré-condições
+
+O Cliente deve acessar o link de login do site.
+
+### 4. Pós-condições
+
+O sistema mostra o formulario de login de usuario.
+
+### 5. Fluxos de Evento
+
+#### 5.1. Fluxo Básico
+
+| Ator   | Sistema |
+|:-------|:--------|
+| 1.O usuario acesa a pagina de login por meio do icone de perfil na pagina de inicial do site | 2. O sistema exibe o formulario de login de usuario, com os seguintes campos; email e senha .  |
+| 3.O usuario preenche os campos corretamente, e clica em "entrar" | 4.O sistema retorna pagina de inicio logado na conta do cliente |
+
+
+#### 5.2. Fluxos de Exceção
+
+| Exceção | Sistema |
+|:--------|:--------|
+|1. Erro nas credenciais | Se o usuario colocar uma informação invalida(email e senha ) ou um campo em branco, vai da erro e retornar a mensagem "Informações invalidas"|
