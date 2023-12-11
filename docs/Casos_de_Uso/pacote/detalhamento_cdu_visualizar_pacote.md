@@ -9,7 +9,7 @@
 
 ### 1. Resumo 
 
-Nesse caso de uso o funcionario acessa o sistema e por meio do botão "pacotes" visualiza os de pacotes existentes.
+Nesse caso de uso o funcionario acessa o sistema, e por meio do botão "pacotes" visualiza os pacotes existentes.
 
 ### 2. Atores 
 
