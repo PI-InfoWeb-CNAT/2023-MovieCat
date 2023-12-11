@@ -1,4 +1,4 @@
-# Projeto AgendMovies
+# Projeto MovieCat
 
 ## Especificação do caso de uso - Listar pacotes
 
@@ -29,7 +29,7 @@ O sistema mostra uma lista de pacotes atuais (número de ingressos e valor do pa
 
 | Ator   | Sistema |
 |:-------|:--------|
-| 1. O administrador clica no botão "pacotes" no painel de controle (dashborad) de funcionário do AgendMovies.| 2. O sistema lista os pacotes atuais do AgendMovies|
+| 1. O administrador clica no botão "pacotes" no painel de controle (dashborad) de funcionário do MovieCat.| 2. O sistema lista os pacotes atuais do MovieCat|
 
 
 #### 5.2. Fluxos de Exceção
