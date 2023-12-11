@@ -28,15 +28,20 @@
 </head>
 <body>
     <header>
-
-        <div id="Header_Organizador">
-            <div>
-                <a href='@Url.Action("AdmPage", "Adm")'><p><img src="~/img/Logo.png"></p></a>
-            </div>
-
-            <div>
-                <a href="#"><p><img src="~/img/logout_branco.png"></p></a>
-            </div>
+        <h1>
+            <a href="@Url.Action("Home", "Home")">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="@Url.Action("Home", "Home")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Pacotes")">Pacotes</a></li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+        </ol>
+        <div>
+            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
+            <p>Perfil</p>
         </div>
     </header>
 
@@ -88,20 +93,12 @@
     </section>
 
     <footer>
-        <div>
-            <p>Copyright © 2023 AgendMovies</p>
-        </div>
-
-        <div>
-            <ol>
-                <a href="#.html">
-                <li><img src="~/img/insta.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/face.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/twitter.png"></li></a>
-            </ol>
-        </div>
+        <img src="~/img/logoFooter.png" />
+        <ol>
+            <li><a href=#><img src="~/img/github.png" /></a></li>
+            <li><a href=#><img src="~/img/facebook.png" /></a></li>
+            <li><a href=#><img src="~/img/twitter.png" /></a></li>
+        </ol>
     </footer>
 </body>
 </html>

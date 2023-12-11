@@ -12,6 +12,12 @@ namespace AgendMovies.Controllers
     {
         // GET: Employees
         Tabelas Banco = new Tabelas();
+
+        public ActionResult Home()
+        {
+            return View(Banco.Filmes.OrderBy(f => f.FilmeId));
+        }
+
         public ActionResult Cadastrar()
         {
             return View(new Funcionario());

@@ -151,6 +151,8 @@
     <Content Include="script\beattlejuice.js" />
     <Content Include="styles\beattlejuice.css" />
     <Content Include="styles\CadastrarFilmes.css" />
+    <Content Include="styles\DashboardaFuncionario_provisorio.css" />
+    <Content Include="styles\DashboardPrincipal.css" />
     <Content Include="styles\EditarFilmes.css" />
     <Content Include="styles\EditarSessao.css" />
     <Content Include="styles\ListarFuncionarios.css" />
@@ -413,6 +415,7 @@
     <Content Include="Views\Home\IndexCliente.cshtml" />
     <Content Include="Views\Home\ComprarForm.cshtml" />
     <Content Include="Views\Cliente\VerPerfilCompras.cshtml" />
+    <Content Include="Views\Employees\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

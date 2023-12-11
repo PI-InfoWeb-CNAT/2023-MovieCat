@@ -8,15 +8,30 @@
 <body>
     <header>
 
-        <div id="Header_Organizador">
-            <div>
-                <a href='@Url.Action("Index", "Home")'><p><img src="~/img/Logo.png"></p></a>
-            </div>
+        <a href="#" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Home")" class="home-active">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Pacotes</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Agenda</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <!-- MENU TEMPORÁRIO -->
+            <li id="MenuTemp">
+                <a id="LinkMenuTemp" href="#sobrenos">Dashboards</a>
+                <ol>
+                    <li><a href="DashboardADM.html">ADM</a></li>
+                    <li><a href="DashboardFuncionario.html">Funcionário</a></li>
+                    <li><a href="#">Cliente</a></li>
+                </ol>
+            </li>
+        </ul>
 
-            <div>
-                <a href="#.html"><p><img src="~/img/logout_branco.png"></p></a>
-            </div>
+        <a href="#" class="btn">Entrar</a>
+
         </div>
+
     </header>
 
     <section>
@@ -41,18 +56,12 @@
 
     <footer>
         <div>
-            <p>Copyright © 2023 AgendMovies</p>
+            <img id="loucura2" src="~/img/logomoviecat.png">
         </div>
-
         <div>
-            <ol>
-                <a href="#.html">
-                <li><img src="~/img/insta.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/face.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/twitter.png"></li></a>
-            </ol>
+            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
+            <img src="~/img/figma.png">
+            <img src="~/img/github.png">
         </div>
     </footer>
 </body>
