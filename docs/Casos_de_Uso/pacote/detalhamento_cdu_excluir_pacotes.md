@@ -1,4 +1,4 @@
-# Projeto AgendMovies
+# Projeto MovieCat
 
 ## Especificação do caso de uso - Excluir pacotes
 
