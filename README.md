@@ -21,7 +21,7 @@ Todo material está publicado sob licença [GPL-3.0](https://github.com/PI-InfoW
 
 =ᗢ=  [Mapa do site](https://www.figma.com/file/Tf9R49Kc4vXWyyZdIGJ6oS/MovieCat?type=design&node-id=0-1&mode=design&t=ToD6eBCOOcf32XOw-0)
 
-=ᗢ=  [Diagrama de casos de uso](docs/Diagramas/Diagrama_de_Casos_de_Uso)
+=ᗢ=  [Diagrama de casos de uso](./docs/Diagramas/Diagrama_de_Casos_de_Uso.png)
 
 =ᗢ=  [Detalhamento de casos de uso](./docs/Casos_de_Uso)
 
