@@ -8,6 +8,7 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 19/06/2023 | **1.00** | Versão Inicial  | Maria Cândida |
+| 11/12/2023 | **1.1** | Versão Final  | Milton Shyon |
 
 ### 1. Resumo 
 
@@ -43,4 +44,4 @@ Ter acesso ao dashboard.
 _
 
 ### 6. Protótipos de Interface
-https://www.figma.com/file/kU2Ogqn2V2mUKLoDF249vz/AgendMovies?type=design&node-id=0%3A1&t=ppw9288UsgGnDo1W-1
+https://www.figma.com/file/Tf9R49Kc4vXWyyZdIGJ6oS/MovieCat?type=design&node-id=0-1&mode=design&t=oTgL2btAqADIzauD-0
