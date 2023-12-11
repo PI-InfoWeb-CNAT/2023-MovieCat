@@ -416,6 +416,7 @@
     <Content Include="Views\Home\ComprarForm.cshtml" />
     <Content Include="Views\Cliente\VerPerfilCompras.cshtml" />
     <Content Include="Views\Employees\Home.cshtml" />
+    <Content Include="Views\Pacotes\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

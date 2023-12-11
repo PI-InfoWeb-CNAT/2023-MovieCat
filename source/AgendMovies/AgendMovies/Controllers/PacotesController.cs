@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -72,5 +73,39 @@ namespace AgendMovies.Controllers
    
             return RedirectToAction("Visualizar");
         }
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Pacotes pacote = T.Pacotes.Find(id);
+
+            if (pacote == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
+            return View(pacote);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Pacotes pacote)
+        {
+            if (ModelState.IsValid)
+            {
+                // Assuming that Pacotes has a property named PacotesId as the primary key
+                T.Entry(pacote).State = EntityState.Modified; // EntityState.Modified is from System.Data.Entity
+                T.SaveChanges();
+                return RedirectToAction("Visualizar");
+            }
+
+            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
+            return View(pacote);
+        }
+
     }
 }
