@@ -1,0 +1,43 @@
+# Projeto MovieCat
+
+## Especificação do caso de uso - Ver Filme
+
+### Histórico da Revisão 
+
+|  Data  | Versão | Descrição | Autor |
+|:-------|:-------|:----------|:------|
+| 11/12/2023 | **1.1** | Versão Final  | Milton Shyon |
+
+### 1. Resumo 
+
+Nesse caso de uso o usuário acessa o sistema e por meio do botão "Filmes" visualiza um filme especifico existente.
+
+### 2. Atores 
+
+Usuários administradores, funcionario e cliente.
+
+### 3. Pré-condições
+
+O usuário deve estar registrado no sistema e acessar a pagina atraves do botão " ver Filmes" no dashborad .
+
+### 4. Pós-condições
+
+O sistema mostra os dados de determinado filme (dia e horario).
+
+### 5. Fluxos de Evento
+
+#### 5.1. Fluxo Básico
+
+| Ator   | Sistema |
+|:-------|:--------|
+| 1. O usuário clica no botão "Ver filmes" no painel de controle (dashborad) de um usuario do MovieCat.| 2. O sistema mostra determinado filme do MovieCat|
+
+
+#### 5.2. Fluxos de Exceção
+
+| Exceção | Sistema |
+|:--------|:--------|
+| | |
+
+### 6. Protótipos de Interface
+https://www.figma.com/file/Tf9R49Kc4vXWyyZdIGJ6oS/MovieCat?type=design&node-id=0-1&mode=design&t=oTgL2btAqADIzauD-0
