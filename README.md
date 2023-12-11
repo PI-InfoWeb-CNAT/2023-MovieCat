@@ -10,6 +10,7 @@
 O sistema web MovieCat é uma plataforma intuitiva projetada para proporcionar uma experiência simplificada aos usuários que desejam adquirir ingressos para sessões cinematográficas. 
 
 
+
 Todo material está publicado sob licença [GPL-3.0](https://github.com/PI-InfoWeb-CNAT/2023-MovieCat/blob/305cf6604d25c7cbc8e5bc1396d0d3fcf5f2dea1/LICENSE).
 
 <h2>ᓚᘏᗢ Artefatos do Projeto</h2>
@@ -52,3 +53,10 @@ Todo material está publicado sob licença [GPL-3.0](https://github.com/PI-InfoW
   
 | [<img align="center" src="https://github.com/PI-InfoWeb-CNAT/2023-MovieCat/assets/79120586/b1fb641a-f623-4a77-af5e-79acdaa8cc91" width=150><br><sub>Maria Cândida</sub>](https://github.com/mmariacandida) |  [<img src="https://github.com/PI-InfoWeb-CNAT/2023-MovieCat/assets/79120586/a0aa352d-3e22-4e2c-bab0-41e6372c0f9e" width=150><br><sub>Milton Shyon</sub>](https://github.com/Shyon246) |  [<img src="https://github.com/PI-InfoWeb-CNAT/2023-MovieCat/assets/79120586/4cd48e33-0b39-4fd9-b9d6-720315141d9a" width=150><br><sub>Rita de Cássia</sub>](https://github.com/Ritinhha) | [<img src="https://avatars.githubusercontent.com/u/19308031?v=4" width=150><br><sub>Gilbert Azevedo</sub>](https://github.com/Gilbert-Silva) </div>|
 | :---: | :---: | :---: | :---: |
+
+ ##
+ Oi! •ﻌ•
+ 
+ Se você precisa acessar aos commits mais recentes do progresso em back-end da nossa aplicação, não se esqueça de trocar a branch para "VerAtual"!
+ 
+/ᐠﹷ ‸ ﹷ ᐟ\ﾉ 
