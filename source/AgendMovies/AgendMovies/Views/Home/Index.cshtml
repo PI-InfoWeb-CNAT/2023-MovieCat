@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>MovieCat Menu Principal</title>
     <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
+    <link rel="icon" href="~/img/IconeSite.svg" />
 
     <!-- link carrosel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -13,10 +14,12 @@
             width: 180px !important;
             height: 270px !important;
         }
+
         .CapaFilmeGrande {
             width: 559px !important;
             height: 842px !important;
         }
+
         .ClassiIndicati {
             width: 40px !important;
             height: 40px !important;
@@ -105,7 +108,7 @@
                         <a href="@Url.Action("PedidoPacote","Home", new {Id = f.FilmeId, dia = "seg"})">
                             @if (f.ConteudoDaFoto == null)
                             {
-                                <img src="~/img/image 4.png">
+                                <img  class="CapaFilmeGrande" src="~/img/image 4.png">
                             }
                             else
                             {
