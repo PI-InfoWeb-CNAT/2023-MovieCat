@@ -1,4 +1,4 @@
-﻿@model AgendMovies.Modelos.Pacotes
+﻿@model AgendMovies.Modelos.VerPerfilView
 
 @{
     Layout = null;
@@ -10,12 +10,21 @@
     <meta charset="utf-8">
     <title>Home</title>
     <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
-    <link href="~/styles/EditarPacote.css" rel="stylesheet" />
+    <link href="~/styles/VerPacote.css" rel="stylesheet" />
     <link rel="icon" href="~/img/Logo_aba.png" />
     <script src="beattlejuice.js"></script>
     <style>
-        form button{
-            cursor: pointer;
+        #AreaComprador{
+            color: white;
+            display: flex;
+        }
+        .Negrito{
+            font-weight:bold;
+            margin-left: 10px;
+        }
+        .BordaBaixa{
+            border-bottom: 1px solid white;
+            width: 100%;
         }
     </style>
 </head>
@@ -41,39 +50,20 @@
         <section>
 
 
-            <div id="organ"><h1>Cadastrar pacote </h1></div>
-
-
-            @using (Html.BeginForm("Cadastrar", "Pacotes", FormMethod.Post,
-new { enctype = "multipart/form-data" }))
-            {
-                @Html.AntiForgeryToken()
-
+            <div id="organ"><img id="olho" src="~/img/oljo.png"><h1>ver pacote comprado</h1></div>
+            <div id="AreaComprador">
+                <p>Comprador: </p><p class="Negrito">@Model.Cliente.Nome</p>
+            </div>
+            <div id="borda">
                 <ol>
-                    <li id="li1">
-                        <p>Nome:</p>
-
-                        @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required" })
-                    </li>
-                    <li id="li2">
-                        <p>Ingressos:</p>
-
-                        @Html.TextBoxFor(model => model.ingressos, new { type = "number", required = "required" })
-                    </li>
-                    <li id="li3">
-                        <p>Valor:</p>
-
-                        @Html.TextBoxFor(model => model.valor, new { type = "number", required = "required" })
-                    </li>
-                    <div id="b">
-                        <button type="submit">Salvar</button>
-                    </div>
+                    <li id="li1"><p>Nome:</p><p class="BordaBaixa">@Model.Pacote.nome</p></li>
+                    <li id="li2"><p>Ingressos:</p><p class="BordaBaixa">@Model.Pacote.ingressos</p></li>
+                    <li id="li3"><p>Valor:</p><p class="BordaBaixa">@Model.Pacote.valor</p></li>
                 </ol>
-
                 <!--<div id="b">
                 <button>Cadastrar</button>
-                </div>-->}
-
+                </div>-->
+            </div>
 
         </section>
     </main>

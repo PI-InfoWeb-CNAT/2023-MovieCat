@@ -14,7 +14,7 @@
     <link rel="icon" href="~/img/Logo_aba.png" />
     <script src="beattlejuice.js"></script>
     <style>
-        form button{
+        form button {
             cursor: pointer;
         }
     </style>
@@ -41,39 +41,39 @@
         <section>
 
 
-            <div id="organ"><h1>Cadastrar pacote </h1></div>
+            <div id="organ"><img id="olho" src="~/img/pen.png"><h1>Editar pacote </h1></div>
 
-
-            @using (Html.BeginForm("Cadastrar", "Pacotes", FormMethod.Post,
+      
+                @using (Html.BeginForm("Editar", "Pacotes", FormMethod.Post,
 new { enctype = "multipart/form-data" }))
-            {
-                @Html.AntiForgeryToken()
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => model.PacotesId)
+                    <ol>
+                        <li id="li1">
+                            <p>Nome:</p>
+                 
+                            @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required" })
+                        </li>
+                        <li id="li2">
+                            <p>Ingressos:</p>
+                        
+                            @Html.TextBoxFor(model => model.ingressos, new { type = "number", required = "required" })
+                        </li>
+                        <li id="li3">
+                            <p>Valor:</p>
+                   
+                            @Html.TextBoxFor(model => model.valor, new { type = "number", required = "required" })
+                        </li>
+                        <div id="b">
+                            <button type="submit">Salvar</button>
+                        </div>
+                    </ol>
 
-                <ol>
-                    <li id="li1">
-                        <p>Nome:</p>
-
-                        @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required" })
-                    </li>
-                    <li id="li2">
-                        <p>Ingressos:</p>
-
-                        @Html.TextBoxFor(model => model.ingressos, new { type = "number", required = "required" })
-                    </li>
-                    <li id="li3">
-                        <p>Valor:</p>
-
-                        @Html.TextBoxFor(model => model.valor, new { type = "number", required = "required" })
-                    </li>
-                    <div id="b">
-                        <button type="submit">Salvar</button>
-                    </div>
-                </ol>
-
-                <!--<div id="b">
-                <button>Cadastrar</button>
-                </div>-->}
-
+                    <!--<div id="b">
+        <button>Cadastrar</button>
+        </div>-->}
+        
 
         </section>
     </main>

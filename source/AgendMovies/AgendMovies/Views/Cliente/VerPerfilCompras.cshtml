@@ -235,8 +235,12 @@ nav {
 
         ol#Comprados::-webkit-scrollbar-track {
             background-color: rgba(255, 255, 255, 0.1); /* cor do fundo da barra de rolagem */
-        } 
-
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
     </style>
 </head>
 <body>
@@ -253,15 +257,31 @@ nav {
             <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
         </ol>
         <div>
-            <p><a href="@Url.Action("VerPerfilCompras", "Cliente")"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>@cliente.Nome</p>
+
+            @if (cliente != null)
+            {
+                if (cliente.Foto == null)
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new { id = cliente.Id })"></p></a>
+                }
+
+                <p id="per">@cliente.Nome</p>
+            }
+            else
+            {
+                <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
+            }
         </div>
     </header>
     <!-- 246 -->
 
     <main>
         <section id="um_terco">
-            <img class="PerfilFoto" src="~/img/funcionario_Mar.png" id="iraik">
+            <img class="PerfilFoto" src="~/img/PerfilSemFoto.png" id="iraik">
             <h1>@cliente.Nome</h1>
             <ol>
                 <a href="#">
@@ -279,56 +299,57 @@ nav {
                 <li><p>Histórico de Compras</p></li></a>
             </ol>
             <div id="do2"><h1>Comprado</h1></div>
-           
 
-                <ol id="Comprados">
-                    @foreach (var compra in Model)
-                    {
-                        <li>
-                            <div class="ImgArea">
-                                @if (compra.Filme.ConteudoDaFoto == null)
-                                {
-                                    <img src="~/img/castelo_animado.png">
-                                }
-                                else
-                                {
-                                    <img width="400px" height="519px" src="@Url.Action("GetLogoTipo", "Filmes", new { id = compra.Filme.FilmeId })">
-                                }
-                                <div>
-                                    @{ 
-                                        var img = @compra.Filme.Indicativa.ToString() + ".png";
-                                    }
-                                    <img src="~/img/@img" />
-                                </div>
 
-                            </div>
+            <ol id="Comprados">
+                @foreach (var compra in Model)
+                {
+                    <li>
+                        <div class="ImgArea">
+                            @if (compra.Filme.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/castelo_animado.png">
+                            }
+                            else
+                            {
+                                <img width="400px" height="519px" src="@Url.Action("GetLogoTipo", "Filmes", new { id = compra.Filme.FilmeId })">
+                            }
                             <div>
-                                <p class="CodSec">@compra.Sessao.SessaoId</p>
-                                <p>Codigo da sessão</p>
-                                <br />
-                                <p>Horario: @compra.Sessao.horaInicio</p>
-                                <br />
-                                <p>Ingressos: @compra.Pacote.ingressos</p>
-                                <br />
-                                <p>Valor: @compra.Pacote.valor</p>
-                                <br />
-                                <p>Sala @compra.Sessao.Sala</p>
+                                @{
+                                    var img = @compra.Filme.Indicativa.ToString() + ".png";
+                                }
+                                <img src="~/img/@img" />
                             </div>
-                        </li>
-                    }
 
-                </ol>
-           
+                        </div>
+                        <div>
+                            <p class="CodSec">@compra.Sessao.SessaoId</p>
+                            <p>Codigo da sessão</p>
+                            <br />
+                            <p>Horario: @compra.Sessao.horaInicio</p>
+                            <br />
+                            <p>Ingressos: @compra.Pacote.ingressos</p>
+                            <br />
+                            <p>Valor: @compra.Pacote.valor</p>
+                            <br />
+                            <p>Sala @compra.Sessao.Sala</p>
+                        </div>
+                    </li>
+                }
+
+            </ol>
+
         </section>
     </main>
 
     <footer>
-        <img src="img/logoFooter.png" />
+        <img src="~/img/footerMovieCat.png" />
         <ol>
-            <li><a href=#><img src="img/github.png" /></a></li>
-            <li><a href=#><img src="img/facebook.png" /></a></li>
-            <li><a href=#><img src="img/twitter.png" /></a></li>
+            <li><a href=#><img src="~/img/replitIcon.png" /></a></li>
+            <li><a href=#><img src="~/img/figmaIcon.png" /></a></li>
+            <li><a href=#><img src="~/img/githubIcon.png" /></a></li>
         </ol>
     </footer>
+    
 </body>
 </html>

@@ -22,6 +22,40 @@ namespace AgendMovies.Controllers
         {
             return View(new Funcionario());
         }
+        public ActionResult VerPacotesComprados()
+        {
+
+
+            List<Compra> Compras = Banco.Compras.OrderByDescending(c => c.CompraId).ToList();
+            List<VerPerfilView> ComprasView = new List<VerPerfilView>();
+            foreach (Compra C in Compras)
+            {
+                VerPerfilView mc = new VerPerfilView();
+                mc.Compra = C;
+                mc.Sessao = Banco.Sessoes.Find(C.IdSessao);
+                mc.Filme = Banco.Filmes.Find(mc.Sessao.IdFilme);
+                mc.Pacote = Banco.Pacotes.Find(C.IdPacote);
+                mc.Cliente = Banco.Clientes.Find(C.IdCliente);
+                ComprasView.Add(mc);
+            }
+            return View(ComprasView);
+
+        }
+        public ActionResult VerPacoteComprado(long id)
+        {
+
+            Compra Compra = Banco.Compras.Find(id);
+            
+            VerPerfilView mc = new VerPerfilView();
+            mc.Compra = Compra;
+            mc.Sessao = Banco.Sessoes.Find(Compra.IdSessao);
+            mc.Filme = Banco.Filmes.Find(mc.Sessao.IdFilme);
+            mc.Pacote = Banco.Pacotes.Find(Compra.IdPacote);
+            mc.Cliente = Banco.Clientes.Find(Compra.IdCliente);
+
+            return View(mc);
+
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Cadastrar(Funcionario f, HttpPostedFileBase arquivo)

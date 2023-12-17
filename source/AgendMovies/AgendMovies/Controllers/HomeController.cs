@@ -14,7 +14,13 @@ namespace AgendMovies.Controllers
         public ActionResult Index()
         {
            
-            return View(BD.Filmes.OrderBy(c => c.FilmeId).ToList());
+            
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                ViewBag.ClienteLogado = c;
+            }
+            return View(BD.Filmes.OrderBy(f => f.FilmeId).ToList());
         }
         public ActionResult IndexCliente()
         {

@@ -70,7 +70,7 @@ namespace AgendMovies.Controllers
             if(cliente != null)
             {
                 Session["Cliente"] = cliente;
-                return RedirectToAction("IndexCliente", "Home");
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Cadastrar", "Cliente");
         }
@@ -89,7 +89,7 @@ namespace AgendMovies.Controllers
             }
             catch
             {
-                return RedirectToAction("IndexCliente", "Home");
+                return RedirectToAction("Index", "Home");
             }
             
         }
@@ -103,7 +103,7 @@ namespace AgendMovies.Controllers
         public FileContentResult GetLogoTipo(int? id)
         {
 
-            Funcionario F = Banco.Funcionarios.Find(id);
+            Cliente F = Banco.Clientes.Find(id);
             if (F != null)
             {
                 return File(F.Foto, F.TipoDaFoto);

@@ -148,15 +148,22 @@
     <Content Include="Content\DataTables-1.10.2\swf\copy_csv_xls.swf" />
     <Content Include="Content\DataTables-1.10.2\swf\copy_csv_xls_pdf.swf" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\figmaIcon.png" />
+    <Content Include="img\footerMovieCat.png" />
+    <Content Include="img\githubIcon.png" />
     <Content Include="img\IconeSite.svg" />
+    <Content Include="img\PerfilSemFoto.png" />
+    <Content Include="img\replitIcon.png" />
     <Content Include="script\beattlejuice.js" />
     <Content Include="styles\beattlejuice.css" />
     <Content Include="styles\CadastrarFilmes.css" />
     <Content Include="styles\DashboardaFuncionario_provisorio.css" />
     <Content Include="styles\DashboardPrincipal.css" />
     <Content Include="styles\EditarFilmes.css" />
+    <Content Include="styles\EditarPacote.css" />
     <Content Include="styles\EditarSessao.css" />
     <Content Include="styles\ListarFuncionarios.css" />
+    <Content Include="styles\ListarPacotes.css" />
     <Content Include="styles\ListarSessoes.css" />
     <Content Include="styles\modalConfirm.css" />
     <Content Include="styles\Principal.css" />
@@ -338,6 +345,7 @@
     <Content Include="styles\pacotes_create.css" />
     <Content Include="styles\style.css" />
     <Content Include="styles\VerFilmes.css" />
+    <Content Include="styles\VerPacote.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -373,7 +381,6 @@
     <Content Include="Views\Temporario\MapaLinks.cshtml" />
     <Content Include="Views\Adm\AdmPage.cshtml" />
     <Content Include="Views\ListarFuncionarios\ListarFuncionarios.cshtml" />
-    <Content Include="Views\Pacotes\ListarPacotes.cshtml" />
     <Content Include="Views\CadastroDePacotes\CadastrarPacotes.cshtml" />
     <Content Include="Views\Funcionario\FuncionarioPage.cshtml" />
     <Content Include="Views\Funcionario02\Funcionario02.cshtml" />
@@ -413,12 +420,14 @@
     <Content Include="Views\Filmes\Editar.cshtml" />
     <Content Include="Views\Filmes\VerFilmes.cshtml" />
     <Content Include="Views\Sessao\VerSessoes.cshtml" />
-    <Content Include="Views\Pacotes\CadastrarPacotes.cshtml" />
     <Content Include="Views\Home\IndexCliente.cshtml" />
     <Content Include="Views\Home\ComprarForm.cshtml" />
     <Content Include="Views\Cliente\VerPerfilCompras.cshtml" />
     <Content Include="Views\Employees\Home.cshtml" />
-    <Content Include="Views\Pacotes\Edit.cshtml" />
+    <Content Include="Views\Employees\VerPacotesComprados.cshtml" />
+    <Content Include="Views\Employees\VerPacoteComprado.cshtml" />
+    <Content Include="Views\Pacotes\Editar.cshtml" />
+    <Content Include="Views\Pacotes\VerPacote.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

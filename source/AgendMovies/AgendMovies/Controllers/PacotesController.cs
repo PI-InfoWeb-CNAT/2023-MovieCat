@@ -13,15 +13,11 @@ namespace AgendMovies.Controllers
 
         // GET: Pacotes
         Tabelas T = new Tabelas();
-        public ActionResult ListarPacotes()
-        {
-            return View();
-        }
+
         public ActionResult Visualizar()
         {
-            ViewBag.Pac = new Pacotes();
-            ViewBag.Quant = T.Pacotes.OrderBy(pacotes => pacotes.nome).ToList().Count();
-            return View(T.Pacotes.OrderBy(pacotes => pacotes.nome));
+            
+            return View(T.Pacotes.OrderBy(pacotes => pacotes.PacotesId));
         }
         public ActionResult Cadastrar()
         {
@@ -29,6 +25,53 @@ namespace AgendMovies.Controllers
             ViewBag.Pacotes = T.Pacotes.OrderBy(pacotes => pacotes.nome);
             
             return View();
+        }
+        public ActionResult Editar(long? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Pacotes pacote = T.Pacotes.Find(id);
+
+            if (pacote == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(pacote);
+        }
+        public ActionResult VerPacote(long? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Pacotes pacote = T.Pacotes.Find(id);
+
+            if (pacote == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(pacote);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar(Pacotes pacote)
+        {
+            if (ModelState.IsValid)
+            {
+                // Assuming that Pacotes has a property named PacotesId as the primary key
+                T.Entry(pacote).State = EntityState.Modified; // EntityState.Modified is from System.Data.Entity
+                T.SaveChanges();
+                return RedirectToAction("Visualizar");
+            }
+
+            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
+            return View(pacote);
         }
         [HttpPost]
         public ActionResult Cadastrar(Pacotes p)
@@ -73,39 +116,7 @@ namespace AgendMovies.Controllers
    
             return RedirectToAction("Visualizar");
         }
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-
-            Pacotes pacote = T.Pacotes.Find(id);
-
-            if (pacote == null)
-            {
-                return HttpNotFound();
-            }
-
-            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
-            return View(pacote);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Pacotes pacote)
-        {
-            if (ModelState.IsValid)
-            {
-                // Assuming that Pacotes has a property named PacotesId as the primary key
-                T.Entry(pacote).State = EntityState.Modified; // EntityState.Modified is from System.Data.Entity
-                T.SaveChanges();
-                return RedirectToAction("Visualizar");
-            }
-
-            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
-            return View(pacote);
-        }
+        
 
     }
 }

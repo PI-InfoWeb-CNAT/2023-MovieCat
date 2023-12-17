@@ -1,5 +1,4 @@
-﻿@model IEnumerable<AgendMovies.Modelos.Pacotes>
-
+﻿@model IEnumerable<AgendMovies.Modelos.VerPerfilView>
 
 @{
     Layout = null;
@@ -35,7 +34,7 @@
     <!-- 246 -->
     <main>
         <div id="uni">
-            <h1 id="h11">PACOTES CADASTRADOS NO SISTEMA</h1>
+            <h1 id="h11">PACOTES COMPRADOS NO SISTEMA</h1>
         </div>
 
         <div id="org">
@@ -43,12 +42,11 @@
                 @foreach (var item in Model)
                 {
                     <li>
-                        <h1 id="pequena">@item.nome</h1><div>
+                        <h1 id="pequena">@item.Pacote.nome</h1><div>
                             <ol class="botoes">
-                                <a href="@Url.Action("VerPacote", "Pacotes", new { id = item.PacotesId})">
+                                <a href="@Url.Action("VerPacoteComprado", "Employees", new { id = item.Compra.CompraId})">
                                 <li><img src="~/img/oljo.png"></li>
                                 <p>Ver </p></a>
-                                <a href="@Url.Action("Editar", "Pacotes", new { id = item.PacotesId})"><li><img src="~/img/pen.png"></li><p>Editar</p></a>
                                 <a href="#">
                                 <li><img src="~/img/lixo.png"></li>
                                 <p>Excluir</p></a>
@@ -58,7 +56,7 @@
                 }
 
 
-            </ol>
+                </ol>
         </div>
 
 
@@ -67,7 +65,7 @@
 
     <footer>
         <div>
-            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+            <img  src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
         </div>
         <div>
             <img id="loucura" src="~/img/replitIcon.png">

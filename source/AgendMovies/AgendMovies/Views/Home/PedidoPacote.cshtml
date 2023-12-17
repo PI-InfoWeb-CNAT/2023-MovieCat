@@ -16,7 +16,16 @@
     <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
     <link rel="stylesheet" href="@Url.Content("~/styles/beattlejuice.css")" />
     <link rel="icon" href="~/img/Logo_aba.png" />
-  
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        .QuebraTextoSinopse{
+            word-break: break-all;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -35,13 +44,20 @@
 
             @if (cliente != null)
             {
-                <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img src="~/img/funcionario_Mar.png"></p></a>
+                if (cliente.Foto == null)
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new { id = cliente.Id })"></p></a>
+                }
+
                 <p id="per">@cliente.Nome</p>
             }
             else
             {
-                <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
-                <p id="per">PErfil</p>
+                <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
             }
 
         </div>
@@ -95,7 +111,7 @@
                             <div id="local_da_sinopse">
                                 <h1 class="h1li">Sinopse:</h1>
                                 <br>
-                                <p>@Model.Sinopse</p>
+                                <p class="QuebraTextoSinopse">@Model.Sinopse</p>
                                 <br>
                                 <div id="orgol">
                                     <ol id="ol1">
@@ -244,12 +260,12 @@
     </body>
     <footer>
         <div>
-            <img id="loucura2" src="~/img/logomoviecat.png">
+            <img id="loucura2" src="~/img/footerMovieCat.png">
         </div>
         <div>
-            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
-            <img src="~/img/figma.png">
-            <img src="~/img/github.png">
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
 </body>

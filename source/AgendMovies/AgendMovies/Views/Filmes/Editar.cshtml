@@ -77,12 +77,19 @@
 
                         <div id="info_do_filme">
                             <div id="local_da_img" onclick="AtualizarImg('CapaFilme', 'InputImg')">
-                                <img id="CapaFilme" src="~/img/castelo_animado.png" width="400px">
+                                @if (Model.ConteudoDaFoto == null)
+                                {
+                                    <img id="CapaFilme" src="~/img/select_film.png" width="400px">
+                                }
+                                else
+                                {
+                                    <img id="CapaFilme" src="@Url.Action("GetLogoTipo", "Filmes", new { id = Model.FilmeId })" width="400px">
+                                }
                             </div>
                             <div id="info">
                                 <div id="info_nome">
-                                    <h1>O Castelo Animado</h1>
-                                    <p>120 min | Aventura </p>
+                                    <h1>@Model.Nome</h1>
+                                    <p>@Model.Duracao min | @Model.Genero </p>
                                 </div>
                                 <div id="idade">
                                     <img src="img/12.png">
@@ -94,32 +101,41 @@
                             @Html.HiddenFor(model => model.FilmeId)
                             @Html.HiddenFor(model => model.ConteudoDaFoto)
                             @Html.HiddenFor(model => model.TipoDaFoto)
+    
 
-                            <div id="local_da_sinopse">
+                    <div id="local_da_sinopse">
 
-                                <div id="orgph"><div><img src="img/pen.png"></div><h1 class="h1li">Sinopse:</h1></div>
-                                <br>
-                                @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
+                        <div id="orgph"><div><img src="img/pen.png"></div><h1 class="h1li">Sinopse:</h1></div>
+                        <br>
+                        @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
 
-                                <div id="ori"><p>Nome do filme: </p>@Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })</div>
+                        <div id="ori"><p>Nome do filme: </p>@Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })</div>
 
-                                <div id="ori">
-                                    <p>Gênero:</p>  @Html.TextBoxFor(model => model.Genero, new { type = "text", required = "required", id = "coloco_um_nome_legal_depois" })
+                        <div id="ori">
+                            <p>Gênero:</p>  @Html.TextBoxFor(model => model.Genero, new { type = "text", required = "required", id = "coloco_um_nome_legal_depois" })
 
-                                    <p>Categoria:</p><select id="Indicativa">
-                                        <p>Categoria</p>
-                                        <option value="Em Breve"><p>Em Breve</p></option>
-                                        <option value="Em Cartaz"><p>Em Cartaz</p></option>
-                                        <option value="Filmes Em Estréia"><p>Filmes Em Estréia</p></option>
-                                    </select>
-                                </div>
+                            @{
+                                var gens = new List<SelectListItem>
+                                                                                                                                            {
+                                            new SelectListItem { Value = "Em Cartaz", Text = "Em Cartaz" },
+                                            new SelectListItem { Value = "Em Breve", Text = "Em Breve" },
+                                            new SelectListItem { Value = "Filmes em Estreia", Text = "Filmes em Estreia" },
 
-                                <div id="ori2">
-                                    <p>Classificação</p>
+                                        };
+                            }
 
-                                    @{
-                                        var inds = new List<SelectListItem>
-                                                                                                                                                                                                                                                                    {
+                            <p>Categoria:</p> @Html.DropDownListFor(model => model.Categoria, gens, new { required = "required", id = "Indicativa" })
+                        </div>
+                        <div>
+                            <label for="distribuidora"><p>Distribuidora:</p></label>
+                            @Html.TextBoxFor(model => model.Distribuidora, new { type = "text", required = "required", id = "it" })
+                        </div>
+                        <div id="ori2">
+                            <p>Classificação</p>
+
+                            @{
+                                var inds = new List<SelectListItem>
+                                                                                                                                                                                                                                                                                                                                                                                    {
                                             new SelectListItem { Value = "Livre", Text = "Livre" },
                                                 new SelectListItem { Value = "10", Text = "10" },
                                                 new SelectListItem { Value = "12", Text = "12" },
@@ -127,25 +143,25 @@
                                                 new SelectListItem { Value = "16", Text = "16" },
                                                 new SelectListItem { Value = "18", Text = "18" }
                                          };
-                                    }
+                            }
 
 
-                                    @Html.DropDownListFor(model => model.Indicativa, inds, new { id = "Indicativa" })
+                            @Html.DropDownListFor(model => model.Indicativa, inds, new { id = "Indicativa" })
 
-                                    <p>Duração</p>
-                                    @Html.TextBoxFor(model => model.Duracao, new { type = "number", id = "it", min = "10", max = "300" })
-                                </div>
+                            <p>Duração</p>
+                            @Html.TextBoxFor(model => model.Duracao, new { type = "number", id = "it", min = "10", max = "300" })
+                        </div>
 
-                                <br>
-                                <div id="dtxt">
-                                    <p>Sinopse</p>
-                                    @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "txt" })
-                                </div>
-                                <div id="butd">
-                                    @*<button type="submit" id="but"><p>SALVAR</p></button>*@
-                                    <input type="submit" id="but" value="SALVER" />
-                                </div>
-                            </div>
+                        <br>
+                        <div id="dtxt">
+                            <p>Sinopse</p>
+                            @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "txt" })
+                        </div>
+                        <div id="butd">
+                            @*<button type="submit" id="but"><p>SALVAR</p></button>*@
+                            <input type="submit" id="but" value="SALVER" />
+                        </div>
+                    </div>
 
 
 

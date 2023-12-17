@@ -10,5 +10,8 @@ namespace AgendMovies.Modelos
         public Sessao Sessao { get; set; }
         public Filme Filme { get; set; }
         public Pacotes Pacote { get; set; }
+        public Cliente Cliente { get; set; }
+        public Compra Compra { get; set; }  
+        
     }
 }

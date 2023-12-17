@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{ 
+    var cliente = ViewBag.ClienteLogado as AgendMovies.Modelos.Cliente;
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +27,11 @@
         .ClassiIndicati {
             width: 40px !important;
             height: 40px !important;
+        }
+        .FotoPerfilHeader{
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
         }
     </style>
 </head>
@@ -49,7 +58,31 @@
             </li>
         </ul>
 
-        <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
+
+
+
+
+
+        <div>
+
+            @if (cliente != null)
+            {
+                if (cliente.Foto == null)
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new { id = cliente.Id })"></p></a>
+                }
+
+                <p id="per">@cliente.Nome</p>
+            }
+            else
+            {
+                <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
+            }
+        </div>
 
 
     </header>
@@ -232,15 +265,14 @@
 
     <footer>
         <div>
-            <img id="loucura2" src="~/img/logomoviecat.png">
+            <img id="loucura2" src="~/img/footerMovieCat.png">
         </div>
         <div>
-            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
-            <img src="~/img/figma.png">
-            <img src="~/img/github.png">
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
-
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!-- link customizar carrosel -->
