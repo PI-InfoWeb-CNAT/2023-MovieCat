@@ -166,6 +166,7 @@
     <Content Include="styles\DashFunPacotes.css" />
     <Content Include="styles\EditarFilmes.css" />
     <Content Include="styles\EditarPacote.css" />
+    <Content Include="styles\EditarPerfilCliente.css" />
     <Content Include="styles\EditarSessao.css" />
     <Content Include="styles\ListarFuncionarios.css" />
     <Content Include="styles\ListarPacotes.css" />
@@ -198,7 +199,7 @@
     <Content Include="img\ci12.png" />
     <Content Include="img\ci14.png" />
     <Content Include="img\ci18.png" />
-    <Content Include="img\ciL.png" />
+    <Content Include="img\ciLivre.png" />
     <Content Include="img\Clapperboard.png" />
     <Content Include="img\clientePequeno.png" />
     <Content Include="img\coisas.png" />
@@ -426,7 +427,6 @@
     <Content Include="Views\Filmes\Editar.cshtml" />
     <Content Include="Views\Filmes\VerFilmes.cshtml" />
     <Content Include="Views\Sessao\VerSessoes.cshtml" />
-    <Content Include="Views\Home\IndexCliente.cshtml" />
     <Content Include="Views\Home\ComprarForm.cshtml" />
     <Content Include="Views\Cliente\VerPerfilCompras.cshtml" />
     <Content Include="Views\Employees\Home.cshtml" />
@@ -437,6 +437,7 @@
     <Content Include="Views\Employees\Login.cshtml" />
     <Content Include="Views\Employees\Editar.cshtml" />
     <Content Include="Views\Employees\Ver.cshtml" />
+    <Content Include="Views\Cliente\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

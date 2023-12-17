@@ -93,7 +93,7 @@
                 <ol class="navbar">
                     <li><a href="@Url.Action("Cadastrar", "Cliente")">Cliente</a>
                     <li><a href="@Url.Action("Login", "Employees")">Funcionário</a></li>
-                    <li><a href="@Url.Action("Home", "Adm")">ADM</a></li>
+                    
                 </ol>
 
             </div>
@@ -168,10 +168,10 @@
                         <div id="dvo">
 
                             <h3>@f.Nome</h3>
-                        
-                            
+
+
                             @{
-                                var x = f.Indicativa.ToString() + ".png";
+                                var x = "ci" + f.Indicativa + ".png";
                             }
                             <div><img class="ClassiIndicati" src="~/img/@x"></div>
                         </div>
@@ -224,12 +224,12 @@
                                     <h3>@f.Nome.ToString().Substring(0, 10).ToString() ...</h3>
                                 }
                                 @{
-                                    var x = f.Indicativa.ToString() + ".png";
+                                    var c = "ci" + f.Indicativa + ".png";
                                 }
                                 <span>@f.Duracao min | @f.Genero</span>
 
                             </div>
-                            <img class="ClassiIndicati" src="~/img/@x">
+                            <img class="ClassiIndicati" src="~/img/@c">
 
                         </div>
                     </div>
@@ -264,10 +264,10 @@
                                 <h3>@f.Nome</h3>
                                 <span>@f.Duracao min | @f.Genero</span>
                             </div>
-                            @{ 
-                                var x = f.Indicativa.ToString() + ".png";
+                            @{
+                                var y = "ci" + f.Indicativa + ".png";
                             }
-                            <div><img class="ClassiIndicati" src="~/img/@x"></div>
+                            <div><img class="ClassiIndicati" src="~/img/@y"></div>
                         </div>
                     </div>
                 }

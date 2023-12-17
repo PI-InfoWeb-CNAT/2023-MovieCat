@@ -12,7 +12,15 @@
     <link href="@Url.Content("~/styles/ListarFilmes.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/styles/Principal.css")" rel="stylesheet" type="text/css" />
     <link rel="icon" href="img/Logo_aba.png" />
-
+    <script src="~/script/modal.js"></script>
+    <link rel="stylesheet" href="~/styles/modalConfirm.css">
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,9 +35,13 @@
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->
@@ -78,7 +90,7 @@
                         </div>
                         <div>
                             @{
-                                var classi = m.Indicativa + ".png";
+                                var classi = "ci"+ m.Indicativa + ".png";
                             }
                             <img src="~/img/@classi" class="classificacao">
                         </div>
@@ -87,7 +99,30 @@
                         <ol class="botoes">
                             <a href="@Url.Action("VerFilmes", "Filmes", new { id = m.FilmeId, dia = "seg" })"><li><img src="~/img/oljo.png"></li><p>Ver </p></a>
                             <a href="@Url.Action("Editar", "Filmes", new { id = m.FilmeId})"><li><img src="~/img/pen.png"></li><p>Editar</p></a>
-                            <a href="@Url.Action("Excluir", "Filmes", new { id = m.FilmeId })"><li><img src="~/img/lixo.png"></li><p>Excluir</p></a>
+                            
+                            @{
+                                    var IdModal = "ModalExclusao" + m.FilmeId.ToString();
+                             }
+                            <a href="javascript:AbrirModal('@IdModal')">
+                                <li>
+                                    <img src="~/img/lixo.png">
+                                </li>
+                                <p>Excluir</p>
+
+
+                                </a>
+
+                                <div id="@IdModal" class="Modal">
+                                    <div class="ModalConteudo">
+                                        <h3>Atenção!</h3>
+                                        <p>Tem certeza de que deseja excluir o filme "@m.Nome"? </p>
+                                        <ol>
+                                            <li><a href="@Url.Action("Excluir", "Filmes", new { id = m.FilmeId })">Sim</a></li>
+                                            <li><a href="javascript:FecharModal('@IdModal')">Não</a></li>
+                                        </ol>
+                                        <span class="TextoImg">Essa ação e irreversivel <img src="~/img/iconConfirmExclu.png" alt="Icone de alerta" /></span>
+                                    </div>
+                                </div>
                         </ol>
                     </div>
                 </div>

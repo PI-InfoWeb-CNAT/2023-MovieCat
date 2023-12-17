@@ -13,7 +13,13 @@
     <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
     <link rel="stylesheet" href="@Url.Content("~/styles/VerFilmes.css")" />
     <link rel="icon" href="~/img/Logo_aba.png" />
-
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,8 +34,12 @@
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ul>
         <div id=md>
-            <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
-            <p id="per">Perfil</p>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->
@@ -76,7 +86,7 @@
                                     </div>
                                     <div id="idade">
                                         @{
-                                            var x = Model.Indicativa.ToString() + ".png";
+                                            var x = "ci" + Model.Indicativa + ".png";
                                         }
                                         <img src="~/img/@x">
 

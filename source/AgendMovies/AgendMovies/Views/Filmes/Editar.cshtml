@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")">
-    <link href="@Url.Content("~/styles/EditarFilmes.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardPrincipal.css")">
+    <link href="@Url.Content("~/styles/CadastrarFilmes.css")" rel="stylesheet" />
     <link rel="icon" href="~/img/Logo_aba.png" />
     <script src="beattlejuice.js"></script>
     <script>
@@ -31,14 +31,25 @@
                 }
             });
             Inp.click();
-        }</script>
+        }
+    </script>
     <style>
-        .Esconde{
-            display: none;
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
         }
-        input{
-            color: white;
+
+        header > div > p {
+            color: black !important;
         }
+
+    .Esconde{
+    display: none;
+    }
+    input{
+    color: white;
+    }
     </style>
 </head>
 <body>
@@ -54,25 +65,26 @@
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ul>
         <div id=md>
-            <a href="#.html"><p><img src="img/funcionario_Mar.png"></p></a>
-            <p id="per">Perfil</p>
+            <a href="#.html">
+                <p>
+             
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    
+                  
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->
-    <body>
+
         <main>
-            <div>
-                <div>
+   
 
 
                     <section id="primeira_section">
-                        <ol id=migalha>
-                            <li><a href="index.html">Home</a></li>
-                            <li></li>
-                            <li> <a href="#">Migalha</a></li>
-                            <li></li>
-                            <li> <a href="beattlejuice.html">Migalha</a></li>
-                        </ol>
+                       
 
                         <div id="info_do_filme">
                             <div id="local_da_img" onclick="AtualizarImg('CapaFilme', 'InputImg')">
@@ -91,7 +103,10 @@
                                     <p>@Model.Duracao min | @Model.Genero </p>
                                 </div>
                                 <div id="idade">
-                                    <img src="img/12.png">
+                                    @{
+                                        var classi = "ci" + Model.Indicativa + ".png";
+                                    }
+                                    <img src="~/img/@classi">
                                 </div>
                             </div>
                         </div>
@@ -100,86 +115,91 @@
                             @Html.HiddenFor(model => model.FilmeId)
                             @Html.HiddenFor(model => model.ConteudoDaFoto)
                             @Html.HiddenFor(model => model.TipoDaFoto)
-    
 
-                    <div id="local_da_sinopse">
+                            <div class="EditarFilme">
+                                <div><img src="~/img/pen.png"></div>
+                                <h1 >Edição de filme:</h1>
+                            </div>
 
-                        <div id="orgph"><div><img src="img/pen.png"></div><h1 class="h1li">Sinopse:</h1></div>
-                        <br>
-                        @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
 
-                        <div id="ori"><p>Nome do filme: </p>@Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })</div>
 
-                        <div id="ori">
-                            <p>Gênero:</p>  @Html.TextBoxFor(model => model.Genero, new { type = "text", required = "required", id = "coloco_um_nome_legal_depois" })
+                            @Html.TextBox("arquivo", "", new { type = "file", id = "InputImg", @class = "Esconde" })
+                            <div>
+                                <label for="NomeFilme"><p>Nome do filme:</p></label>
+                                @Html.TextBoxFor(model => model.Nome, new { type = "text", required = "required", id = "NomeFilme" })
+                            </div>
+                            <div>
+                                <label for="id do filme"><p>Id do filme:</p></label>
+                                @Html.TextBoxFor(model => model.FilmeId, new { type = "text", required = "required", id = "id do filme" })
+                            </div>
+                            <div>
+                                <label for="distribuidora"><p>Distribuidora:</p></label>
+                                @Html.TextBoxFor(model => model.Distribuidora, new { type = "text", required = "required", id = "distribuidora" })
+                            </div>
+                            <div id="org">
+                                @{
+                                    var gens = new List<SelectListItem>
+                                                                                                        {
+                                new SelectListItem { Value = "Em Cartaz", Text = "Em Cartaz" },
+                                new SelectListItem { Value = "Em Breve", Text = "Em Breve" },
+                                new SelectListItem { Value = "Filmes em Estreia", Text = "Filmes em Estreia" },
 
-                            @{
-                                var gens = new List<SelectListItem>
+                            };
+                                }
+
+                                <div>
+                                    <label id="coloco_um_nome_legal_depois">
+                                        <p>Genero</p>
+                                        @Html.TextBoxFor(model => model.Genero, new { type = "text", required = "required", id = "coloco_um_nome_legal_depois" })
+                                    </label>
+                                </div>
+
+
+                                <div id="cat">
+                                    <label for="Categoria" id="cat_go"><p>Categoria:</p></label>
+                                    @Html.DropDownListFor(model => model.Categoria, gens, new { required = "required", id = "Categoria" })
+                                </div>
+
+                            </div>
+                            <div>
+                                <label for="tentacles"><p>Duração:</p></label>
+                                @Html.TextBoxFor(model => model.Duracao, new { type = "number", required = "required", id = "tentacles", min = "1", max = "500" })
+                                @{
+                                    var inds = new List<SelectListItem>
                                                                                                                                             {
-                                            new SelectListItem { Value = "Em Cartaz", Text = "Em Cartaz" },
-                                            new SelectListItem { Value = "Em Breve", Text = "Em Breve" },
-                                            new SelectListItem { Value = "Filmes em Estreia", Text = "Filmes em Estreia" },
-
-                                        };
-                            }
-
-                            <p>Categoria:</p> @Html.DropDownListFor(model => model.Categoria, gens, new { required = "required", id = "Indicativa" })
-                        </div>
-                        <div>
-                            <label for="distribuidora"><p>Distribuidora:</p></label>
-                            @Html.TextBoxFor(model => model.Distribuidora, new { type = "text", required = "required", id = "it" })
-                        </div>
-                        <div id="ori2">
-                            <p>Classificação</p>
-
-                            @{
-                                var inds = new List<SelectListItem>
-                                                                                                                                                                                                                                                                                                                                                                                    {
-                                            new SelectListItem { Value = "Livre", Text = "Livre" },
-                                                new SelectListItem { Value = "10", Text = "10" },
-                                                new SelectListItem { Value = "12", Text = "12" },
-                                                new SelectListItem { Value = "14", Text = "14" },
-                                                new SelectListItem { Value = "16", Text = "16" },
-                                                new SelectListItem { Value = "18", Text = "18" }
-                                         };
-                            }
-
-
-                            @Html.DropDownListFor(model => model.Indicativa, inds, new { id = "Indicativa" })
-
-                            <p>Duração</p>
-                            @Html.TextBoxFor(model => model.Duracao, new { type = "number", id = "it", min = "10", max = "300" })
-                        </div>
-
-                        <br>
-                        <div id="dtxt">
-                            <p>Sinopse</p>
-                            @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "txt" })
-                        </div>
-                        <div id="butd">
-                            @*<button type="submit" id="but"><p>SALVAR</p></button>*@
-                            <input type="submit" id="but" value="SALVER" />
-                        </div>
-                    </div>
-
+                                new SelectListItem { Value = "Livre", Text = "Livre" },
+                                new SelectListItem { Value = "10", Text = "10" },
+                                new SelectListItem { Value = "12", Text = "12" },
+                                new SelectListItem { Value = "14", Text = "14" },
+                                new SelectListItem { Value = "16", Text = "16" },
+                                new SelectListItem { Value = "18", Text = "18" }
+                            };
+                                }
+                                <label for="Indicativa" id="label_classificacao"><p>Classificação indicativa:</p></label>
+                                @Html.DropDownListFor(model => model.Indicativa, inds, new { required = "required", id = "Indicativa" })
+                            </div>
+                            <div>
+                                <label for="Sinopse"><p>Sinopse:</p></label>
+                                @Html.TextAreaFor(model => model.Sinopse, new { maxlength = 820, id = "Sinopse" })
+                            </div>
+                            <input class="Adicionar" type="submit" value="Atualizar" />
 
 
 
                         }
                     </section>
-                    </div>
+                
 
-                    
-</main>
-    </body>
+
+        </main>
     <footer>
         <div>
-            <img id="loucura2" src="img/logomoviecat.png">
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
         </div>
         <div>
-            <img id="loucura" src="img/replit-icon-seeklogo.com.svg">
-            <img src="img/figma.png">
-            <img src="img/Documents/gith.png">
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
 </body>

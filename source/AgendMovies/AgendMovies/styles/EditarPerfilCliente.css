@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    position: relative !important;
+    background-color: white;
+}
+
+    header a {
+        color: black !important;
+    }
+
+footer {
+    width: 100%;
+}
+
+#md {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.FotoPerfilHeader {
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+
+header > div > p {
+    color: black !important;
+}
+main{
+    margin: 0 auto;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+}
+form div > img{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+}
+form div > button{
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin: 3em auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+form div > button a{
+    display: block;
+    background-color: #202020;
+    border: 1px solid #B2B2B2;
+    color: white;
+    box-sizing: border-box;
+    font-size: 130%;
+    width: 70%;
+    padding: 5px 10px;
+    margin: 0 auto;
+    border-radius: 6px;
+    cursor: pointer;
+}
+form div > button a b{
+    font-weight: normal;
+    border-bottom: 2px solid transparent;
+    margin: 3px auto;
+    display: block;
+    width: fit-content;
+    transition-property: color, border-color;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+form div > ol{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid white;
+    margin-bottom: 7em;
+    padding-bottom: 5px;
+}
+form div > ol li a{
+    color: white;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+    transition-property: border-color;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+form div > ol li a:hover{
+    border-color: #C00C0C;
+}
+#AreaFoto > p{
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    word-break: break-all;
+    font-size: 130%;
+}
+#AreaInputs{
+    width: 40%;
+}
+#AreaInputs input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    outline: none;
+    margin: 3em 0;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+}
+a:hover .CorBordaVerde{
+    border-color: #00820D;
+    color: #00820D;
+}
+a:hover .CorBordaVermelha{
+    border-color: #FF2828;
+    color: #FF2828;
+}
+#ColocarFotoDePerfil{
+    display: none !important;
+}

@@ -218,6 +218,13 @@ namespace AgendMovies.Controllers
 
             if (s != null)
             {
+
+                List<Compra> compras = Banco.Compras.OrderBy(c => c.IdSessao).Where(co => co.IdSessao == s.SessaoId).ToList();
+                foreach (Compra c in compras)
+                {
+                    Banco.Compras.Remove(c);
+                    Banco.SaveChanges();
+                }
                 Banco.Sessoes.Remove(s);
                 Banco.SaveChanges();
                 // Página de erro 404

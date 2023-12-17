@@ -10,24 +10,75 @@
     <title>Home</title>
     <link rel="icon" href="~/img/Logo_aba.png" />
     <link rel="stylesheet" href="@Url.Content("~/styles/DashboardADM.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardPrincipal.css")" />
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>
-            <a href="@Url.Action("Index", "Home")">
-                <img src="~/img/logo.png" alt="yy" />
-            </a>
-        </h1>
-        <ol>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
             <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
-        </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->
@@ -65,12 +116,14 @@
         </section>
     </main>
     <footer>
-        <img src="~/img/logoFooter.png" />
-        <ol>
-            <li><a href=#><img src="~/img/github.png" /></a></li>
-            <li><a href=#><img src="~/img/facebook.png" /></a></li>
-            <li><a href=#><img src="~/img/twitter.png" /></a></li>
-        </ol>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
     </footer>
 </body>
 </html>

@@ -13,7 +13,83 @@
     <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
     <link rel="stylesheet" href="@Url.Content("~/styles/beattlejuice.css")" />
     <link rel="icon" href="~/img/Logo_aba.png" />
+    <script src="~/script/modal.js"></script>
+    <link rel="stylesheet" href="~/styles/modalConfirm.css">
+    <style>
+        .botoes {
+            display: flex;
+            align-items: stretch;
+            border: none;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .botoes p {
+            border: none !important;
+            width: 100% ;
+            text-align: center;
+            justify-content: center !important;
+            margin: 5px 0 !important;
+            padding: 0 !important;
+        }
+        .botoes a{
+            display: flex;
+            justify-content: center;
+            align-content: space-between;
+            border: none;
+            flex-wrap: wrap;
+        }
+        .botoes a li{
+             border: none;
+            display: block;
+            width: min-content;
+            background-color: white;
+            padding:10px;
+            box-sizing: border-box;
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+        }
+        .botoes a li img{
+            margin: 0 !important;
+        }
+        #infodia1 {
+            display: flex; 
+            overflow: auto;
+        }
+        #infodia1 > div p{
+             width: 100% ;
+        }
+        #infodia1 > div {
+            display: flex;
+            justify-content: center;
+            width: min-content;
+            align-content: center;
+            flex-wrap: wrap;
+            margin: 0 10px;
+        }
 
+        /* Personalizando barrinha */
+        div#infodia1::-webkit-scrollbar {
+            /* largura da barra de rolagem */
+            height: 9px;
+        }
+
+        div#infodia1::-webkit-scrollbar-thumb {
+            background-color: red; /* cor do "polegar" da barra de rolagem */
+            border-radius: 5px;
+            /* borda arredondada do "polegar" */
+        }
+
+        div #infodia1::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1); /* cor do fundo da barra de rolagem */
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,10 +102,15 @@
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+
         </ul>
         <div id=md>
-            <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
-            <p id="per">Perfil</p>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->
@@ -70,7 +151,7 @@
                                     </div>
                                     <div id="idade">
                                         @{
-                                            var x = Model.Indicativa.ToString() + ".png";
+                                            var x = "ci" + Model.Indicativa + ".png";
                                         }
                                         <img src="~/img/@x">
 
@@ -81,7 +162,7 @@
                             <div id="local_da_sinopse">
                                 <h1 class="h1li">Sinopse:</h1>
                                 <br>
-                                <p>@Model.Sinopse</p>
+                                <p style="word-break: break-all;">@Model.Sinopse</p>
                                 <br>
                                 <div id="orgol">
                                     <ol id="ol1">
@@ -193,44 +274,62 @@
                                 {
 
 
-                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Dub)
-                                    {
-                                        <p>sala @s.Sala  | @s.data.ToString("dd/MM/yyyy") | @s.horaInicio | <img src="~/img/dub.png" /><ol class="botoes">
-    <a href="@Url.Action("Editar", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/pen.png"></li>
-    <p>Editar</p></a>
-    <a href="@Url.Action("Excluir", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/lixo.png"></li>
-    <p>Excluir</p></a>
-</ol></p> 
-                                    }
+                                    <div>
+                                        <p>
+                                            sala @s.Sala <br />  @s.data.ToString("dd/MM/yyyy") <br />  @s.horaInicio
+                                            @if (s.Idioma == AgendMovies.Modelos.Idioma.Dub)
+                                            {
+
+                                                <img src="~/img/dub.png" />
+                                            }
+                                            @if (s.Idioma == AgendMovies.Modelos.Idioma.Leg)
+                                            {
+
+                                                <img src="~/img/leg.png" />
+                                            }
+                                            @if (s.Idioma == AgendMovies.Modelos.Idioma.Orig)
+                                            {
+
+                                                <img src="~/img/nac.png" />
+                                            }
+                                            <ol class="botoes">
+
+                                                <a href="@Url.Action("Editar", "Sessao", new { id = s.SessaoId })">
 
 
-                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Leg)
-                                    {
-                            <p>sala @s.Sala | @s.data.ToString("dd/MM/yyyy") | @s.horaInicio | <img src="~/img/leg.png" /></p> <ol class="botoes">
-    
-    <a href="@Url.Action("Editar", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/pen.png"></li>
-    <p>Editar</p></a>
-    <a href="@Url.Action("Excluir", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/lixo.png"></li>
-    <p>Excluir</p></a>
-</ol>
-                                    }
-                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Orig)
-                                    {
-                            <p>sala @s.Sala | @s.data.ToString("dd/MM/yyyy") | @s.horaInicio | <img src="~/img/nac.png" /></p> <ol class="botoes">
-    
-    <a href="@Url.Action("Editar", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/pen.png"></li>
-    <p>Editar</p></a>
-    <a href="@Url.Action("Excluir", "Sessao", new { id = s.SessaoId })">
-    <li><img src="~/img/lixo.png"></li>
-    <p>Excluir</p></a>
-</ol>
-                                    }
+                                                <li><img src="~/img/pen.png"></li>
 
+                                                <p>Editar</p></a>
+
+                                                @{
+                                                    var IdModal = "ModalExclusao" + s.SessaoId.ToString();
+                                                }
+                                                <a href="javascript:AbrirModal('@IdModal')">
+                                                <li>
+                                                    <img src="~/img/lixo.png">
+                                                </li>
+                                                <p>Excluir</p>
+
+
+                                                </a>
+
+                                                <div id="@IdModal" class="Modal">
+                                                    <div class="ModalConteudo">
+                                                        <h3>Atenção!</h3>
+                                                        <p>Tem certeza de que deseja excluir a Sessão de @s.data.ToString("dd/MM/yyyy"), iniciada as @s.horaInicio? </p>
+                                                        <ol>
+                                                            <li><a href="@Url.Action("Excluir", "Sessao", new { id = s.SessaoId })">Sim</a></li>
+                                                            <li><a href="javascript:FecharModal('@IdModal')">Não</a></li>
+                                                        </ol>
+                                                        <span class="TextoImg">Essa ação e irreversivel <img src="~/img/iconConfirmExclu.png" alt="Icone de alerta" /></span>
+                                                    </div>
+                                                </div>
+                                            </ol>
+
+
+
+
+</div>
 
                                 }
                             </div>

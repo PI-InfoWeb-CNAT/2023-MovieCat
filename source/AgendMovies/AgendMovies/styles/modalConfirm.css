@@ -3,7 +3,9 @@
     padding: 0;
 
 }
-
+.Modal h3, .Modal p, .Modal span {
+    color: black;
+}
 .Modal{
     position: fixed;
     top: 0;

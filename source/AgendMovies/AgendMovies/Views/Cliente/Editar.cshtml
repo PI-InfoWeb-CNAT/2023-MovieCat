@@ -1,0 +1,125 @@
+﻿@model AgendMovies.Modelos.Cliente
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="~/styles/EditarPerfilCliente.css" rel="stylesheet" />
+    <link href="~/styles/DashboardPrincipal.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ul>
+        <div id=md>
+            <a href="@Url.Action("VerPerfilCompras", "Cliente")">
+                <p>
+                    @if (Model.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new {id = Model.Id})">
+                    }
+
+                </p>
+            </a>
+            <p id="per">@Model.Nome</p>
+        </div>
+    </header>
+    <main>
+        <section>
+            @using (Html.BeginForm("Editar", "Cliente", FormMethod.Post,
+new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Foto)
+                @Html.HiddenFor(model => model.TipoDaFoto)
+                @Html.HiddenFor(model => model.Id)
+
+
+                <div id="AreaFoto">
+
+
+                    @if (Model.Foto == null)
+                    {
+
+                        <img src="~/img/PerfilSemFoto.png" />
+                    }
+                    else
+                    {
+                        <img onclick="EditarImagem()" id="FotoTemp" src="@Url.Action("GetLogoTipo", "Cliente", new {id = Model.Id})">
+                    }
+                    <p>@Model.Nome</p>
+                    <button type="submit"><a><b class="CorBordaVerde">Salvar</b></a></button>
+                    <button type="button"><a href="@Url.Action("VerPerfilCompras", "Cliente")"><b class="CorBordaVermelha">Cancelar</b></a></button>
+                </div>
+                <div id="AreaInputs">
+                    <ol>
+                        <li><a href="">Meus pedidos</a></li>
+                        <li><a href="@Url.Action("VerPerfilCompras", "Cliente")">Histórico de Compras</a></li>
+                    </ol>
+
+
+                    @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
+
+
+
+                    <script>
+                        function EditarImagem() {
+                            var InputArquivo = document.getElementById("ColocarFotoDePerfil");
+                            const Imagem = document.getElementById('FotoTemp');
+
+                            InputArquivo.addEventListener("change", function (evento) {
+
+
+                                const Arquivo = evento.target.files[0];
+                                if (Arquivo) {
+                                    const LeitorDeArquivo = new FileReader();
+                                    LeitorDeArquivo.onload = function (e) {
+                                        Imagem.setAttribute('src', e.target.result);
+                                    };
+                                    LeitorDeArquivo.readAsDataURL(Arquivo);
+                                } else {
+                                    Imagem.setAttribute('src', '~/img/PerfilSemFoto.png');
+                                }
+                            });
+                            InputArquivo.click();
+
+
+                        }
+                    </script>
+
+                    @Html.TextBoxFor(model => model.Nome, new { type = "text", placeholder = "nome", required = "required" })
+                    @Html.TextBoxFor(model => model.Email, new { type = "email", placeholder = "email", required = "required" })
+                    @Html.TextBoxFor(model => model.Cpf, new { type = "text", placeholder = "cpf", required = "required" })
+                    @Html.TextBoxFor(model => model.Senha, new { type = "text", placeholder = "senha", required = "required" })
+                </div>
+            }
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

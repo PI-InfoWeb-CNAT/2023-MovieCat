@@ -52,6 +52,11 @@
             color: white;
             background-color: black;
         }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
     </style>
 </head>
 <body>
@@ -67,9 +72,13 @@
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <!-- 246 -->

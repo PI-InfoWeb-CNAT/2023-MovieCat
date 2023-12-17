@@ -1,6 +1,7 @@
 ﻿using AgendMovies.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -41,6 +42,34 @@ namespace AgendMovies.Controllers
         {
             Session["Cliente"] = null;
             return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Editar()
+        {
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                return View(c);
+            }
+            return RedirectToAction("Cadastrar", "Cliente");
+        }
+        [HttpPost]
+        public ActionResult Editar(Cliente c , HttpPostedFileBase arquivo)
+        {
+            if (ModelState.IsValid)
+            {
+                if (arquivo != null)
+                {
+                    c.TipoDaFoto = arquivo.ContentType;
+                    c.Foto = SetLogoTipo(arquivo);
+
+                }
+                Banco.Entry(c).State = EntityState.Modified;
+               
+                Banco.SaveChanges();
+                Session["Cliente"] = c;
+                return RedirectToAction("VerPerfilCompras");
+            }
+            return RedirectToAction("VerPerfilCompras");
         }
         [HttpPost]
         public ActionResult Cadastrar(Cliente f, HttpPostedFileBase arquivo)

@@ -12,12 +12,17 @@
     <meta name="viewport" content="width=device-height, initial-scale=1.0">
     <title>MovieCat</title>
     <link rel="icon" href="~/img/Logo_aba.png" />
-    <link rel="stylesheet" href="@Url.Content("~/styles/CadastrarFilmes.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardPrincipal.css")">
+    <link href="@Url.Content("~/styles/CadastrarFilmes.css")" rel="stylesheet" />
 
     <style>
         .Esconde {
             display: none;
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
         }
     </style>
     <script>
@@ -62,20 +67,27 @@
       </div>
     </header>-->
     <header>
-        <h1>
-            <a href="@Url.Action("Index", "Home")">
-                <img src="~/img/logo.png" alt="yy" />
-            </a>
-        </h1>
-        <ol>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
             <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
-        </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
         </div>
     </header>
     <main>
@@ -156,12 +168,14 @@ new { enctype = "multipart/form-data" }))
         </section>
     </main>
     <footer>
-        <img src="~/img/logoFooter.png" />
-        <ol>
-            <li><a href=#><img src="~/img/github.png" /></a></li>
-            <li><a href=#><img src="~/img/facebook.png" /></a></li>
-            <li><a href=#><img src="~/img/twitter.png" /></a></li>
-        </ol>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
     </footer>
     <!--<footer>
       <div>

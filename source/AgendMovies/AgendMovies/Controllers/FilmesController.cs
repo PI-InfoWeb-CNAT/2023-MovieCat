@@ -68,6 +68,21 @@ namespace AgendMovies.Controllers
                     filme.ConteudoDaFoto = SetLogoTipo(arquivo);
 
                 }
+                if (filme.Categoria == "Em Breve")
+                {
+                    List<Sessao> sessoes = Banco.Sessoes.OrderBy(s => s.IdFilme).Where(se => se.IdFilme == filme.FilmeId).ToList();
+                    foreach (Sessao s in sessoes)
+                    {
+                        List<Compra> compras = Banco.Compras.OrderBy(c => c.IdSessao).Where(co => co.IdSessao == s.SessaoId).ToList();
+                        foreach (Compra c in compras)
+                        {
+                            Banco.Compras.Remove(c);
+                            Banco.SaveChanges();
+                        }
+                        Banco.Sessoes.Remove(s);
+                        Banco.SaveChanges();
+                    }
+                }
                 Banco.Entry(filme).State = EntityState.Modified;
                 Banco.SaveChanges();
                 return RedirectToAction("Listar", "Filmes");
@@ -86,6 +101,19 @@ namespace AgendMovies.Controllers
 
            if (filme != null)
             {
+               
+                List<Sessao> sessoes = Banco.Sessoes.OrderBy(s => s.IdFilme).Where(se => se.IdFilme == id).ToList();
+                foreach(Sessao s in sessoes)
+                {
+                    List<Compra> compras = Banco.Compras.OrderBy(c => c.IdSessao).Where(co => co.IdSessao == s.SessaoId).ToList();
+                    foreach(Compra c in compras)
+                    {
+                        Banco.Compras.Remove(c);
+                        Banco.SaveChanges();
+                    }
+                    Banco.Sessoes.Remove(s);
+                    Banco.SaveChanges();
+                }
                 Banco.Filmes.Remove(filme);
                 Banco.SaveChanges();
                // Página de erro 404

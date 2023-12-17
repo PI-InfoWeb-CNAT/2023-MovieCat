@@ -5,6 +5,52 @@
   margin: 0;
   padding: 0;
 }
+
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    position: relative !important;
+    background-color: white;
+}
+
+    header a {
+        color: black !important;
+    }
+
+footer {
+    width: 100%;
+}
+
+#md {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.FotoPerfilHeader {
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+
+header > div > p {
+    color: black !important;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
 li{
   list-style-type: none;
 }
@@ -53,31 +99,7 @@ header {
   box-sizing: border-box;
   padding: 1em 10px;
 }*/
-footer{
-    margin-top: 2em;
-   width: 100%;
-  background-color: #000000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  box-sizing: border-box;
-  padding: 1em 10px;
-}
-footer ol{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
 
-}
-footer ol li{
-  margin-left: 1em;
-}
-footer p{
-  margin-left: 1.5em;
-  color: white;
-}
 
 main{
   width: 100%;
@@ -113,7 +135,7 @@ form > div{
 }
 label{
   color: white;
-  width: 127px !important;
+ 
   text-align: left;
   margin-right: 10px;
 }
@@ -150,8 +172,9 @@ input[type="text"]{
     border-left-color: transparent;
     padding-bottom: 5px;
     max-width: 405px;
-    width: 405px;
+    width: 60%;
     margin-bottom: 15px;
+
 }
 
 input[type="submit"]{
@@ -208,11 +231,7 @@ a{
 
 }
 
-footer div{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+
 
 #loucura{
   width: 1.5em;
@@ -259,4 +278,22 @@ input[type="number"]{
   color:white;
   border: 3px solid white;
   outline: none;
+}
+
+
+.EditarFilme {
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 10px;
+}
+.EditarFilme div {
+    background-color: white;
+    padding: 0.5em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    margin-right: 10px;
 }

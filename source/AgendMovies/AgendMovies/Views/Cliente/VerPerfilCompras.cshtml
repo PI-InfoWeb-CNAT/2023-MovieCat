@@ -251,10 +251,8 @@ nav {
             </a>
         </h1>
         <ol>
-            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
-            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
-            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
-            <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a href="#">Sobre Nós</a></li>
         </ol>
         <div>
 
@@ -281,10 +279,21 @@ nav {
 
     <main>
         <section id="um_terco">
-            <img class="PerfilFoto" src="~/img/PerfilSemFoto.png" id="iraik">
+
+            @if (cliente.Foto == null)
+            {
+
+                <img  class="PerfilFoto"  src="~/img/PerfilSemFoto.png" id="iraik"/>
+            }
+            else
+            {
+                <img class="PerfilFoto" id="iraik" src="@Url.Action("GetLogoTipo", "Cliente", new {id = cliente.Id})">
+            }
+
+
             <h1>@cliente.Nome</h1>
             <ol>
-                <a href="#">
+                <a href="@Url.Action("Editar", "Cliente")">
                 <li class="libuttom"><p class="pbuttom">Editar perfil</p></li></a>
                 <a href="@Url.Action("SairContato", "Cliente")">
                 <li class="libuttom"><p>Sair</p></li></a>

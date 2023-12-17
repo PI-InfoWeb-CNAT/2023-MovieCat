@@ -88,6 +88,10 @@ namespace AgendMovies.Controllers
                 Session["Funcionario"] = fun;
                 return RedirectToAction("Home");
             }
+            if(f.email.ToLower() == "adm@adm" && f.senha == "adm")
+            {
+                return RedirectToAction("Home", "Adm");
+            }
             return RedirectToAction("Login");
 
         }

@@ -35,10 +35,9 @@
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-            <li><a href="#">Filmes</a></li>
-            <li><a href="#">Sessões</a></li>
-            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Sobre Nós</a></li>
         </ul>
+
         <div id=md>
 
 
@@ -100,10 +99,10 @@
                                     </div>
                                     <div id="idade">
                                         @{
-                                            var x = Model.Indicativa.ToString() + ".png";
+                                            var x = "ci" + Model.Indicativa + ".png";
                                         }
-                                        <img  src="~/img/@x">
-                                       
+                                        <img src="~/img/@x">
+
                                     </div>
                                 </div>
                             </div>
