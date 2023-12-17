@@ -191,10 +191,10 @@ namespace AgendMovies.Controllers
                     se.IdFilme = s.IdFilme;
                     se.data = data;
                     se.Sala = s.Sala;
-                    se.horaInicio = horario.ToString();
+                    se.horaInicio = horario.ToString(@"hh\:mm");
                     se.Duracao = duracaoMin;
                     se.NomeFilme = s.NomeFilme;
-
+                    se.Idioma = s.Idioma;
                     Banco.Sessoes.Add(se);
                     Banco.SaveChanges();
                     horario = horario + duracao;

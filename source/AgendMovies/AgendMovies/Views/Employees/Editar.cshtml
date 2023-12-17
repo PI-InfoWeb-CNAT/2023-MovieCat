@@ -35,6 +35,32 @@
         header {
             background-color: white;
         }
+        form {
+            width: auto !important;
+            height: auto !important;
+            padding-bottom: 15px;
+        }
+            form input {
+                border: none !important;
+                box-sizing: border-box;
+                outline: none;
+                margin-left: 2px;
+            }
+        form > div {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+        }
+        form p {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            box-sizing: border-box;
+            border-bottom: 2px solid white;
+            width: 100%;
+     
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -58,17 +84,26 @@
 
     <main>
         <div class="wrapper">
-            @using (Html.BeginForm("Cadastrar", "Employees", FormMethod.Post,
+            @using (Html.BeginForm("Editar", "Employees", FormMethod.Post,
  new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Foto)
+                @Html.HiddenFor(model => model.TipoDaFoto)
 
 
-
-                <h1>Cadastro de Funcionários</h1>
+                <h1>Edição de Funcionário</h1>
                 @Html.HiddenFor(model => model.FuncionarioId)
 
-                <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
+                if (Model.Foto == null)
+                {
+                    <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
+                }
+                else
+                {
+                    <img onclick="EditarImagem()" src="@Url.Action("GetLogoTipo", "Employees", new {id = Model.FuncionarioId})" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;">
+                }
+
                 @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
                 <script>
                     function EditarImagem() {
@@ -95,32 +130,50 @@
                     }
                 </script>
 
-                <div><p>Nome Completo*   @Html.ValidationMessageFor(model => model.nome, "")</p>@Html.EditorFor(model => model.nome, new { type = "text", required = "required", size = "40" }) </div>
+                <div>
+                    <p>
+                        Nome Completo:
+                        @Html.EditorFor(model => model.nome, new { type = "text", required = "required", size = "40" })
 
-                <div><p>CPF*   @Html.ValidationMessageFor(model => model.cpf, "")</p>@Html.EditorFor(model => model.cpf, new { type = "text", required = "required", size = "40" }) </div>
-
-                <div><p>Data de Nascimento*   @Html.ValidationMessageFor(model => model.data, "")</p>@Html.EditorFor(model => model.data, new { type = "text", required = "required", size = "40" }) </div>
-
-                <div><p>Telefone*  @Html.ValidationMessageFor(model => model.telefone, "")</p>@Html.EditorFor(model => model.telefone, new { type = "text", required = "required", size = "40" }) </div>
+                    </p>
+                    @Html.ValidationMessageFor(model => model.nome, "")
+                </div>
 
                 <div>
-                    <p>Email*  @Html.ValidationMessageFor(model => model.email, "")</p> @Html.EditorFor(model => model.email, new { type = "email", required = "required", size = "40" })
+                    <p>
+                        CPF:
+                        @Html.EditorFor(model => model.cpf, new { type = "text", required = "required", size = "40" })
+                    </p>
+                    @Html.ValidationMessageFor(model => model.cpf, "")
+                </div>
+
+                <div>
+                    <p>
+                        Data de Nascimento:
+                        @Html.EditorFor(model => model.data, new { type = "text", required = "required", size = "40" })
+                    </p>
+                    @Html.ValidationMessageFor(model => model.data, "")
+                </div>
+
+                <div>
+                    <p>Telefone:   @Html.EditorFor(model => model.telefone, new { type = "text", required = "required", size = "40" })</p>
+                    @Html.ValidationMessageFor(model => model.telefone, "")
 
                 </div>
 
-
                 <div>
-                    <p>Senha*</p>
-                    <input class="p" type="text" name="Nome" size="40" />
-
+                    <p>Email: @Html.EditorFor(model => model.email, new { type = "email", required = "required", size = "40" })  </p>
+                    @Html.ValidationMessageFor(model => model.email, "")
                 </div>
+
                 <div>
-                    <p>Confirmar Senha*  @Html.ValidationMessageFor(model => model.senha, "")</p>
-                    @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" })
+                    <p>Confirmar Senha*  @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" }) </p>
+
+                    @Html.ValidationMessageFor(model => model.senha, "")
                 </div>
 
                 <div class="t">
-                    <button type="submit" class="btn">Criar</button>
+                    <button type="submit" class="btn">Atualizar</button>
                 </div>
 
 

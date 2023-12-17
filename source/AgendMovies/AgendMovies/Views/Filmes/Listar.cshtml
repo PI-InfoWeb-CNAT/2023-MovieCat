@@ -26,7 +26,6 @@
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
             <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
-            <li><a href="@Url.Action("Index", "Home")">Pacotes</a></li>
         </ol>
         <div>
             <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
@@ -64,11 +63,11 @@
                     <div class="box-img">
                         @if (m.ConteudoDaFoto == null)
                         {
-                            <img src="~/img/image 4.png">
+                            <img src="~/img/image 4.png" style="width:205px; height: 270px;">
                         }
                         else
                         {
-                            <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = m.FilmeId })">
+                            <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = m.FilmeId })" >
                         }
                     </div>
 

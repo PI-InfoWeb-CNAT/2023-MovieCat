@@ -151,20 +151,26 @@
     <Content Include="img\figmaIcon.png" />
     <Content Include="img\footerMovieCat.png" />
     <Content Include="img\githubIcon.png" />
+    <Content Include="img\iconConfirmExclu.png" />
     <Content Include="img\IconeSite.svg" />
+    <Content Include="img\PacotesCompradosIcone.png" />
+    <Content Include="img\PacotesIcone.png" />
     <Content Include="img\PerfilSemFoto.png" />
     <Content Include="img\replitIcon.png" />
     <Content Include="script\beattlejuice.js" />
+    <Content Include="script\modal.js" />
     <Content Include="styles\beattlejuice.css" />
     <Content Include="styles\CadastrarFilmes.css" />
     <Content Include="styles\DashboardaFuncionario_provisorio.css" />
     <Content Include="styles\DashboardPrincipal.css" />
+    <Content Include="styles\DashFunPacotes.css" />
     <Content Include="styles\EditarFilmes.css" />
     <Content Include="styles\EditarPacote.css" />
     <Content Include="styles\EditarSessao.css" />
     <Content Include="styles\ListarFuncionarios.css" />
     <Content Include="styles\ListarPacotes.css" />
     <Content Include="styles\ListarSessoes.css" />
+    <Content Include="styles\LoginFunc.css" />
     <Content Include="styles\modalConfirm.css" />
     <Content Include="styles\Principal.css" />
     <Content Include="Global.asax" />
@@ -428,6 +434,9 @@
     <Content Include="Views\Employees\VerPacoteComprado.cshtml" />
     <Content Include="Views\Pacotes\Editar.cshtml" />
     <Content Include="Views\Pacotes\VerPacote.cshtml" />
+    <Content Include="Views\Employees\Login.cshtml" />
+    <Content Include="Views\Employees\Editar.cshtml" />
+    <Content Include="Views\Employees\Ver.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

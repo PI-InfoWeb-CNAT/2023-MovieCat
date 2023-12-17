@@ -25,7 +25,7 @@
             <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
-            <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ul>
         <div id=md>
             <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
@@ -87,7 +87,7 @@
                             <div id="local_da_sinopse">
                                 <h1 class="h1li">Sinopse:</h1>
                                 <br>
-                                <p>@Model.Sinopse</p>
+                                <p style="word-break: break-all;">@Model.Sinopse</p>
                                 <br>
                                 <div id="orgol">
                                     <ol id="ol1">
@@ -226,12 +226,12 @@
     </body>
     <footer>
         <div>
-            <img id="loucura2" src="~/img/logomoviecat.png">
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
         </div>
         <div>
-            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
-            <img src="~/img/figma.png">
-            <img src="~/img/github.png">
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
 </body>

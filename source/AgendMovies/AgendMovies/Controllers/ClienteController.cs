@@ -37,6 +37,11 @@ namespace AgendMovies.Controllers
             }
             return RedirectToAction("Cadastrar", "Cliente");
         }
+        public ActionResult SairContato()
+        {
+            Session["Cliente"] = null;
+            return RedirectToAction("Index", "Home");
+        }
         [HttpPost]
         public ActionResult Cadastrar(Cliente f, HttpPostedFileBase arquivo)
         {
@@ -63,6 +68,7 @@ namespace AgendMovies.Controllers
             Banco.SaveChanges();
             return RedirectToAction("Cadastrar", "Cliente");
         }
+
         [HttpPost]
         public ActionResult Login(Cliente f)
         {
@@ -74,6 +80,7 @@ namespace AgendMovies.Controllers
             }
             return RedirectToAction("Cadastrar", "Cliente");
         }
+
         [HttpPost]
         public ActionResult FazerCompra(Compra c, long? IdCliente, long? IdSessao)
         {

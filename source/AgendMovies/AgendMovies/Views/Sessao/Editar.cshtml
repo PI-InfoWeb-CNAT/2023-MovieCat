@@ -65,7 +65,7 @@
             <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
             <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
             <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
-            <li><a href="@Url.Action("Listar", "Funcionario")">Funcionários</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
         </ol>
         <div>
             <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
@@ -85,6 +85,8 @@
                 @Html.HiddenFor(model => model.NomeFilme)
                 @Html.HiddenFor(model => model.IdFilme)
                 @Html.HiddenFor(model => model.SessaoId)
+                @Html.HiddenFor(model => model.horaInicio)
+                @Html.HiddenFor(model => model.NomeFilme)
 
                 <label for="Filmes">
 

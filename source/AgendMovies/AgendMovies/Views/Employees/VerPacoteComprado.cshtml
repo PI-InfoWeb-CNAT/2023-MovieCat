@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    var funcionario = ViewBag.Funcionario as AgendMovies.Modelos.Funcionario;
 }
 
 <!DOCTYPE html>
@@ -14,17 +15,30 @@
     <link rel="icon" href="~/img/Logo_aba.png" />
     <script src="beattlejuice.js"></script>
     <style>
-        #AreaComprador{
+        #AreaComprador {
             color: white;
             display: flex;
         }
-        .Negrito{
-            font-weight:bold;
+
+        .Negrito {
+            font-weight: bold;
             margin-left: 10px;
         }
-        .BordaBaixa{
+
+        .BordaBaixa {
             border-bottom: 1px solid white;
             width: 100%;
+        }
+
+       
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
         }
     </style>
 </head>
@@ -35,14 +49,26 @@
         </a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="@Url.Action("Home", "Employees")">Home</a></li>
             <li><a href="@Url.Action("Visualizar", "Pacotes")">Pacotes</a></li>
             <li><a href="@Url.Action("VerPacotesComprados", "Employees")">Pacotes comprados</a></li>
             <li><a href="#">Sobre Nós</a></li>
         </ul>
         <div id=md>
-            <a href="#.html"><p><img src="~/img/funcionario_Mar.png"></p></a>
-            <p id="per">Perfil</p>
+            <a href="#.html">
+                <p>
+                    @if (funcionario.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Employees", new {id = funcionario.FuncionarioId})">
+                    }
+
+                </p>
+            </a>
+            <p id="per">@funcionario.nome</p>
         </div>
     </header>
     <!-- 246 -->

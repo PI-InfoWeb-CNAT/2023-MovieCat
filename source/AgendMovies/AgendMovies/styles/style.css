@@ -17,20 +17,27 @@
     --bg-color: white;
 }
 
-#MenuTemp {
-    visibility: hidden;
-}
 
 #LinkMenuTemp {
-    visibility: visible !important;
+    display: block;
 }
 
 #MenuTemp ol {
-    position: absolute;
+    position: absolute !important;
+    display: none !important;
+    background-color: white;
+    padding: 10px;
+    z-index: 4;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 }
 
-#MenuTemp:hover {
-    visibility: visible;
+
+#MenuTemp:hover ol{
+    display: block !important;
+   
+}
+#MenuTemp:hover ol a{
+    color: black !important;
 }
 
 

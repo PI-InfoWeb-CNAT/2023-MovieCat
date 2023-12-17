@@ -33,6 +33,11 @@
             height: 62px;
             border-radius: 100%;
         }
+        #LadoLado{
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -48,14 +53,14 @@
             <li><a href="#emcartaz">Em Cartaz</a></li>
             <li><a href="#sobrenos">Sobre Nós</a></li>
             <!-- MENU TEMPORÁRIO -->
-            <li id="MenuTemp">
+            @*<li id="MenuTemp">
                 <a id="LinkMenuTemp" href="#sobrenos">Dashboards</a>
                 <ol>
                     <li><a href="@Url.Action("Home", "Adm")">ADM</a></li>
                     <li><a href="DashboardFuncionario.html">Funcionário</a></li>
                     <li><a href="#">Cliente</a></li>
                 </ol>
-            </li>
+            </li>*@
         </ul>
 
 
@@ -63,11 +68,11 @@
 
 
 
-        <div>
+     
 
             @if (cliente != null)
-            {
-                if (cliente.Foto == null)
+            {   <div id="LadoLado">
+                @if (cliente.Foto == null)
                 {
                     <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
                 }
@@ -77,12 +82,24 @@
                 }
 
                 <p id="per">@cliente.Nome</p>
+        </div>
             }
             else
             {
-                <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
+            
+            <div id="MenuTemp">
+               
+                <a class="btn" id="LinkMenuTemp" href="#sobrenos">Entrar</a>
+                <ol class="navbar">
+                    <li><a href="@Url.Action("Cadastrar", "Cliente")">Cliente</a>
+                    <li><a href="@Url.Action("Login", "Employees")">Funcionário</a></li>
+                    <li><a href="@Url.Action("Home", "Adm")">ADM</a></li>
+                </ol>
+
+            </div>
+
             }
-        </div>
+        
 
 
     </header>

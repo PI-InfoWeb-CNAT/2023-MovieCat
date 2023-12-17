@@ -15,18 +15,7 @@
   --bg-color:white;
 }
 
-#MenuTemp{
-  visibility: hidden;
-}
-#LinkMenuTemp{
-  visibility: visible !important;
-}
-#MenuTemp ol{
-  position: absolute;
-}
-#MenuTemp:hover{
-  visibility: visible;
-}
+
 
 
 /* customizar barra de scrollagem */
@@ -41,7 +30,7 @@ html::-webkit-scrollbar-thumb{
 
  body{
    background: var(--text-color);
-   color: var (--bg-color);
+   color: var(--bg-color);
  }
 
 section{
@@ -69,7 +58,7 @@ header.shadow .navbar a{
 
 .logo .bx{
   font-size:24px;
-  color: var (--main-color);
+  color: var(--main-color);
 }
 
 .navbar{
@@ -391,3 +380,5 @@ footer{
   justify-content: space-between;
   margin: 3px;
 }
+
+

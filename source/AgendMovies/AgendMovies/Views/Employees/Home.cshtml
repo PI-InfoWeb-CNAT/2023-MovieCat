@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AgendMovies.Modelos.Funcionario
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -6,55 +7,78 @@
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link href="@Url.Content("~/styles/DashboardaFuncionario_provisorio.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/styles/Principal.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
+    <link rel="stylesheet" href="~/styles/DashFunPacotes.css">
     <link rel="icon" href="~/img/Logo_aba.png" />
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        header > div > p{
+            color: black !important;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>
-            <a href="@Url.Action("Index", "Home")">
-                <img src="~/img/logo.png" alt="yy" />
-            </a>
-        </h1>
-        <ol>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
             <li><a href="@Url.Action("Home", "Employees")">Home</a></li>
-            <li><a href="@Url.Action("Listar", "Pacotes")">Pacotes</a></li>
-            <li><a href="#">Agenda</a></li>
-            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
-        </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+            <li><a href="@Url.Action("Visualizar", "Pacotes")">Pacotes</a></li>
+            <li><a href="@Url.Action("VerPacotesComprados", "Employees")">Pacotes comprados</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    @if (Model.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img  class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Employees", new {id = Model.FuncionarioId})">
+                    }
+
+                </p>
+            </a>
+            <p id="per">@Model.nome</p>
         </div>
     </header>
     <!-- 246 -->
 
     <main>
-        <h1>MEUS SERVIÇOS</h1>
         <section>
-            <ol id="ccc">
-
-                <a href="@Url.Action("Cadastrar", "Pacotes")">
-                <li id="humli2">
-                    <img src="~/img/cm03.png"><div>
-                        <h1 id="hummm">
-                            Cadastrar
-                            Pacotes
-                        </h1>
-                    </div>
-                </li></a>
-
+            <ol id="LinksPacotes">
+                <li>
+                    <a href="@Url.Action("Cadastrar", "Pacotes")">
+                        <img src="~/img/PacotesIcone.png" alt="" />
+                        <p>Cadastrar pacote</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("VerPacotesComprados", "Employees")">
+                        <img src="~/img/PacotesCompradosIcone.png" alt="" />
+                        <p>Pacotes comprados</p>
+                    </a>
+                </li>
             </ol>
         </section>
     </main>
     <footer>
-        <img src="~/img/logoFooter.png" />
-        <ol>
-            <li><a href=#><img src="~/img/github.png" /></a></li>
-            <li><a href=#><img src="~/img/facebook.png" /></a></li>
-            <li><a href=#><img src="~/img/twitter.png" /></a></li>
-        </ol>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
     </footer>
 </body>
 </html>

@@ -61,6 +61,7 @@
     transition-property: background-color, color;
     transition-timing-function: linear;
     transition-duration: 200ms;
+    color:black;
 
 
 }
