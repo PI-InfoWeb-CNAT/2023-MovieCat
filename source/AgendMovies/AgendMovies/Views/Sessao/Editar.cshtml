@@ -1,0 +1,185 @@
+﻿@model AgendMovies.Modelos.Sessao
+
+@{
+    Layout = null;
+    var nulo = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "-", Text = Model.IdFilme + " - "+ Model.NomeFilme }
+    };
+    var fs = ViewBag.Filmes as SelectList;
+    var Filme = Model.IdFilme + " - " + Model.NomeFilme;
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MovieCat</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/styles/EditarSessao.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <style>
+        .DiaDaSemana {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        #SalaQunt {
+            margin: 1em 0;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+            #SalaQunt > div {
+                display: flex;
+                align-content: center;
+            }
+
+        .SalaQuantidade {
+            background-color: black;
+            border-color: white;
+        }
+
+        option {
+            color: white;
+            background-color: black;
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ol>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section>
+
+            <h1>Edição de sessões</h1>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.NomeFilme)
+                @Html.HiddenFor(model => model.IdFilme)
+                @Html.HiddenFor(model => model.SessaoId)
+                @Html.HiddenFor(model => model.horaInicio)
+                @Html.HiddenFor(model => model.NomeFilme)
+
+                <label for="Filmes">
+
+
+                    @Filme
+
+                </label>
+
+                <div id="seg">
+                    <div>
+                        <p>Data:</p> @Html.EditorFor(model => model.data)
+                    </div>
+
+                </div>
+                <div id="SalaQunt">
+                    <div>
+                        <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10", @class = "SalaQuantidade" })
+                    </div>
+
+                </div>
+
+
+
+                <div class="horario">
+                    <div>
+                        <p>Horário de início:</p>
+                        @Html.TextBoxFor(model => model.horaInicio, new { type = "time", required = "required" })
+                    </div>
+                    <div>
+                        <p>Duração</p>
+                        @Html.TextBoxFor(model => model.Duracao, new { type = "number", required = "required" })
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Idioma:</p>
+                        @Html.EnumDropDownListFor(model => model.Idioma, new { required = "required" })
+                    </div>
+                </div>
+
+                @*@Html.LabelFor(model => model.nacional)
+
+            @Html.EditorFor(model => model.nacional, new { @class = "control-label col-md-2" })
+
+            @Html.LabelFor(model => model.dub)
+
+            @Html.EditorFor(model => model.dub, new { @class = "control-label col-md-2" })
+
+
+            @Html.LabelFor(model => model.leg)
+
+            @Html.EditorFor(model => model.leg, new { @class = "control-label col-md-2" })*@
+
+
+
+
+
+
+                <div id="b">
+                    <div>
+                        <input type="submit" id="botao" value="SALVAR">
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+    <footer>
+        <img src="~/img/logoFooter.png" />
+        <ol>
+            <li><a href=#><img src="~/img/github.png" /></a></li>
+            <li><a href=#><img src="~/img/facebook.png" /></a></li>
+            <li><a href=#><img src="~/img/twitter.png" /></a></li>
+        </ol>
+    </footer>
+</body>
+</html>

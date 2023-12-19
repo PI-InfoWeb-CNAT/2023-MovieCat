@@ -1,0 +1,100 @@
+﻿@model AgendMovies.Modelos.Pacotes
+
+@{
+    Layout = null;
+    var funcionario = ViewBag.Funcionario as AgendMovies.Modelos.Funcionario;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
+    <link href="~/styles/VerPacote.css" rel="stylesheet" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <script src="beattlejuice.js"></script>
+    <style>
+
+
+        .BordaBaixa {
+            border-bottom: 1px solid white;
+            width: 100%;
+        }
+
+     
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Employees")">Home</a></li>
+            <li><a href="@Url.Action("Visualizar", "Pacotes")">Pacotes</a></li>
+            <li><a href="@Url.Action("VerPacotesComprados", "Employees")">Pacotes comprados</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    @if (funcionario.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Employees", new {id = funcionario.FuncionarioId})">
+                    }
+
+                </p>
+            </a>
+            <p id="per">@funcionario.nome</p>
+        </div>
+    </header>
+    <!-- 246 -->
+    <main>
+        <section>
+
+
+            <div id="organ"><img id="olho" src="~/img/oljo.png"><h1>ver pacote</h1></div>
+
+            <div id="borda">
+                <ol>
+                    <li id="li1"><p>Nome:</p><p class="BordaBaixa">@Model.nome</p></li>
+                    <li id="li2"><p>Ingressos:</p><p class="BordaBaixa">@Model.ingressos</p></li>
+                    <li id="li3"><p>Valor:</p><p class="BordaBaixa">@Model.valor</p></li>
+                </ol>
+                <!--<div id="b">
+                <button>Cadastrar</button>
+                </div>-->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>
+

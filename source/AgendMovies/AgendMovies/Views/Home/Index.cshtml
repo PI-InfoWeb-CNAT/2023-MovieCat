@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{ 
+    var cliente = ViewBag.ClienteLogado as AgendMovies.Modelos.Cliente;
+}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>MovieCat Menu Principal</title>
     <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
+    <link rel="icon" href="~/img/IconeSite.svg" />
 
     <!-- link carrosel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -13,20 +18,32 @@
             width: 180px !important;
             height: 270px !important;
         }
+
         .CapaFilmeGrande {
             width: 559px !important;
             height: 842px !important;
         }
+
         .ClassiIndicati {
             width: 40px !important;
             height: 40px !important;
+        }
+        .FotoPerfilHeader{
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        #LadoLado{
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <header>
 
-        <a href="#" class="logo">
+        <a href="@Url.Action("Index", "Home")" class="logo">
             <img src="~/img/logo.png">
         </a>
         <div class="bx bx-menu" id="menu-icon"></div>
@@ -36,17 +53,53 @@
             <li><a href="#emcartaz">Em Cartaz</a></li>
             <li><a href="#sobrenos">Sobre Nós</a></li>
             <!-- MENU TEMPORÁRIO -->
-            <li id="MenuTemp">
+            @*<li id="MenuTemp">
                 <a id="LinkMenuTemp" href="#sobrenos">Dashboards</a>
                 <ol>
-                    <li><a href="@Url.Action("Home", "Administradores")">ADM</a></li>
+                    <li><a href="@Url.Action("Home", "Adm")">ADM</a></li>
                     <li><a href="DashboardFuncionario.html">Funcionário</a></li>
                     <li><a href="#">Cliente</a></li>
                 </ol>
-            </li>
+            </li>*@
         </ul>
 
-        <a href="#" class="btn">Entrar</a>
+
+
+
+
+
+     
+
+            @if (cliente != null)
+            {   <div id="LadoLado">
+                @if (cliente.Foto == null)
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new { id = cliente.Id })"></p></a>
+                }
+
+                <p id="per">@cliente.Nome</p>
+        </div>
+            }
+            else
+            {
+            
+            <div id="MenuTemp">
+               
+                <a class="btn" id="LinkMenuTemp" href="#sobrenos">Entrar</a>
+                <ol class="navbar">
+                    <li><a href="@Url.Action("Cadastrar", "Cliente")">Cliente</a>
+                    <li><a href="@Url.Action("Login", "Employees")">Funcionário</a></li>
+                    
+                </ol>
+
+            </div>
+
+            }
+        
 
 
     </header>
@@ -105,20 +158,20 @@
                         <a href="@Url.Action("PedidoPacote","Home", new {Id = f.FilmeId, dia = "seg"})">
                             @if (f.ConteudoDaFoto == null)
                             {
-                                <img src="~/img/image 4.png">
+                                <img  class="CapaFilmeGrande" src="~/img/image 4.png">
                             }
                             else
                             {
-                                <img class="CapaFilmeGrande" src="@Url.Action("GetLogoTipo", "Movies", new { id = f.FilmeId })">
+                                <img class="CapaFilmeGrande" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
                             }
                         </a>
                         <div id="dvo">
 
                             <h3>@f.Nome</h3>
-                        
-                            
+
+
                             @{
-                                var x = f.Indicativa.ToString() + ".png";
+                                var x = "ci" + f.Indicativa + ".png";
                             }
                             <div><img class="ClassiIndicati" src="~/img/@x"></div>
                         </div>
@@ -155,28 +208,28 @@
                             }
                             else
                             {
-                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Movies", new { id = f.FilmeId })">
+                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
                             }
 
                         </div>
                         <div id="dh12">
                             <div>
-                                @if (f.Nome.ToString().Length == 13)
+                                @if (f.Nome.ToString().Length <= 13)
                                 {
                                     <h3>@f.Nome</h3>
                                 }
                                 else
                                 {
 
-                                    <h3>@f.Nome.ToString().Substring(0, 13).ToString() ...</h3>
+                                    <h3>@f.Nome.ToString().Substring(0, 10).ToString() ...</h3>
                                 }
                                 @{
-                                    var x = f.Indicativa.ToString() + ".png";
+                                    var c = "ci" + f.Indicativa + ".png";
                                 }
                                 <span>@f.Duracao min | @f.Genero</span>
 
                             </div>
-                            <img class="ClassiIndicati" src="~/img/@x">
+                            <img class="ClassiIndicati" src="~/img/@c">
 
                         </div>
                     </div>
@@ -202,7 +255,7 @@
                             }
                             else
                             {
-                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Movies", new { id = f.FilmeId })">
+                                <img class="CapaFilmePequena" src="@Url.Action("GetLogoTipo", "Filmes", new { id = f.FilmeId })">
                             }
 
                         </div>
@@ -211,10 +264,10 @@
                                 <h3>@f.Nome</h3>
                                 <span>@f.Duracao min | @f.Genero</span>
                             </div>
-                            @{ 
-                                var x = f.Indicativa.ToString() + ".png";
+                            @{
+                                var y = "ci" + f.Indicativa + ".png";
                             }
-                            <div><img class="ClassiIndicati" src="~/img/@x"></div>
+                            <div><img class="ClassiIndicati" src="~/img/@y"></div>
                         </div>
                     </div>
                 }
@@ -229,15 +282,14 @@
 
     <footer>
         <div>
-            <img id="loucura2" src="~/img/logomoviecat.png">
+            <img id="loucura2" src="~/img/footerMovieCat.png">
         </div>
         <div>
-            <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
-            <img src="~/img/figma.png">
-            <img src="~/img/github.png">
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
-
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!-- link customizar carrosel -->

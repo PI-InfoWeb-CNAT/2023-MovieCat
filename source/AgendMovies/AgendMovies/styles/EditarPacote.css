@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  position: relative;
+  background-color: white;
+}
+.navbar {
+  align-items: center;
+}
+.navbar a{
+  color: black;
+}
+#md{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+#per{
+  font-size: 1rem;
+}
+
+#migalha{
+  padding-left: 1em;
+  display: flex;
+  column-gap: 1em;
+  color: white;
+}
+#migalha li a{
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+section h1{
+  color: white;
+}
+
+form{
+  display: flex;
+  border-radius: 20px;
+  border: 3px solid white;
+  width: 56%;
+  height: 70%;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 15em;
+}
+
+form ol li p{
+  color: white;
+}
+
+form ol{
+  margin-right: 160px;
+  margin-left: 160px;
+  margin-top: 80px;
+}
+
+form ol li input{
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  width: 100%;
+  padding-right: 1em;
+}
+
+form button{
+  background-color: #00820D;
+  border-radius: 24px;
+  width: 18em;
+  height: 4em;
+  color: white;
+  font-size: 1em;
+}
+
+#b{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4em;
+  padding-top: 4em;
+}
+
+
+#li1{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+#li2{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+#li3{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+#organ{
+  padding-bottom: 3em;
+  display: flex;
+  width: 620px;
+  gap: 1em;
+  align-items: center;
+}
+
+#olho{
+  width: 25px;
+  height: 25px;
+  background-color: white;
+}
+
+#com{
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input{
+    color: white;
+}

@@ -1,0 +1,364 @@
+﻿@model IEnumerable<AgendMovies.Modelos.VerPerfilView>
+
+@{
+    Layout = null;
+    var cliente = ViewBag.ClienteLogado as AgendMovies.Modelos.Cliente;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/styles/Principal.css")" />
+    <link rel="icon" href="img/Logo_aba.png" />
+    <style>
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  width: 100%;
+  background-color: #ffffff;
+}
+
+main{
+    display: flex;
+    background: black;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    margin-top: 10em;
+    padding-left: 7em;
+    padding-right: 7em;
+}
+
+h1{
+  color: white;
+  font-size: 2em
+}
+
+p{
+  color: #B2B2B2;
+
+}
+
+#iraik{
+  margin: 1em;
+}
+
+.libuttom{
+  border-radius: 11px;
+  background-color: #383838;
+  width: 12em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #B2B2B2;
+  margin: 3em;
+}
+
+
+#um_terco{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dois_terco{
+  width: 67%;
+}
+
+#troca{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a li p{
+  border-bottom: 2px solid transparent;
+  transition-property: border-color;
+  transition-timing-function: linear;
+   transition-duration: 500ms;
+}
+
+a li p:hover{
+  border-bottom: 2px solid #D91010;
+  color: #D91010;
+}
+
+.pbuttom{
+  font-size: 20px;
+}
+
+#div_ext{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1.5em;
+}
+
+#div_ext div{
+  width: 250px;
+}
+
+#div_ext div div img{
+  width: 250px;
+}
+
+#div_ext div div div img{
+  width: 60px;
+}
+
+#do{
+  display: flex;
+  gap: 2em;
+}
+
+#do div div{
+  display: flex;
+  justify-content: space-between;
+}
+
+#do2{
+  display: flex;
+  justify-content: center;
+}
+
+#pe p{
+  padding: 5px;
+}
+
+#pe{
+  height: 460px;
+}
+
+#h1c{
+  background-color: #FFCC00;
+  width: 6em;
+  height: 1.5em;
+  border-radius: 7px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav,
+.scroll-container {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+nav {
+  width: 339px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.scroll-container {
+  width: 350px;
+  height: 200px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.scroll-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 5em;
+}
+        .PerfilFoto{
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+        }
+        #Comprados {
+            overflow: auto;
+            height: 55vh;
+            padding: 5px;
+            width: fit-content;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        #Comprados li >div{
+            margin: 0 10px;
+        }
+        #Comprados li {
+            display: flex;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            justify-content: space-around;
+        }
+        .CodSec{
+            background-color: deepskyblue;
+            padding: 5px 1em;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        #Comprados .ImgArea {
+            background-color: white;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        #Comprados .ImgArea > img{
+            width: 230px;
+            height: 343px;
+        }
+        /* Personalizando barrinha */
+        ol#Comprados::-webkit-scrollbar {
+            width: 7px; /* largura da barra de rolagem */
+        }
+
+        ol#Comprados::-webkit-scrollbar-thumb {
+            background-color: red; /* cor do "polegar" da barra de rolagem */
+            border-radius: 6px;
+            /* borda arredondada do "polegar" */
+        }
+
+        ol#Comprados::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1); /* cor do fundo da barra de rolagem */
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/img/logo.png" alt="yy" />
+            </a>
+        </h1>
+        <ol>
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ol>
+        <div>
+
+            @if (cliente != null)
+            {
+                if (cliente.Foto == null)
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png"></p></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("VerPerfilCompras", "Cliente")"><p><img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Cliente", new { id = cliente.Id })"></p></a>
+                }
+
+                <p id="per">@cliente.Nome</p>
+            }
+            else
+            {
+                <a href="@Url.Action("Cadastrar", "Cliente")" class="btn">Entrar</a>
+            }
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+        <section id="um_terco">
+
+            @if (cliente.Foto == null)
+            {
+
+                <img  class="PerfilFoto"  src="~/img/PerfilSemFoto.png" id="iraik"/>
+            }
+            else
+            {
+                <img class="PerfilFoto" id="iraik" src="@Url.Action("GetLogoTipo", "Cliente", new {id = cliente.Id})">
+            }
+
+
+            <h1>@cliente.Nome</h1>
+            <ol>
+                <a href="@Url.Action("Editar", "Cliente")">
+                <li class="libuttom"><p class="pbuttom">Editar perfil</p></li></a>
+                <a href="@Url.Action("SairContato", "Cliente")">
+                <li class="libuttom"><p>Sair</p></li></a>
+            </ol>
+        </section>
+
+        <section id="dois_terco">
+            <ol id="troca">
+                <a href="PerfilCliente.html">
+                <li><p>Meus pedidos</p></li></a>
+                <a class="pagAtual" href="@Url.Action("VerPerfilCompras", "Cliente")">
+                <li><p>Histórico de Compras</p></li></a>
+            </ol>
+            <div id="do2"><h1>Comprado</h1></div>
+
+
+            <ol id="Comprados">
+                @foreach (var compra in Model)
+                {
+                    <li>
+                        <div class="ImgArea">
+                            @if (compra.Filme.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/castelo_animado.png">
+                            }
+                            else
+                            {
+                                <img width="400px" height="519px" src="@Url.Action("GetLogoTipo", "Filmes", new { id = compra.Filme.FilmeId })">
+                            }
+                            <div>
+                                @{
+                                    var img = @compra.Filme.Indicativa.ToString() + ".png";
+                                }
+                                <img src="~/img/@img" />
+                            </div>
+
+                        </div>
+                        <div>
+                            <p class="CodSec">@compra.Sessao.SessaoId</p>
+                            <p>Codigo da sessão</p>
+                            <br />
+                            <p>Horario: @compra.Sessao.horaInicio</p>
+                            <br />
+                            <p>Ingressos: @compra.Pacote.ingressos</p>
+                            <br />
+                            <p>Valor: @compra.Pacote.valor</p>
+                            <br />
+                            <p>Sala @compra.Sessao.Sala</p>
+                        </div>
+                    </li>
+                }
+
+            </ol>
+
+        </section>
+    </main>
+
+    <footer>
+        <img src="~/img/footerMovieCat.png" />
+        <ol>
+            <li><a href=#><img src="~/img/replitIcon.png" /></a></li>
+            <li><a href=#><img src="~/img/figmaIcon.png" /></a></li>
+            <li><a href=#><img src="~/img/githubIcon.png" /></a></li>
+        </ol>
+    </footer>
+    
+</body>
+</html>

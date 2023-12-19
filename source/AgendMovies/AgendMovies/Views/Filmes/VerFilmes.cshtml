@@ -1,0 +1,248 @@
+﻿@model AgendMovies.Modelos.Filme
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/styles/style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/VerFilmes.css")" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+    <body>
+        <main>
+            <div>
+                <div>
+
+                  
+
+                    <section id="primeira_section">
+                        <ol id=migalha>
+                            <li><a href="index.html">Home</a></li>
+                            <li>></li>
+                            <li></li>
+                            <li> <a href="#">Filmes</a></li>
+                            <li>></li>
+                            <li></li>
+                            <li> <a href="beattlejuice.html">Ver Filme</a></li>
+                        </ol>
+
+                        <h1 id="h1_do_nome_do_filme">@Model.Nome</h1>
+                        <div id="inicio">
+                            <img src="~/img/oljo.png"><h1 id="h1_do_nome_do_filme">Ver Filme</h1>
+                        </div>
+                        <div id="disp_para_a_sinopse_e_img">
+
+                            <div id="info_do_filme">
+                                <div id="local_da_img">
+                                    @if (Model.ConteudoDaFoto == null)
+                                    {
+                                        <img src="~/img/castelo_animado.png">
+                                    }
+                                    else
+                                    {
+                                        <img width="400px" height="519px" src="@Url.Action("GetLogoTipo", "Filmes", new { id = Model.FilmeId })">
+                                    }
+
+                                </div>
+                                <div id="info">
+                                    <div id="info_nome">
+                                        <h1>@Model.Nome</h1>
+                                        <p>@Model.Duracao min | @Model.Genero </p>
+                                    </div>
+                                    <div id="idade">
+                                        @{
+                                            var x = "ci" + Model.Indicativa + ".png";
+                                        }
+                                        <img src="~/img/@x">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="local_da_sinopse">
+                                <h1 class="h1li">Sinopse:</h1>
+                                <br>
+                                <p style="word-break: break-all;">@Model.Sinopse</p>
+                                <br>
+                                <div id="orgol">
+                                    <ol id="ol1">
+                                        <!-- <li><img src="img/Clapperboard.png"> <h1 class="h1li">Diretor:</h3><p class="pli">Fulano</p></li> -->
+                                        <li><img src="~/img/Movie Projector.png"><h1 class="h1li">Distribuidora:</h1><p class="pli">@Model.Distribuidora</p></li>
+                                        <li><img src="~/img/Fantasy.png"><h1 class="h1li">Gênero:</h1><p class="pli">@Model.Genero</li>
+
+                                        <li><img src="~/img/Film Reel.png"><h1 class="h1li">Duração:</h1><p class="pli">@Model.Duracao min</p></li>
+                                        <!-- <li><img src="~/img/Movie Projector.png"><h1 class="h1li">Distribuidora:</h1><p class="pli">MovieCat</p></li> -->
+                                        <!-- <li><img src="~/img/Amelie Poulain.png"><h1 class="h1li"">Elenco:</h1><p class="pli">Ciclano, Ciclana, Fulano, Fulana, Beltrano, Beltrana, Ciclano de Tal, Fulana de Tal</p></li> -->
+                                    </ol>
+
+
+                                </div>
+                                @if (Model.Indicativa == "Livre")
+                                {
+                                    <div id="borda"><h2>Este filme é livre para todos os públicos.</h2></div>
+                                }
+
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="segunda">
+                <div>
+                    <h2>Compre seus pacotes de ingressos pelo nosso site!</h2>
+                    <section id="dias">
+                        @if ((ViewBag.Dia) as string == "seg")
+                        {
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "ter")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "qua")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "qui")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "sex")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "sab")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+                        @if ((ViewBag.Dia) as string == "dom")
+                        {
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "seg"})">SEG</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "ter"})">TER</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qua"})">QUA</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "qui"})">QUI</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sex"})">SEX</a></div>
+                            <div><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "sab"})">SAB</a></div>
+                            <div id="dia1"><a href="@Url.Action("PedidoPacote","Home", new {Id = Model.FilmeId, dia = "dom"})">DOM</a></div>
+                        }
+
+                    </section>
+                    <section id="sec_sessoes">
+                        @if (Model.Sessoes != null && Model.Sessoes.Any())
+                        {
+                            <div id="infodia1">
+
+                                @foreach (var s in Model.Sessoes)
+                                {
+
+
+                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Dub)
+                                    {
+                                        <p>sala @s.Sala  | @s.data | <img src="~/img/dub.png" /></p>
+                                    }
+                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Leg)
+                                    {
+                                        <p>sala @s.Sala | @s.data | <img src="~/img/leg.png" /></p>
+                                    }
+                                    if (s.Idioma == AgendMovies.Modelos.Idioma.Orig)
+                                    {
+                                        <p>sala @s.Sala | @s.data | <img src="~/img/nac.png" /></p>
+                                    }
+
+
+                                }
+                            </div>
+                        }
+
+
+                    </section>
+                </div>
+            </div>
+        </main>
+
+    </body>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

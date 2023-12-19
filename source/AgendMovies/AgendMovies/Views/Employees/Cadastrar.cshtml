@@ -3,7 +3,7 @@
 @{
     Layout = null;
 }
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-height, initial-scale=1.0">
     <title>Agend Movies</title>
 
-    <link rel="stylesheet" href="@Url.Content("~/estilos/Principal.css")" />
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
     <link rel="icon" href="~/img/Logo_aba.png" />
     <link href="@Url.Content("~/styles/Cadastro_de_Funcionario.css")" rel="stylesheet" />
 
@@ -31,46 +31,78 @@
         .wrapper form > div p span {
             color: #ff5454;
         }
-        header{
+
+        header {
             background-color: white;
         }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+
     </style>
 </head>
 <body>
-    <!--<header>
-      <figure>
-        <a href="index.html"><img id="logo" src="~/img/logomoviecat.png" alt="Logo do site"/></a>
-      </figure>
 
-      <ol id="olh">
-        <a href="#"<li><p>Home</p></li></a>
-        <a href="#"<li><p>Filmes</p></li></a>
-        <a href="#"<li><p>Sessões</p></li></a>
-        <a href="#"<li><p>Funcionários</p></li></a>
-        <a href="#"<li><p>Pacotes</p></li></a>
-      </ol>
-
-      <div id="dfah">
-      <figure>
-        <a href="#"><img src="~/img/funcionario_Mar.png" alt="Icone de logout"/></a>
-      </figure>
-        <h1>Perfil</h1>
-      </div>
-    </header>-->
     <header>
-        <h1>
-            <a href="@Url.Action("Index", "Home")">
-                <img src="~/img/logo.png" alt="yy" />
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
             </a>
-        </h1>
-        <ol>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pacotes</a></li>
-            <li><a href="#">Agenda</a></li>
-        </ol>
-        <div>
-            <p><a href="#"><img src="~/img/funcionario_Mar.png" /></a></p>
-            <p>Perfil</p>
+            <p id="per">Adm</p>
         </div>
     </header>
 
@@ -81,12 +113,13 @@
             {
                 @Html.AntiForgeryToken()
 
-                @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
+
 
                 <h1>Cadastro de Funcionários</h1>
                 @Html.HiddenFor(model => model.FuncionarioId)
 
                 <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
+                @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
                 <script>
                     function EditarImagem() {
                         var InputArquivo = document.getElementById("ColocarFotoDePerfil");
@@ -159,23 +192,17 @@
             });
         </script>
     </main>
+
     <footer>
-        <img src="~/img/logoFooter.png" />
-        <ol>
-            <li><a href=#><img src="~/img/github.png" /></a></li>
-            <li><a href=#><img src="~/img/facebook.png" /></a></li>
-            <li><a href=#><img src="~/img/twitter.png" /></a></li>
-        </ol>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
     </footer>
-    <!--<footer>
-      <div>
-        <img id="loucura2" src="~/img/footer_logo.png">
-      </div>
-      <div>
-        <img id="loucura" src="~/img/replit-icon-seeklogo.com.svg">
-        <img src="~/img/figma.png">
-        <img src="~/img/git.png">
-      </div>
-    </footer>-->
+
 </body>
 </html>

@@ -12,9 +12,11 @@ namespace AgendMovies.Modelos
             Database.SetInitializer<Tabelas>(new DropCreateDatabaseIfModelChanges<Tabelas>());
         }
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pacotes> Pacotes { get; set; }
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
+        public DbSet<Compra> Compras { get; set; }
 
 
     }

@@ -1,0 +1,129 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardADM.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardPrincipal.css")" />
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+        <h1>MEUS SERVIÇOS</h1>
+        <section>
+            <ol id="ccc">
+
+                <a href="@Url.Action("Cadastrar","Filmes")">
+                <li id="humli">
+                    <img src="~/img/placa.png"><h1 id="hum">
+                        Cadastrar
+                        Filmes
+                    </h1>
+                </li></a>
+
+                <a href="@Url.Action("Cadastrar","Sessao")">
+                <li id="humli">
+                    <img src="~/img/coisas.png"><h1 id="humm">
+                        Cadastrar
+                        Sessões
+                    </h1>
+                </li></a>
+
+                <a href="@Url.Action("Cadastrar","Employees")">
+                <li id="humli2">
+                    <img src="~/img/pc.png"><h1 id="hummm">
+                        Cadastrar
+                        Funcionários
+                    </h1>
+                </li></a>
+
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

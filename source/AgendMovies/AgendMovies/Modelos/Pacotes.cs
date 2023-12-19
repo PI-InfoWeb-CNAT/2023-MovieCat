@@ -12,10 +12,6 @@ namespace AgendMovies.Modelos
 
         public int ingressos { get; set; }
 
-        public string sala { get; set; }
-
-        public string assento { get; set; }
-
         public string valor { get; set; }
        
     }

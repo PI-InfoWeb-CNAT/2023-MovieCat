@@ -1,0 +1,123 @@
+﻿@model IEnumerable<AgendMovies.Modelos.VerPerfilView>
+
+@{
+    Layout = null;
+    var funcionario = ViewBag.Funcionario as AgendMovies.Modelos.Funcionario;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
+    <link rel="stylesheet" href="~/styles/modalConfirm.css">
+    <link href="~/styles/ListarPacotes.css" rel="stylesheet" />
+    <link rel="icon" href="img/Logo_aba.png" />
+    <script src="~/script/beattlejuice.js"></script>
+    <script src="~/script/modal.js"></script>
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Employees")">Home</a></li>
+            <li><a href="@Url.Action("Visualizar", "Pacotes")">Pacotes</a></li>
+            <li><a href="@Url.Action("VerPacotesComprados", "Employees")">Pacotes comprados</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    @if (funcionario.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Employees", new {id = funcionario.FuncionarioId})">
+                    }
+
+                </p>
+            </a>
+            <p id="per">@funcionario.nome</p>
+        </div>
+    </header>
+    <!-- 246 -->
+    <main>
+        <div id="uni">
+            <h1 id="h11">PACOTES COMPRADOS NO SISTEMA</h1>
+        </div>
+
+        <div id="org">
+            <ol id="ol1">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <h1 id="pequena">@item.Pacote.nome</h1><div>
+                            <ol class="botoes">
+                                <a href="@Url.Action("VerPacoteComprado", "Employees", new { id = item.Compra.CompraId})">
+                                <li><img src="~/img/oljo.png"></li>
+                                <p>Ver </p></a>
+                                 @{ 
+                                    var IdModal = "ModalExclusao"+item.Compra.CompraId.ToString() ;
+                                }
+                                <a href="javascript:AbrirModal('@IdModal')">
+                                    <li>
+                                        <img src="~/img/lixo.png">
+                                    </li>
+                                    <p>Excluir</p>
+                               
+                                   
+                                </a>
+                               
+                                <div id="@IdModal" class="Modal">
+                                    <div class="ModalConteudo">
+                                        <h3>Atenção!</h3>
+                                        <p>Tem certeza de que deseja excluir essa compra de @item.Cliente.Nome ? </p>
+                                        <ol>
+                                            <li><a href="@Url.Action("ExlcluirPacoteComprado", "Employees", new { id = item.Compra.CompraId})">Sim</a></li>
+                                            <li><a href="javascript:FecharModal('@IdModal')">Não</a></li>
+                                        </ol>
+                                        <span class="TextoImg">Essa ação e irreversivel <img src="~/img/iconConfirmExclu.png" alt="Icone de alerta"/></span>
+                                    </div>
+                                </div>
+                            </ol>
+                        </div>
+                    </li>
+                }
+
+
+                </ol>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div>
+            <img  src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

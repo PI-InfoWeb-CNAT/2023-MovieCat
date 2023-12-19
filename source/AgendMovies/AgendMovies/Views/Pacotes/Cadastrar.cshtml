@@ -1,129 +1,118 @@
 ﻿@model AgendMovies.Modelos.Pacotes
 
-@{ 
-    var PS = ViewBag.Pacotes  as IQueryable<AgendMovies.Modelos.Pacotes>;
+@{
+    Layout = null;
+    var funcionario = ViewBag.Funcionario as AgendMovies.Modelos.Funcionario;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Cadastro de Pacotes</title>
-    <link href="@Url.Content("~/styles/pacotes_create.css")" rel="stylesheet" />
+    <title>Home</title>
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
+    <link href="~/styles/EditarPacote.css" rel="stylesheet" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <script src="beattlejuice.js"></script>
     <style>
-        #acrescentar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-            box-sizing: border-box;
+        form button {
+            cursor: pointer;
         }
-        form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-            box-sizing: border-box;
-        }
-        .inputs {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0 !important;
 
+      
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
         }
-        input[type="submit"]{
-            background-color: limegreen;
-            text-align: center;
-            padding: 0.5em;
-        
-            color: white;
+
+        header > div > p {
+            color: black !important;
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Employees")">Home</a></li>
+            <li><a href="@Url.Action("Visualizar", "Pacotes")">Pacotes</a></li>
+            <li><a href="@Url.Action("VerPacotesComprados", "Employees")">Pacotes comprados</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    @if (funcionario.Foto == null)
+                    {
+                        <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                    }
+                    else
+                    {
+                        <img class="FotoPerfilHeader" src="@Url.Action("GetLogoTipo", "Employees", new {id = funcionario.FuncionarioId})">
+                    }
 
-        <div id="Header_Organizador">
-            <div>
-                <a href="index.html"><p><img src="~/img/Logo.png"></p></a>
-            </div>
-
-            <div>
-                <a href="#.html"><p><img src="~/img/logout_branco.png"></p></a>
-            </div>
+                </p>
+            </a>
+            <p id="per">@funcionario.nome</p>
         </div>
     </header>
-
-    <section>
-        <h1>Cadastrar pacote</h1>
-        <div id="endireitar_o_endireitar">
-            <div id="endireitar">
-                <div></div>
-                <div class="wrapper">
-                    @foreach (var p in PS)
-                    {
-                        <a href="#.html"><div class="botao"><p>@p.ingressos por @p.valor R$</p></div></a>
-                    }
-                    @for (int a = 0; a < 6 - ViewBag.Quant; a++)
-                    {
-                        <a href="#.html"><div class="botao"><p>- - - - - - - - - -</p></div></a>
-                    }
-                </div>
-                <div></div>
-            </div>
-        </div>
-        <h1>Anexar Filme</h1>
-
-        <div id="acrescentar_safado">
-
-            <div id="acrescentar">
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "")
-
-                    @Html.HiddenFor(model => model.PacotesId)
+    <!-- 246 -->
+    <main>
+        <section>
 
 
-                <div class="inputs">
-
-                    @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required", placeholder = "nome" })
-                    @Html.TextBoxFor(model => model.ingressos, new { type = "text", required = "required", placeholder = "ingressos" })
-                    @Html.TextBoxFor(model => model.sala, new { type = "text", required = "required", placeholder = "sala" })
-                </div>
-                <div class="inputs">
-
-                    @Html.TextBoxFor(model => model.assento, new { type = "text", required = "required", placeholder = "assento" })
-                    @Html.TextBoxFor(model => model.valor, new { type = "text", required = "required", placeholder = "valor" })
-                </div>
-                   <input type="submit" value="enviar"/>
-
-                }
+            <div id="organ"><h1>Cadastrar pacote </h1></div>
 
 
+            @using (Html.BeginForm("Cadastrar", "Pacotes", FormMethod.Post,
+new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
 
-                
-            </div>
-        </div>
+                <ol>
+                    <li id="li1">
+                        <p>Nome:</p>
 
-    </section>
+                        @Html.TextBoxFor(model => model.nome, new { type = "text", required = "required" })
+                    </li>
+                    <li id="li2">
+                        <p>Ingressos:</p>
+
+                        @Html.TextBoxFor(model => model.ingressos, new { type = "number", required = "required" })
+                    </li>
+                    <li id="li3">
+                        <p>Valor:</p>
+
+                        @Html.TextBoxFor(model => model.valor, new { type = "number", required = "required" })
+                    </li>
+                    <div id="b">
+                        <button type="submit">Salvar</button>
+                    </div>
+                </ol>
+
+                <!--<div id="b">
+                <button>Cadastrar</button>
+                </div>-->}
+
+
+        </section>
+    </main>
 
     <footer>
         <div>
-            <p>Copyright © 2023 AgendMovies</p>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
         </div>
-
         <div>
-            <ol>
-                <a href="#.html">
-                <li><img src="~/img/insta.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/face.png"></li></a>
-                <a href="#.html">
-                <li><img src="~/img/twitter.png"></li></a>
-            </ol>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
         </div>
     </footer>
 </body>
 </html>
+

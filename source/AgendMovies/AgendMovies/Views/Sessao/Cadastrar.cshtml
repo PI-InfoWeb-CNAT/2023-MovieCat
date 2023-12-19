@@ -1,0 +1,217 @@
+﻿@model AgendMovies.Modelos.Sessao
+
+@{
+    Layout = null;
+    var nulo = new List<SelectListItem>
+{
+        new SelectListItem { Value = "-", Text = "---------" }
+    };
+    var fs = ViewBag.Filmes as SelectList;
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MovieCat</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/styles/EditarSessao.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/DashboardPrincipal.css")" />
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <style>
+        .DiaDaSemana {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        #SalaQunt {
+            margin: 1em 0;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+         #SalaQunt > div{
+              display: flex;
+         
+            align-content: center;
+         }
+        .SalaQuantidade{
+            background-color: black;
+            border-color: white;
+        }
+        option {
+            color: white;
+            background-color: black;
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section>
+
+            <h1>Cadastro de sessões</h1>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                <label for="Filmes">
+                    <p>Filme:</p>
+                    @if (ViewBag.Filmes != null && fs.Count() != 0)
+                    {
+                        @Html.DropDownListFor(model => model.NomeFilme, ViewBag.Filmes as SelectList, new { required = "required", id = "Filmes" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => model.NomeFilme, nulo, new { required = "required", id = "Filmes" })
+                    }
+                </label>
+
+                <div id="seg">
+                    <div>
+                        <p>Dia Final:</p> <input type="date" name="datai" required />
+                    </div>
+                    <div>
+                        <p>Dia Final:</p> <input type="date" name="dataf" required  />
+                    </div>
+                </div>
+                <div id="SalaQunt">
+                    <div>
+                            <p>Sala</p> @Html.TextBoxFor(model => model.Sala, new { type = "text", required = "required", minlength = "1", maxlength = "8", size = "10", @class = "SalaQuantidade" })
+                    </div>
+                    <div>
+                        <p>Quantidade por dia:</p> <input type="number" name="quant" required min="1" class="SalaQuantidade"/>
+                     </div>
+                </div>
+
+              
+
+                <div class="horario">
+                    <div>
+                        <p>Horário de início:</p>
+                        @Html.TextBoxFor(model => model.horaInicio, new { type = "time", required = "required" })
+                    </div>
+                    <div>
+                        <p>Duração</p>
+                        @Html.TextBoxFor(model => model.Duracao, new { type = "number", required = "required" })
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Duração</p>
+                        @Html.EnumDropDownListFor(model => model.Idioma, new { required = "required" })
+                    </div>
+                </div>
+
+               
+
+
+
+
+
+
+                <div id="b">
+                    <div>
+                        <input type="submit" id="botao" value="CADASTRAR">
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

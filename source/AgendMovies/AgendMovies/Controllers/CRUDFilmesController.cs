@@ -12,10 +12,10 @@ namespace AgendMovies.Controllers
     {
         Tabelas context = new Tabelas();
         //// GET: CRUDFilmes
-        public ActionResult Listar()
-        {
-            return View(context.Filmes.OrderByDescending(f => f.FilmeId));
-        }
+        //public ActionResult Listar()
+        //{
+        //    return View(context.Filmes.OrderByDescending(f => f.FilmeId));
+        //}
         //public ActionResult Adicionar()
         //{
         //    return View();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,22 +13,100 @@ namespace AgendMovies.Controllers
 
         // GET: Pacotes
         Tabelas T = new Tabelas();
-        public ActionResult ListarPacotes()
-        {
-            return View();
-        }
+
         public ActionResult Visualizar()
         {
-            ViewBag.Pac = new Pacotes();
-            ViewBag.Quant = T.Pacotes.OrderBy(pacotes => pacotes.nome).ToList().Count();
-            return View(T.Pacotes.OrderBy(pacotes => pacotes.nome));
+            
+            
+
+            Funcionario f = Session["Funcionario"] as Funcionario;
+            if (f != null)
+            {
+                ViewBag.Funcionario = f;
+                return View(T.Pacotes.OrderBy(pacotes => pacotes.PacotesId));
+            }
+            return RedirectToAction("Login");
         }
         public ActionResult Cadastrar()
         {
-            ViewBag.Quant = T.Pacotes.OrderBy(pacotes => pacotes.nome).ToList().Count();
-            ViewBag.Pacotes = T.Pacotes.OrderBy(pacotes => pacotes.nome);
             
-            return View();
+
+
+            Funcionario f = Session["Funcionario"] as Funcionario;
+            if (f != null)
+            {
+                ViewBag.Funcionario = f;
+                ViewBag.Quant = T.Pacotes.OrderBy(pacotes => pacotes.nome).ToList().Count();
+                ViewBag.Pacotes = T.Pacotes.OrderBy(pacotes => pacotes.nome);
+
+                return View();
+            }
+            return RedirectToAction("Login");
+        }
+        public ActionResult Editar(long? id)
+        {
+           
+
+
+            Funcionario f = Session["Funcionario"] as Funcionario;
+            if (f != null)
+            {
+                ViewBag.Funcionario = f;
+                if (id == null)
+                {
+                    return HttpNotFound();
+                }
+
+                Pacotes pacote = T.Pacotes.Find(id);
+
+                if (pacote == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(pacote);
+            }
+            return RedirectToAction("Login");
+        }
+        public ActionResult VerPacote(long? id)
+        {
+          
+
+
+            Funcionario f = Session["Funcionario"] as Funcionario;
+            if (f != null)
+            {
+                ViewBag.Funcionario = f;
+                if (id == null)
+                {
+                    return HttpNotFound();
+                }
+
+                Pacotes pacote = T.Pacotes.Find(id);
+
+                if (pacote == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(pacote);
+            }
+            return RedirectToAction("Login");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar(Pacotes pacote)
+        {
+            if (ModelState.IsValid)
+            {
+                // Assuming that Pacotes has a property named PacotesId as the primary key
+                T.Entry(pacote).State = EntityState.Modified; // EntityState.Modified is from System.Data.Entity
+                T.SaveChanges();
+                return RedirectToAction("Visualizar");
+            }
+
+            ViewBag.Quant = T.Pacotes.OrderBy(p => p.nome).ToList().Count();
+            return View(pacote);
         }
         [HttpPost]
         public ActionResult Cadastrar(Pacotes p)
@@ -40,27 +119,23 @@ namespace AgendMovies.Controllers
             }
             return RedirectToAction("Visualizar");
         }
-
-        public ActionResult Selecionar(long? id)
-        {
+     
+        public ActionResult Excluir(long id)
+        {    
             Pacotes p = T.Pacotes.Find(id);
-            Session["Pacote"] = T.Pacotes.Find(id);       
-            return RedirectToAction("Visualizar");
-        }
-        public ActionResult Delete()
-        {
+            T.Pacotes.Remove(p);
+            T.SaveChanges();
 
-            Pacotes x = (Pacotes)Session["Pacote"];
-           
-            if (x != null)
+            List<Compra> compras = T.Compras.OrderBy(c => c.CompraId).Where(comp => comp.IdPacote == id).ToList();
+            foreach (Compra c in compras)
             {
-                Pacotes p = T.Pacotes.Find(x.PacotesId);
-                T.Pacotes.Remove(p);
+                T.Compras.Remove(c);
                 T.SaveChanges();
-                TempData["Message"] = "O PACOTE " + p.nome.ToUpper() + " FOI REMOVIDO";
             }
-   
+
             return RedirectToAction("Visualizar");
         }
+        
+
     }
 }

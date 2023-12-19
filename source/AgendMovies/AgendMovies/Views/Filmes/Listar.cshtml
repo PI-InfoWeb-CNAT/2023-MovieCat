@@ -1,0 +1,186 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/ListarFilmes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/styles/DashboardPrincipal.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="img/Logo_aba.png" />
+    <script src="~/script/modal.js"></script>
+    <link rel="stylesheet" href="~/styles/modalConfirm.css">
+    <style>
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section id="sect">
+            <select name="cars" aria-placeholder="Genero">
+                <option value="g">Gênero</option>
+                <option value="Algo 1">Algo 1</option>
+                <option value="Algo 2">Algo 2</option>
+                <option value="algo 3">algo 3</option>
+                <option value="Capivara">Capivara</option>
+            </select>
+
+            <input type="text" id="fname" name="fname" placeholder="Diretor"> <!--<img src="img/fil.png">-->
+
+            <input type="text" id="fname" name="fname" placeholder="Elenco"> <!--<img src="img/userr.png">-->
+
+            <input type="text" placeholder="..." /><br></br> <!--<img src="img/sear.png">-->
+        </section>
+
+        <section class="filmes">
+            <h2 class="heading">Filmes cadastrados no sistema</h2>
+            <!-- movies conatiner -->
+            <div class="movies-container">
+                <!-- caixa 1 -->
+                @foreach (var m in Model)
+                {
+                <div class="box">
+                    <div class="box-img">
+                        @if (m.ConteudoDaFoto == null)
+                        {
+                            <img src="~/img/image 4.png" style="width:205px; height: 270px;">
+                        }
+                        else
+                        {
+                            <img src="@Url.Action("GetLogoTipo", "Filmes", new { id = m.FilmeId })" >
+                        }
+                    </div>
+
+                    <div class="dh12">
+                        <div>
+                            <h3>@m.Nome</h3>
+                            <span>@m.Duracao | @m.Genero</span>
+                        </div>
+                        <div>
+                            @{
+                                var classi = "ci"+ m.Indicativa + ".png";
+                            }
+                            <img src="~/img/@classi" class="classificacao">
+                        </div>
+                    </div>
+                    <div>
+                        <ol class="botoes">
+                            <a href="@Url.Action("VerFilmes", "Filmes", new { id = m.FilmeId, dia = "seg" })"><li><img src="~/img/oljo.png"></li><p>Ver </p></a>
+                            <a href="@Url.Action("Editar", "Filmes", new { id = m.FilmeId})"><li><img src="~/img/pen.png"></li><p>Editar</p></a>
+                            
+                            @{
+                                    var IdModal = "ModalExclusao" + m.FilmeId.ToString();
+                             }
+                            <a href="javascript:AbrirModal('@IdModal')">
+                                <li>
+                                    <img src="~/img/lixo.png">
+                                </li>
+                                <p>Excluir</p>
+
+
+                                </a>
+
+                                <div id="@IdModal" class="Modal">
+                                    <div class="ModalConteudo">
+                                        <h3>Atenção!</h3>
+                                        <p>Tem certeza de que deseja excluir o filme "@m.Nome"? </p>
+                                        <ol>
+                                            <li><a href="@Url.Action("Excluir", "Filmes", new { id = m.FilmeId })">Sim</a></li>
+                                            <li><a href="javascript:FecharModal('@IdModal')">Não</a></li>
+                                        </ol>
+                                        <span class="TextoImg">Essa ação e irreversivel <img src="~/img/iconConfirmExclu.png" alt="Icone de alerta" /></span>
+                                    </div>
+                                </div>
+                        </ol>
+                    </div>
+                </div>
+                }
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>  

@@ -1,0 +1,261 @@
+﻿@model AgendMovies.Modelos.Funcionario
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <title>Agend Movies</title>
+
+    <link rel="stylesheet" href="~/styles/DashboardPrincipal.css">
+    <link rel="icon" href="~/img/Logo_aba.png" />
+    <link href="@Url.Content("~/styles/Cadastro_de_Funcionario.css")" rel="stylesheet" />
+
+    @* Scriprs do barra automatico *@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    @* Scriprs do barra automatico *@
+    <style>
+        input[type="file"] {
+            display: none;
+        }
+
+        ion-icon:hover {
+            cursor: pointer;
+        }
+
+        .wrapper form > div p span {
+            color: #ff5454;
+        }
+
+        header {
+            background-color: white;
+        }
+        form {
+            width: auto !important;
+            height: auto !important;
+            padding-bottom: 15px;
+        }
+            form input {
+                border: none !important;
+                box-sizing: border-box;
+                outline: none;
+                margin-left: 2px;
+            }
+        form > div {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+        }
+        form p {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            box-sizing: border-box;
+            border-bottom: 2px solid white;
+            width: 100%;
+     
+            padding: 10px;
+        }
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+        header {
+            background-color: white;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+
+        header > div > p {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            @using (Html.BeginForm("Editar", "Employees", FormMethod.Post,
+ new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Foto)
+                @Html.HiddenFor(model => model.TipoDaFoto)
+
+
+                <h1>Edição de Funcionário</h1>
+                @Html.HiddenFor(model => model.FuncionarioId)
+
+                if (Model.Foto == null)
+                {
+                    <img onclick="EditarImagem()" src="~/img/iconeFuncionario.png" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;" />
+                }
+                else
+                {
+                    <img onclick="EditarImagem()" src="@Url.Action("GetLogoTipo", "Employees", new {id = Model.FuncionarioId})" id="FotoTemp" style="width: 70px; height: 71px; border-radius:100%;">
+                }
+
+                @Html.TextBox("arquivo", "", new { type = "file", id = "ColocarFotoDePerfil" })
+                <script>
+                    function EditarImagem() {
+                        var InputArquivo = document.getElementById("ColocarFotoDePerfil");
+                        const Imagem = document.getElementById('FotoTemp');
+
+                        InputArquivo.addEventListener("change", function (evento) {
+
+
+                            const Arquivo = evento.target.files[0];
+                            if (Arquivo) {
+                                const LeitorDeArquivo = new FileReader();
+                                LeitorDeArquivo.onload = function (e) {
+                                    Imagem.setAttribute('src', e.target.result);
+                                };
+                                LeitorDeArquivo.readAsDataURL(Arquivo);
+                            } else {
+                                Imagem.setAttribute('src', '~/img/EditarPerfil.png');
+                            }
+                        });
+                        InputArquivo.click();
+
+
+                    }
+                </script>
+
+                <div>
+                    <p>
+                        Nome Completo:
+                        @Html.EditorFor(model => model.nome, new { type = "text", required = "required", size = "40" })
+
+                    </p>
+                    @Html.ValidationMessageFor(model => model.nome, "")
+                </div>
+
+                <div>
+                    <p>
+                        CPF:
+                        @Html.EditorFor(model => model.cpf, new { type = "text", required = "required", size = "40" })
+                    </p>
+                    @Html.ValidationMessageFor(model => model.cpf, "")
+                </div>
+
+                <div>
+                    <p>
+                        Data de Nascimento:
+                        @Html.EditorFor(model => model.data, new { type = "text", required = "required", size = "40" })
+                    </p>
+                    @Html.ValidationMessageFor(model => model.data, "")
+                </div>
+
+                <div>
+                    <p>Telefone:   @Html.EditorFor(model => model.telefone, new { type = "text", required = "required", size = "40" })</p>
+                    @Html.ValidationMessageFor(model => model.telefone, "")
+
+                </div>
+
+                <div>
+                    <p>Email: @Html.EditorFor(model => model.email, new { type = "email", required = "required", size = "40" })  </p>
+                    @Html.ValidationMessageFor(model => model.email, "")
+                </div>
+
+                <div>
+                    <p>Confirmar Senha*  @Html.TextBoxFor(model => model.senha, new { type = "text", required = "required", size = "40" }) </p>
+
+                    @Html.ValidationMessageFor(model => model.senha, "")
+                </div>
+
+                <div class="t">
+                    <button type="submit" class="btn">Atualizar</button>
+                </div>
+
+
+            }
+        </div>
+
+
+        @* Scripts da validação *@
+        <script src="@Url.Content("~/scripts/jquery-3.4.1.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.js")">
+        </script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")">
+        </script>
+        @* Scripts da validação *@
+
+        <script>
+            $(document).ready(function () {
+                $('#data').mask('00/00/0000');
+            });
+        </script>
+    </main>
+
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+
+</body>
+</html>

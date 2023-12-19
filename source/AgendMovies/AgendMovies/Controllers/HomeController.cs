@@ -14,41 +14,68 @@ namespace AgendMovies.Controllers
         public ActionResult Index()
         {
            
-            return View(BD.Filmes.OrderBy(c => c.FilmeId).ToList());
+            
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                ViewBag.ClienteLogado = c;
+            }
+            return View(BD.Filmes.OrderBy(f => f.FilmeId).ToList());
+        }
+        public ActionResult IndexCliente()
+        {
+
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                ViewBag.ClienteLogado = c;
+                return View(BD.Filmes.OrderBy(fs => fs.FilmeId).ToList());
+            }
+            return RedirectToAction("Cadastrar", "Cliente");
         }
         public ActionResult PedidoPacote(string Id, string dia) 
         {
-            
+            Cliente c = Session["Cliente"] as Cliente;
+            if (c != null)
+            {
+                ViewBag.ClienteLogado = c;
+                List<SelectListItem> ps = new List<SelectListItem>();
+                foreach (Pacotes p in BD.Pacotes.OrderBy(p => p.PacotesId))
+                {
+                    ps.Add(new SelectListItem { Value = p.PacotesId.ToString(), Text = p.nome + "(" + p.ingressos + "-"+p.valor+")" });
+                }
+                ViewBag.Pacotes = new SelectList(ps, "Value", "Text");
+            }
             Filme x = BD.Filmes.Find(Id);
             if (x != null)
             {
-                x.Sessoes = new List<Sessao>();
-
-                if (dia == "seg" || dia == null)
+                x.Sessoes = new List<Sessao>();                  
+                
+                if (dia == "seg")
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.seg == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Monday)
                         {
                             x.Sessoes.Add(s);
                         }
                     }
                 }
-                else if (dia == "ter" )
+                else if (dia == "ter")
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.ter == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Tuesday)
                         {
                             x.Sessoes.Add(s);
                         }
                     }
                 }
-                else if(dia == "qua")
+                else if (dia == "qua")
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.qua == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Wednesday)
                         {
                             x.Sessoes.Add(s);
                         }
@@ -58,7 +85,7 @@ namespace AgendMovies.Controllers
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.qui == true && s != null)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Thursday)
                         {
                             x.Sessoes.Add(s);
                         }
@@ -68,7 +95,7 @@ namespace AgendMovies.Controllers
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.sex == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Friday)
                         {
                             x.Sessoes.Add(s);
                         }
@@ -78,7 +105,7 @@ namespace AgendMovies.Controllers
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.sab == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Saturday)
                         {
                             x.Sessoes.Add(s);
                         }
@@ -88,7 +115,7 @@ namespace AgendMovies.Controllers
                 {
                     foreach (Sessao s in BD.Sessoes.OrderBy(se => se.SessaoId).ToList())
                     {
-                        if (s.IdFilme == x.FilmeId && s.dom == true)
+                        if (s.IdFilme == x.FilmeId && s.data.DayOfWeek == DayOfWeek.Sunday)
                         {
                             x.Sessoes.Add(s);
                         }

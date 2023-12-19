@@ -1,0 +1,152 @@
+﻿@model IEnumerable<AgendMovies.Modelos.Filme>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="@Url.Content("~/styles/ListarSessoes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/styles/DashboardPrincipal.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="img/Logo_aba.png" />
+    <style>
+        header {
+            background-color: white;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative !important;
+            background-color: white;
+        }
+
+            header a {
+                color: black !important;
+            }
+
+        footer {
+            width: 100%;
+        }
+
+        #md {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .FotoPerfilHeader {
+            width: 62px;
+            height: 62px;
+            border-radius: 100%;
+        }
+
+        header > div > p {
+            color: black !important;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/img/logo.png">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="@Url.Action("Home", "Adm")">Home</a></li>
+            <li><a href="@Url.Action("Listar", "Filmes")">Filmes</a></li>
+            <li><a href="@Url.Action("Listar", "Sessao")">Sessões</a></li>
+            <li><a href="@Url.Action("Listar", "Employees")">Funcionários</a></li>
+        </ul>
+        <div id=md>
+            <a href="#.html">
+                <p>
+
+                    <img class="FotoPerfilHeader" src="~/img/PerfilSemFoto.png">
+
+
+
+                </p>
+            </a>
+            <p id="per">Adm</p>
+        </div>
+    </header>
+    <!-- 246 -->
+
+    <main>
+
+        <section class="filmes">
+            <h2 class="heading">Filmes que possuem sessões cadastradas no sistema</h2>
+            <!-- movies conatiner -->
+            <div class="movies-container">
+                <!-- caixa 1 -->
+                @foreach (var filme in Model)
+                {
+                    <div class="box">
+                        <div class="box-img">
+                            @if (filme.ConteudoDaFoto == null)
+                            {
+                                <img src="~/img/image 4.png">
+                            }
+                            else
+                            {
+                                <img  src="@Url.Action("GetLogoTipo", "Filmes", new { id = filme.FilmeId })">
+                            }
+                        </div>
+                       
+                        <div class="dh12">
+                            <div>
+                                <h3>@filme.Nome</h3>
+                                <span>@filme.Duracao | @filme.Genero</span>
+                            </div>
+                            <div>
+                                @{
+                                    var classi = filme.Indicativa + ".png";
+                                }
+                                <img src="~/img/@classi">
+                            </div>
+                        </div>
+                        <div>
+                            <ol class="botoes">
+                                <a href="@Url.Action("VerSessoes", "Sessao", new { id = filme.FilmeId, dia = "seg" })">
+                                <li><img src="~/img/oljo.png"></li>
+                                <p>Ver </p></a>
+                            </ol>
+                        </div>
+
+
+                    </div>
+                }
+
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="~/img/footerMovieCat.png" style="width: 180px; height: 80px;">
+        </div>
+        <div>
+            <img id="loucura" src="~/img/replitIcon.png">
+            <img src="~/img/figmaIcon.png">
+            <img src="~/img/githubIcon.png">
+        </div>
+    </footer>
+</body>
+</html>

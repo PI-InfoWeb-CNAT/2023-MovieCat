@@ -51,7 +51,7 @@ namespace AgendMovies.Controllers
                 if (arquivo != null)
                 {
                     f.TipoDaFoto = arquivo.ContentType;
-                    f.ConteudoDaFoto = SetLogoTipo(arquivo);
+                    f.Foto = SetLogoTipo(arquivo);
                 }
                 context.Funcionarios.Add(f);
                 context.SaveChanges();
@@ -66,7 +66,7 @@ namespace AgendMovies.Controllers
                 if (arquivo != null)
                 {
                     f.TipoDaFoto = arquivo.ContentType;
-                    f.ConteudoDaFoto = SetLogoTipo(arquivo);
+                    f.Foto = SetLogoTipo(arquivo);
 
                 }
                 context.Entry(f).State = EntityState.Modified;
@@ -100,7 +100,7 @@ namespace AgendMovies.Controllers
             Funcionario  F = context.Funcionarios.Find(id);
             if (F != null)
             {
-                return File(F.ConteudoDaFoto, F.TipoDaFoto);
+                return File(F.Foto, F.TipoDaFoto);
             }
             return null;
         }

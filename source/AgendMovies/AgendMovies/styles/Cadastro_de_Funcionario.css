@@ -5,7 +5,9 @@
   box-sizing: border-box;
   
 }
-
+header ul a{
+    color: black !important;
+}
 header{
     z-index: 100;
 }
@@ -40,7 +42,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100hv;
+
   background-color: black;
   background-size: cover;
   background-position: center;
@@ -77,7 +79,7 @@ main{
   align-items: center;
 /*Apaga margin-top abaixo quaquer coisa*/
   margin-top: 13em;
-
+  margin-bottom: 5em;
 }
 
 
@@ -159,4 +161,21 @@ form input {
     border-right: transparent;
     border-top: transparent;
   color: white;
+}
+
+footer{
+    width: 100%;
+
+}
+body{
+    min-height:100vh;
+    flex-wrap: wrap;
+}
+#LadoLado {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+#LadoLado > p{
+    color: black !important;
 }
